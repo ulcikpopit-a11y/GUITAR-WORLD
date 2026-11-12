@@ -1,7 +1,25 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta name="weryfikacja witryny Google" content="n773vMddhCfjldX-FplPCezLGtZ0LYDxUh0Ilw12Ows" />
+<style>
+.guitar-star {
+  position: fixed;
+  top: 25px;
+  right: 30px;
+  font-size: 110px;
+  color: #ffd700;
+  z-index: 9999;
+  animation: starGlow 2s infinite ease-in-out;
+  text-shadow: 0 0 15px gold, 0 0 30px gold;
+}
+
+@keyframes starGlow {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.15) rotate(10deg); }
+}
+</style>
+<head>
+
 <meta charset="UTF-8">
 <title>Guitar World</title>
 <style>
@@ -62,7 +80,7 @@ footer {
 </style>
 </head>
 <body>
-
+<div class="guitar-star">★</div>
 <header>
 <h1>GUITAR WORLD 🎸</h1>
 <p>ROCK • METAL • GUITAR</p>
