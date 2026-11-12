@@ -1,9 +1,71 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guitar World</title>
+
 <style>
+* {
+  box-sizing: border-box;
+}
+
 body {
+  margin: 0;
+  background: linear-gradient(to bottom, #8b0000 0%, #350000 35%, #111 75%, #000 100%);
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+  font-family: Arial, sans-serif;
   transition: background 0.7s ease;
+}
+
+h1 {
+  font-family: cursive;
+  font-size: 48px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  color: white;
+  text-shadow: 0 0 10px red, 0 0 20px darkred;
+}
+
+h2 {
+  color: red;
+}
+
+h1, h2, h3, p, section {
+  text-align: center;
+}
+
+header {
+  background: #b00000;
+  padding: 35px;
+}
+
+nav {
+  background: #222;
+  padding: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: red;
+}
+
+section {
+  padding: 35px 15px;
+}
+
+footer {
+  background: #222;
+  padding: 20px;
+  margin-top: 30px;
 }
 
 .vibe-button {
@@ -21,13 +83,16 @@ body {
   cursor: pointer;
   z-index: 9999;
 }
-</style>
-<style>
+
+.vibe-button:hover {
+  background: #e00000;
+}
+
 .guitar-star {
   position: fixed;
   top: 25px;
   right: 30px;
-  font-size: 110px;
+  font-size: 70px;
   color: #ffd700;
   z-index: 9999;
   animation: starGlow 2s infinite ease-in-out;
@@ -38,180 +103,22 @@ body {
   0%, 100% { transform: scale(1) rotate(0deg); }
   50% { transform: scale(1.15) rotate(10deg); }
 }
-</style>
-<head>
 
-<meta charset="UTF-8">
-<title>Guitar World</title>
-<style>
-h1 {
-    font-family: 'metal mania',cursive;
-    font-size: 48px;
-    font-weight: bold;
-    letter-spacing: 5px;
-    color: white;
-    text-shadow: 0 0 10px red, 0 0 20px darkred;
-    text-align: center;
-}
-<style>
-h1{ text-a;ing: center ! important;
-}
-h1, h2, h3, p, section {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-body {
-    background: linear-gradient(to bottom, #8b0000 0%, #350000 35%, #111111 75%, #000000 100%);
-background-attachment: fixed;
-color: white;
-text-aling: center;
-}
-header {
-    background: #b00000;
-    padding: 35px;
-}
-h1 {
-    font-size: 48px;
-    letter-spacing: 5px;
-}
-nav {
-    background: #222;
-    padding: 20px;
-}
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 15px;
-    font-weight: bold;
-}
-nav a:hover {
-    color: red;
-}
-section {
-    padding: 45px 15px;
-}
-h2 {
-    color: red;
-}
-footer {
-    background: #222;
-    padding: 20px;
-}
-</style>
-</head>
-<body>
-<script>
-let vibe = 0;
-
-function changeVibe() {
-  const colors = [
-    "#000000",
-    "#650000",
-    "#24003d"
-  ];
-
-  vibe = (vibe + 1) % colors.length;
-  document.body.style.background = colors[vibe];
-}
-</script>
-<button class="vibe-button" onclick="changeVibe()">
-CHANGE THE VIBE
-</button>
-<div class="guitar-star">★</div>
-<header>
-<h1>GUITAR WORLD 🎸</h1>
-<p>ROCK • METAL • GUITAR</p>
-</header>
-
-<nav>
-<a href="#taby">TABULATURY</a>
-<a href="#riffy">RIFFY</a>
-<a href="#piosenki">PIOSENKI</a>
-<a href="#metallica">METALLICA</a>
-</nav>
-
-<section id="taby">
-<h2>🎸 TABULATURY</h2>
-<p>Twoje miejsce do nauki utworów!</p>
-<section id="happybirthday">
-<h2>🎂 HAPPY BIRTHDAY 🎸 </h2>
-
-</section>
-
-<p>Tabulatura – część 1</p>
-<img src="happybirthday1.jpg" width="300">
-
-<p>Tabulatura – część 2</p>
-<img src="happybirthday2.jpg" width="300">
-<section id="chivas">
-
-<h2>🔥chivas nowybatman</h2> 
-
-<p>🎸 Tabulatura – część 1</p>
-<img src="batman1.jpg" width="30%">
-
-<p>🎸 Tabulatura – część 2</p>
-<img src="batman2.jpg" width="30%">
-
-</section>
-
-</section>
-
-<section id="riffy">
-<h2>🤘 RIFFY</h2>
-<p>Najlepsze gitarowe riffy.</p>
-<div class="riff">
-  <h3>SMOKE ON THE WATER🤘</h3>
-  <pre>
-E|------------------------------|
-B|------------------------------|
-G|------------------------------|
-D|------------------------------|
-A|------------------------------|
-E|-0-3-5-0-3-6-5-0-3-5-3-0--|
-  </pre>
-</div>
-</section>
-
-<section id="piosenki">
-<h2>🎵 PIOSENKI</h2>
-<p>Utwory do nauki na gitarze.</p>
-</section>
-
-
-<style>
 pre {
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 1.8;
-    color: #ff3333;
-    background: #1c1c1c;
-    padding: 25px;
-    border: 2px solid #b00000;
-    border-radius: 12px;
-    display: inline-block;
-    text-align: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.8;
+  color: #ff3333;
+  background: #1c1c1c;
+  padding: 25px;
+  border: 2px solid #b00000;
+  border-radius: 12px;
+  display: inline-block;
+  text-align: left;
+  max-width: 95%;
+  overflow-x: auto;
 }
 
-</style>
-
-
-</body>
-<section id="metallica">
-<h2>🔥 METALLICA – UTWORY</h2>
-
-<p><a href="https://www.google.com/search?q=Metallica+Nothing+Else+Matters+guitar+tabs">Nothing Else Matters 🎸</a></p>
-
-<p><a href="https://www.google.com/search?q=Metallica+Enter+Sandman+guitar+tabs">Enter Sandman 🤘</a></p>
-
-<p><a href="https://www.google.com/search?q=Metallica+Master+of+Puppets+guitar+tabs">Master of Puppets 🔥</a></p>
-
-<p><a href="https://www.google.com/search?q=Metallica+One+guitar+tabs">One ⚡</a></p>
-<footer>
-GUITAR WORLD © 2026 ig:Ulc1xx
-</footer>
-<style>
 #sparkCanvas {
   position: fixed;
   inset: 0;
@@ -220,11 +127,166 @@ GUITAR WORLD © 2026 ig:Ulc1xx
   pointer-events: none;
   z-index: 10;
 }
+
+.lightning {
+  position: fixed;
+  z-index: 11;
+  pointer-events: none;
+  color: #fff4a3;
+  font-size: 55px;
+  text-shadow: 0 0 15px yellow, 0 0 30px red;
+  animation: lightningFlash 0.7s ease-out forwards;
+}
+
+@keyframes lightningFlash {
+  0% { opacity: 0; transform: scale(0.5); }
+  20% { opacity: 1; transform: scale(1.2); }
+  40% { opacity: 0.2; }
+  60% { opacity: 1; }
+  100% { opacity: 0; transform: scale(0.8); }
+}
+
+.corner-smoke {
+  position: fixed;
+  bottom: -35px;
+  left: -45px;
+  width: 190px;
+  height: 190px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.22;
+  filter: blur(18px);
+  background: radial-gradient(
+    ellipse at 40% 70%,
+    rgba(180,180,180,0.7),
+    rgba(100,100,100,0.25) 45%,
+    transparent 75%
+  );
+  animation: smokeRise 7s ease-in-out infinite;
+}
+
+@keyframes smokeRise {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.15;
+  }
+  50% {
+    transform: translate(12px, -35px) scale(1.25);
+    opacity: 0.3;
+  }
+}
+
+img {
+  max-width: 90%;
+  height: auto;
+}
 </style>
+</head>
+
+<body>
+
+<button class="vibe-button" onclick="changeVibe()">
+  CHANGE THE VIBE
+</button>
+
+<div class="guitar-star">★</div>
+
+<header>
+  <h1>GUITAR WORLD 🎸</h1>
+  <p>ROCK • METAL • GUITAR</p>
+</header>
+
+<nav>
+  <a href="#taby">TABULATURY</a>
+  <a href="#riffy">RIFFY</a>
+  <a href="#piosenki">PIOSENKI</a>
+  <a href="#metallica">METALLICA</a>
+</nav>
+
+<section id="taby">
+  <h2>🎸 TABULATURY</h2>
+  <p>Twoje miejsce do nauki utworów!</p>
+
+  <section id="happybirthday">
+    <h2>🎂 HAPPY BIRTHDAY 🎸</h2>
+
+    <p>Tabulatura – część 1</p>
+    <img src="happybirthday1.jpg" width="300" alt="Happy Birthday część 1">
+
+    <p>Tabulatura – część 2</p>
+    <img src="happybirthday2.jpg" width="300" alt="Happy Birthday część 2">
+  </section>
+
+  <section id="chivas">
+    <h2>🔥 CHIVAS NOWYBATMAN</h2>
+
+    <p>🎸 Tabulatura – część 1</p>
+    <img src="batman1.jpg" width="300" alt="Batman część 1">
+
+    <p>🎸 Tabulatura – część 2</p>
+    <img src="batman2.jpg" width="300" alt="Batman część 2">
+  </section>
+</section>
+
+<section id="riffy">
+  <h2>🤘 RIFFY</h2>
+  <p>Najlepsze gitarowe riffy.</p>
+
+  <div class="riff">
+    <h3>SMOKE ON THE WATER 🤘</h3>
+    <pre>
+E|------------------------------|
+B|------------------------------|
+G|------------------------------|
+D|------------------------------|
+A|------------------------------|
+E|-0-3-5-0-3-6-5-0-3-5-3-0------|
+    </pre>
+  </div>
+</section>
+
+<section id="piosenki">
+  <h2>🎵 PIOSENKI</h2>
+  <p>Utwory do nauki na gitarze.</p>
+</section>
+
+<section id="metallica">
+  <h2>🔥 METALLICA – UTWORY</h2>
+
+  <p><a href="https://www.google.com/search?q=Metallica+Nothing+Else+Matters+guitar+tabs">Nothing Else Matters 🎸</a></p>
+
+  <p><a href="https://www.google.com/search?q=Metallica+Enter+Sandman+guitar+tabs">Enter Sandman 🤘</a></p>
+
+  <p><a href="https://www.google.com/search?q=Metallica+Master+of+Puppets+guitar+tabs">Master of Puppets 🔥</a></p>
+
+  <p><a href="https://www.google.com/search?q=Metallica+One+guitar+tabs">One ⚡</a></p>
+</section>
+
+<footer>
+  GUITAR WORLD © 2026 ig:Ulc1xx
+</footer>
 
 <canvas id="sparkCanvas"></canvas>
+<div class="corner-smoke"></div>
 
 <script>
+let vibe = 0;
+
+function changeVibe() {
+  const backgrounds = [
+    "linear-gradient(to bottom, #8b0000 0%, #350000 35%, #111111 75%, #000000 100%)",
+    "#000000",
+    "#24003d",
+    "#650000"
+  ];
+
+  vibe = (vibe + 1) % backgrounds.length;
+
+  document.body.style.background = backgrounds[vibe];
+  document.body.style.backgroundAttachment = "fixed";
+}
+
+// ISKRY
 const canvas = document.getElementById("sparkCanvas");
 const ctx = canvas.getContext("2d");
 
@@ -270,28 +332,8 @@ function animateSparks() {
 }
 
 animateSparks();
-</script>
-<style>
-.lightning {
-  position: fixed;
-  z-index: 11;
-  pointer-events: none;
-  color: #fff4a3;
-  font-size: 55px;
-  text-shadow: 0 0 15px yellow, 0 0 30px red;
-  animation: lightningFlash 0.7s ease-out forwards;
-}
 
-@keyframes lightningFlash {
-  0% { opacity: 0; transform: scale(0.5); }
-  20% { opacity: 1; transform: scale(1.2); }
-  40% { opacity: 0.2; }
-  60% { opacity: 1; }
-  100% { opacity: 0; transform: scale(0.8); }
-}
-</style>
-
-<script>
+// BŁYSKAWICE
 function createLightning() {
   const bolt = document.createElement("div");
   bolt.className = "lightning";
@@ -307,36 +349,6 @@ function createLightning() {
 
 setInterval(createLightning, 3500);
 </script>
-<style>
-.corner-smoke {
-  position: fixed;
-  bottom: -35px;
-  left: -45px;
-  width: 190px;
-  height: 190px;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.22;
-  filter: blur(18px);
-  background:
-    radial-gradient(ellipse at 40% 70%,
-      rgba(180,180,180,0.7),
-      rgba(100,100,100,0.25) 45%,
-      transparent 75%);
-  animation: smokeRise 7s ease-in-out infinite;
-}
 
-@keyframes smokeRise {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-    opacity: 0.15;
-  }
-  50% {
-    transform: translate(12px, -35px) scale(1.25);
-    opacity: 0.3;
-  }
-}
-</style>
-
-<div class="corner-smoke"></div>
+</body>
 </html>
