@@ -6,9 +6,7 @@
 <title>Guitar World</title>
 
 <style>
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -29,20 +27,11 @@ h1 {
   text-shadow: 0 0 10px red, 0 0 20px darkred;
 }
 
-h2 {
-  color: red;
-}
+h2 { color: red; }
 
-h1, h2, h3, p, section {
-  text-align: center;
-}
+h1, h2, h3, p, section { text-align: center; }
 
-/* TREŚĆ STRONY ZAWSZE NAD EFEKTAMI */
-
-header,
-nav,
-section,
-footer {
+header, nav, section, footer {
   position: relative;
   z-index: 2;
 }
@@ -61,9 +50,7 @@ header {
   flex-wrap: wrap;
 }
 
-.header-content h1 {
-  margin: 0;
-}
+.header-content h1 { margin: 0; }
 
 .header-guitar {
   width: 160px;
@@ -83,13 +70,9 @@ nav a {
   font-weight: bold;
 }
 
-nav a:hover {
-  color: red;
-}
+nav a:hover { color: red; }
 
-section {
-  padding: 35px 15px;
-}
+section { padding: 35px 15px; }
 
 .welcome {
   max-width: 850px;
@@ -105,13 +88,30 @@ section {
   font-size: 17px;
 }
 
+.about-button {
+  display: inline-block;
+  position: static;
+  transform: none;
+  margin-top: 15px;
+  padding: 13px 28px;
+  background: #a00000;
+  color: white;
+  border: 2px solid #d00000;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.about-button:hover { background: #d00000; }
+
 footer {
   background: #222;
   padding: 20px;
   margin-top: 30px;
 }
-
-/* PRZYCISK */
 
 .vibe-button {
   position: fixed;
@@ -129,11 +129,7 @@ footer {
   z-index: 9999;
 }
 
-.vibe-button:hover {
-  background: #e00000;
-}
-
-/* GWIAZDKA - ZA TREŚCIĄ */
+.vibe-button:hover { background: #e00000; }
 
 .guitar-star {
   position: fixed;
@@ -148,15 +144,9 @@ footer {
 }
 
 @keyframes starGlow {
-  0%, 100% {
-    transform: scale(1) rotate(0deg);
-  }
-  50% {
-    transform: scale(1.15) rotate(10deg);
-  }
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.15) rotate(10deg); }
 }
-
-/* RIFFY */
 
 pre {
   font-size: 24px;
@@ -175,12 +165,7 @@ pre {
   z-index: 3;
 }
 
-.riff {
-  position: relative;
-  z-index: 3;
-}
-
-.riff h3 {
+.riff, .riff h3 {
   position: relative;
   z-index: 3;
 }
@@ -200,8 +185,6 @@ section img {
   z-index: 3;
 }
 
-/* ISKRY - ZA TEKSTEM I ZDJĘCIAMI */
-
 #sparkCanvas {
   position: fixed;
   inset: 0;
@@ -210,8 +193,6 @@ section img {
   pointer-events: none;
   z-index: 1;
 }
-
-/* DYM - ZA ZAWARTOŚCIĄ */
 
 .corner-smoke {
   position: fixed;
@@ -248,17 +229,13 @@ img {
   height: auto;
 }
 
-/* TELEFONY */
-
 @media (max-width: 600px) {
   h1 {
     font-size: 32px;
     letter-spacing: 2px;
   }
 
-  .header-guitar {
-    width: 130px;
-  }
+  .header-guitar { width: 130px; }
 
   nav a {
     display: inline-block;
@@ -315,6 +292,10 @@ img {
   </p>
 
   <p><strong>Chwyć gitarę i zaczynamy! 🔥</strong></p>
+
+  <a href="o-stronie.html" class="about-button">
+    🎸 O STRONIE
+  </a>
 </section>
 
 <section id="taby">
@@ -323,7 +304,6 @@ img {
 
   <div>
     <h3>🎂 HAPPY BIRTHDAY 🎸</h3>
-
     <p>Tabulatura – część 1</p>
     <img src="happybirthday1.jpg" width="300" alt="Happy Birthday część 1">
 
@@ -333,7 +313,6 @@ img {
 
   <div>
     <h3>🔥 CHIVAS NOWYBATMAN</h3>
-
     <p>🎸 Tabulatura – część 1</p>
     <img src="batman1.jpg" width="300" alt="Batman część 1">
 
@@ -398,16 +377,12 @@ function changeVibe() {
   ];
 
   vibe = (vibe + 1) % backgrounds.length;
-
   document.body.style.background = backgrounds[vibe];
   document.body.style.backgroundAttachment = "fixed";
 }
 
-// ISKRY
-
 const canvas = document.getElementById("sparkCanvas");
 const ctx = canvas.getContext("2d");
-
 let sparks = [];
 
 function resizeCanvas() {
