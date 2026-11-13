@@ -128,24 +128,6 @@ pre {
   z-index: 10;
 }
 
-.lightning {
-  position: fixed;
-  z-index: 11;
-  pointer-events: none;
-  color: #fff4a3;
-  font-size: 55px;
-  text-shadow: 0 0 15px yellow, 0 0 30px red;
-  animation: lightningFlash 0.7s ease-out forwards;
-}
-
-@keyframes lightningFlash {
-  0% { opacity: 0; transform: scale(0.5); }
-  20% { opacity: 1; transform: scale(1.2); }
-  40% { opacity: 0.2; }
-  60% { opacity: 1; }
-  100% { opacity: 0; transform: scale(0.8); }
-}
-
 .corner-smoke {
   position: fixed;
   bottom: -35px;
@@ -244,7 +226,8 @@ E|-0-3-5-0-3-6-5-0-3-5-3-0------|
     </pre>
   </div>
 </section>
-  <div class="riff">
+
+<div class="riff">
   <h3>ENTER SANDMAN – METALLICA 🔥</h3>
   <pre>
 E|-----------------------------
@@ -343,22 +326,6 @@ function animateSparks() {
 }
 
 animateSparks();
-
-// BŁYSKAWICE
-function createLightning() {
-  const bolt = document.createElement("div");
-  bolt.className = "lightning";
-  bolt.textContent = "⚡";
-
-  bolt.style.left = Math.random() * 85 + "%";
-  bolt.style.top = Math.random() * 80 + "%";
-
-  document.body.appendChild(bolt);
-
-  setTimeout(() => bolt.remove(), 700);
-}
-
-setInterval(createLightning, 3500);
 </script>
 
 </body>
