@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Guitar World</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  background: linear-gradient(to bottom, #8b0000 0%, #350000 35%, #111 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  padding: 45px 20px 35px;
+  background: rgba(90, 0, 0, 0.65);
+  border-bottom: 2px solid #b00000;
+  position: relative;
+  z-index: 2;
+}
+
+header h1 {
+  font-size: 42px;
+  margin: 0 0 12px;
+  letter-spacing: 3px;
+  text-shadow: 3px 3px 8px black;
+}
+
+header p {
+  color: #ddd;
+  letter-spacing: 3px;
+  margin: 0;
+}
+
+nav {
+  text-align: center;
+  padding: 18px;
+  background: rgba(0, 0, 0, 0.75);
+  position: relative;
+  z-index: 2;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 10px 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #ff4444;
+}
+
+main {
+  max-width: 950px;
+  margin: 35px auto;
+  padding: 0 18px;
+  position: relative;
+  z-index: 2;
+}
+
+section {
+  background: rgba(15, 15, 15, 0.88);
+  border: 1px solid #8b0000;
+  border-left: 5px solid #b00000;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.5);
+}
+
+h2 {
+  color: #ff4444;
+  margin-top: 0;
+  font-size: 25px;
+}
+
+section p {
+  line-height: 1.8;
+  color: #e5e5e5;
+  font-size: 16px;
+}
+
+ul {
+  line-height: 2;
+  color: #e5e5e5;
+}
+
+.back {
+  display: inline-block;
+  background: #a00000;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 7px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.back:hover {
+  background: #d00000;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: rgba(0,0,0,0.7);
+  color: #aaa;
+  position: relative;
+  z-index: 2;
+}
+
+#sparkCanvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 29px;
+  }
+
+  section {
+    padding: 19px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 8px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="sparkCanvas"></canvas>
+
+<header>
+  <h1>O GUITAR WORLD 🎸</h1>
+  <p>ROCK • METAL • GUITAR</p>
+</header>
+
+<nav>
+  <a href="index.html">STRONA GŁÓWNA</a>
+  <a href="#o-nas">O STRONIE</a>
+  <a href="#zawartosc">CO TU ZNAJDZIESZ?</a>
+  <a href="#nauka">GITARA OD PODSTAW</a>
+</nav>
+
+<main>
+
+<a class="back" href="index.html">← POWRÓT NA STRONĘ GŁÓWNĄ</a>
+
+<section id="o-nas">
+  <h2>🎸 Czym jest Guitar World?</h2>
+  <p>
+    Guitar World to miejsce stworzone z myślą o osobach, które interesują się
+    gitarą, muzyką rockową i metalową. Strona skupia się przede wszystkim
+    na riffach gitarowych oraz tabulaturach, dzięki którym można poznawać
+    nowe utwory i rozwijać swoje umiejętności.
+  </p>
+  <p>
+    Nie chodzi tutaj tylko o oglądanie gotowych materiałów. Najważniejsze
+    jest odkrywanie muzyki, poznawanie brzmień gitary i czerpanie inspiracji
+    do własnej nauki oraz grania.
+  </p>
+</section>
+
+<section id="zawartosc">
+  <h2>🔥 Co znajdziesz na tej stronie?</h2>
+  <p>
+    Guitar World jest podzielone na kilka części, dzięki którym łatwiej
+    znaleźć interesujące materiały.
+  </p>
+  <ul>
+    <li><b>Riffy gitarowe</b> – fragmenty utworów, które można poznawać i ćwiczyć.</li>
+    <li><b>Tabulatury</b> – zapis pokazujący, na których strunach i progach grać.</li>
+    <li><b>Muzyczne inspiracje</b> – materiały związane z rockiem i metalem.</li>
+    <li><b>Zdjęcia</b> – gitarowy klimat i wizualna część strony.</li>
+  </ul>
+  <p>
+    Zawartość będzie stopniowo rozwijana o kolejne materiały i nowe pomysły.
+  </p>
+</section>
+
+<section>
+  <h2>🤘 Dla kogo powstała ta strona?</h2>
+  <p>
+    Strona jest przeznaczona zarówno dla osób, które dopiero zaczynają
+    przygodę z gitarą, jak i dla tych, które mają już pierwsze doświadczenia
+    z instrumentem.
+  </p>
+  <p>
+    Znajdzie się tu coś dla fanów mocniejszych brzmień, miłośników
+    rocka, metalu oraz wszystkich, którzy chcą poznawać gitarowe riffy.
+    Nie musisz być profesjonalistą ani znać teorii muzyki, żeby zacząć.
+  </p>
+</section>
+
+<section id="nauka">
+  <h2>📚 Gitara od podstaw – co warto wiedzieć?</h2>
+  <p>
+    Gitara może wydawać się skomplikowana na początku, ale wiele rzeczy
+    można poznawać stopniowo.
+  </p>
+  <p>
+    <b>Riff</b> to charakterystyczny fragment muzyczny, często oparty
+    na gitarze, który powtarza się w utworze i nadaje mu rozpoznawalne brzmienie.
+  </p>
+  <p>
+    <b>Tabulatura</b> to uproszczony sposób zapisywania muzyki na gitarę.
+    Pokazuje sześć strun oraz numery progów, na których należy zagrać.
+    Dzięki temu można odczytać zapis bez znajomości tradycyjnych nut.
+  </p>
+  <p>
+    Nauka gry wymaga cierpliwości i regularnych ćwiczeń. Warto zaczynać
+    od prostszych fragmentów, pilnować rytmu i stopniowo poznawać nowe techniki.
+  </p>
+</section>
+
+<section>
+  <h2>🎶 Dlaczego powstał Guitar World?</h2>
+  <p>
+    Pomysł na Guitar World narodził się z zainteresowania gitarą
+    i muzyką. Celem było stworzenie własnej strony, na której można
+    zebrać gitarowe materiały w jednym miejscu i rozwijać ją według
+    własnych pomysłów.
+  </p>
+  <p>
+    To projekt, który będzie się zmieniał i rozbudowywał. Każdy nowy riff,
+    tabulatura czy pomysł może stać się kolejną częścią Guitar World.
+  </p>
+</section>
+
+<section>
+  <h2>🚀 Co dalej?</h2>
+  <p>
+    Guitar World nie jest zamkniętym projektem. W przyszłości mogą pojawić
+    się kolejne riffy, nowe tabulatury, dodatkowe materiały dla początkujących
+    i kolejne elementy związane z gitarą.
+  </p>
+  <p>
+    Najważniejsze jest to, żeby strona stale się rozwijała i była miejscem,
+    do którego warto wracać po nowe muzyczne inspiracje.
+  </p>
+</section>
+
+<a class="back" href="index.html">← WRÓĆ DO GUITAR WORLD</a>
+
+</main>
+
+<footer>
+  GUITAR WORLD © 2026 | ROCK • METAL • GUITAR
+</footer>
+
+<script>
+const canvas = document.getElementById("sparkCanvas");
+const ctx = canvas.getContext("2d");
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
+
+const sparks = [];
+
+for (let i = 0; i < 45; i++) {
+  sparks.push({
+    x: Math.random() * window.innerWidth,
+    y: Math.random() * window.innerHeight,
+    size: Math.random() * 2 + 1,
+    speed: Math.random() * 0.7 + 0.2,
+    alpha: Math.random()
+  });
+}
+
+function animateSparks() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  sparks.forEach(s => {
+    s.y -= s.speed;
+    s.alpha += (Math.random() - 0.5) * 0.04;
+
+    if (s.y < 0) {
+      s.y = canvas.height;
+      s.x = Math.random() * canvas.width;
+    }
+
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255, 170, 40, ${Math.max(0.1, Math.min(1, s.alpha))})`;
+    ctx.shadowBlur = 10;
+    ctx.shadowColor = "orange";
+    ctx.fill();
+  });
+
+  requestAnimationFrame(animateSparks);
+}
+
+animateSparks();
+</script>
+
+</body>
+</html>
