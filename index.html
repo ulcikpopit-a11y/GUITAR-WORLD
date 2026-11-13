@@ -81,6 +81,20 @@ section {
   padding: 35px 15px;
 }
 
+.welcome {
+  max-width: 850px;
+  margin: 25px auto;
+  padding: 30px 20px;
+  background: rgba(30, 30, 30, 0.85);
+  border: 2px solid #b00000;
+  border-radius: 15px;
+}
+
+.welcome p {
+  line-height: 1.7;
+  font-size: 17px;
+}
+
 footer {
   background: #222;
   padding: 20px;
@@ -191,6 +205,16 @@ img {
   .header-guitar {
     width: 130px;
   }
+
+  nav a {
+    display: inline-block;
+    margin: 8px;
+  }
+
+  pre {
+    font-size: 17px;
+    padding: 15px;
+  }
 }
 </style>
 </head>
@@ -214,33 +238,48 @@ img {
 <nav>
   <a href="#taby">TABULATURY</a>
   <a href="#riffy">RIFFY</a>
-  <a href="#piosenki">PIOSENKI</a>
-  <a href="#metallica">METALLICA</a>
 </nav>
+
+<section class="welcome">
+  <h2>🤘 WITAJ W GUITAR WORLD! 🎸</h2>
+
+  <p>
+    Witaj w miejscu, gdzie królują gitary, rock i metal!
+    Znajdziesz tutaj gitarowe riffy oraz tabulatury,
+    dzięki którym możesz poznawać nowe utwory i uczyć się grać.
+  </p>
+
+  <p>
+    Strona jest przeznaczona dla początkujących gitarzystów,
+    osób uczących się gry na gitarze oraz fanów rocka i metalu.
+  </p>
+
+  <p><strong>Chwyć gitarę i zaczynamy! 🔥</strong></p>
+</section>
 
 <section id="taby">
   <h2>🎸 TABULATURY</h2>
   <p>Twoje miejsce do nauki utworów!</p>
 
-  <section id="happybirthday">
-    <h2>🎂 HAPPY BIRTHDAY 🎸</h2>
+  <div>
+    <h3>🎂 HAPPY BIRTHDAY 🎸</h3>
 
     <p>Tabulatura – część 1</p>
     <img src="happybirthday1.jpg" width="300" alt="Happy Birthday część 1">
 
     <p>Tabulatura – część 2</p>
     <img src="happybirthday2.jpg" width="300" alt="Happy Birthday część 2">
-  </section>
+  </div>
 
-  <section id="chivas">
-    <h2>🔥 CHIVAS NOWYBATMAN</h2>
+  <div>
+    <h3>🔥 CHIVAS NOWYBATMAN</h3>
 
     <p>🎸 Tabulatura – część 1</p>
     <img src="batman1.jpg" width="300" alt="Batman część 1">
 
     <p>🎸 Tabulatura – część 2</p>
     <img src="batman2.jpg" width="300" alt="Batman część 2">
-  </section>
+  </div>
 </section>
 
 <section id="riffy">
@@ -258,35 +297,18 @@ A|------------------------------|
 E|-0-3-5-0-3-6-5-0-3-5-3-0------|
     </pre>
   </div>
-</section>
 
-<div class="riff">
-  <h3>ENTER SANDMAN – METALLICA 🔥</h3>
-  <pre>
+  <div class="riff">
+    <h3>ENTER SANDMAN – METALLICA 🔥</h3>
+    <pre>
 E|-----------------------------
 B|-----------------------------
 G|-----------------------------
 D|---5-------------------------
 A|--7--------7-----------------
 E|-0----6-5--------------------
-  </pre>
-</div>
-
-<section id="piosenki">
-  <h2>🎵 PIOSENKI</h2>
-  <p>Utwory do nauki na gitarze.</p>
-</section>
-
-<section id="metallica">
-  <h2>🔥 METALLICA – UTWORY</h2>
-
-  <p><a href="https://www.google.com/search?q=Metallica+Nothing+Else+Matters+guitar+tabs">Nothing Else Matters 🎸</a></p>
-
-  <p><a href="https://www.google.com/search?q=Metallica+Enter+Sandman+guitar+tabs">Enter Sandman 🤘</a></p>
-
-  <p><a href="https://www.google.com/search?q=Metallica+Master+of+Puppets+guitar+tabs">Master of Puppets 🔥</a></p>
-
-  <p><a href="https://www.google.com/search?q=Metallica+One+guitar+tabs">One ⚡</a></p>
+    </pre>
+  </div>
 </section>
 
 <footer>
@@ -304,7 +326,10 @@ function changeVibe() {
     "linear-gradient(to bottom, #8b0000 0%, #350000 35%, #111111 75%, #000000 100%)",
     "#000000",
     "#24003d",
-    "#650000"
+    "#650000",
+    "linear-gradient(to bottom, #001b38, #003b59, #000814)",
+    "linear-gradient(to bottom, #003b2f, #001a14, #000000)",
+    "linear-gradient(to bottom, #402060, #170b2b, #000000)"
   ];
 
   vibe = (vibe + 1) % backgrounds.length;
