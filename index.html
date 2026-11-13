@@ -42,6 +42,25 @@ header {
   padding: 35px;
 }
 
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+}
+
+.header-content h1 {
+  margin: 0;
+}
+
+.header-guitar {
+  width: 160px;
+  height: auto;
+  object-fit: contain;
+}
+
 nav {
   background: #222;
   padding: 20px;
@@ -162,6 +181,17 @@ img {
   max-width: 90%;
   height: auto;
 }
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 32px;
+    letter-spacing: 2px;
+  }
+
+  .header-guitar {
+    width: 130px;
+  }
+}
 </style>
 </head>
 
@@ -174,7 +204,10 @@ img {
 <div class="guitar-star">★</div>
 
 <header>
-  <h1>GUITAR WORLD 🎸</h1>
+  <div class="header-content">
+    <h1>GUITAR WORLD 🎸</h1>
+    <img src="gitara.png" alt="Moja gitara" class="header-guitar">
+  </div>
   <p>ROCK • METAL • GUITAR</p>
 </header>
 
