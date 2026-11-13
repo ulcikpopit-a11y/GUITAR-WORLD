@@ -37,6 +37,16 @@ h1, h2, h3, p, section {
   text-align: center;
 }
 
+/* TREŚĆ STRONY ZAWSZE NAD EFEKTAMI */
+
+header,
+nav,
+section,
+footer {
+  position: relative;
+  z-index: 2;
+}
+
 header {
   background: #b00000;
   padding: 35px;
@@ -101,6 +111,8 @@ footer {
   margin-top: 30px;
 }
 
+/* PRZYCISK */
+
 .vibe-button {
   position: fixed;
   bottom: 25px;
@@ -121,21 +133,30 @@ footer {
   background: #e00000;
 }
 
+/* GWIAZDKA - ZA TREŚCIĄ */
+
 .guitar-star {
   position: fixed;
   top: 25px;
   right: 30px;
   font-size: 70px;
   color: #ffd700;
-  z-index: 9999;
+  z-index: 1;
+  pointer-events: none;
   animation: starGlow 2s infinite ease-in-out;
   text-shadow: 0 0 15px gold, 0 0 30px gold;
 }
 
 @keyframes starGlow {
-  0%, 100% { transform: scale(1) rotate(0deg); }
-  50% { transform: scale(1.15) rotate(10deg); }
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.15) rotate(10deg);
+  }
 }
+
+/* RIFFY */
 
 pre {
   font-size: 24px;
@@ -150,15 +171,36 @@ pre {
   text-align: left;
   max-width: 95%;
   overflow-x: auto;
+  position: relative;
+  z-index: 3;
+}
+
+.riff {
+  position: relative;
+  z-index: 3;
+}
+
+.riff h3 {
+  position: relative;
+  z-index: 3;
 }
 
 .riff-image {
   display: block;
+  position: relative;
+  z-index: 3;
   width: 450px;
   max-width: 95%;
   height: auto;
   margin: 20px auto;
 }
+
+section img {
+  position: relative;
+  z-index: 3;
+}
+
+/* ISKRY - ZA TEKSTEM I ZDJĘCIAMI */
 
 #sparkCanvas {
   position: fixed;
@@ -166,8 +208,10 @@ pre {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 10;
+  z-index: 1;
 }
+
+/* DYM - ZA ZAWARTOŚCIĄ */
 
 .corner-smoke {
   position: fixed;
@@ -204,6 +248,8 @@ img {
   height: auto;
 }
 
+/* TELEFONY */
+
 @media (max-width: 600px) {
   h1 {
     font-size: 32px;
@@ -222,6 +268,12 @@ img {
   pre {
     font-size: 17px;
     padding: 15px;
+  }
+
+  .guitar-star {
+    font-size: 42px;
+    right: 12px;
+    top: 12px;
   }
 }
 </style>
@@ -352,6 +404,7 @@ function changeVibe() {
 }
 
 // ISKRY
+
 const canvas = document.getElementById("sparkCanvas");
 const ctx = canvas.getContext("2d");
 
