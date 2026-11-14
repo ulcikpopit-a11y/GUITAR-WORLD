@@ -183,14 +183,21 @@ pre {
   z-index: 3;
 }
 
+/* ZDJĘCIA RIFFÓW */
 .riff-image {
   display: block;
   position: relative;
   z-index: 3;
-  width: 450px;
+  width: 550px;
   max-width: 95%;
-  height: auto;
+  height: 300px;
+  object-fit: contain;
   margin: 20px auto;
+}
+
+/* TYLKO CALIFORNIA – WIĘKSZA WYSOKOŚĆ */
+.california-image {
+  height: 450px;
 }
 
 section img {
@@ -421,6 +428,15 @@ img {
     right: 12px;
     top: 12px;
   }
+
+  .riff-image {
+    width: 95%;
+    height: 260px;
+  }
+
+  .california-image {
+    height: 400px;
+  }
 }
 </style>
 </head>
@@ -607,12 +623,30 @@ E|-0----6-5--------------------
     </pre>
   </div>
 
+  <!-- BLACK IN BLACK – AC/DC -->
+  <div class="riff difficulty-item" data-levels="medium">
+    <h3>🔥 BLACK IN BLACK – AC/DC 🎸</h3>
+    <p class="tuning">Strojenie klasyczne: E A D G B E</p>
+    <p class="difficulty medium">POZIOM TRUDNOŚCI: ŚREDNI</p>
+
+    <img
+      src="black-in-black.jpg"
+      alt="Riff Black in Black – AC/DC"
+      class="riff-image"
+    >
+  </div>
+
+  <!-- CALIFORNIA – ZWIĘKSZONA TYLKO WYSOKOŚĆ -->
   <div class="riff difficulty-item" data-levels="easy">
     <h3>CALIFORNIA – WHITE 2115 🌴</h3>
     <p class="tuning">Strojenie klasyczne: E A D G B E</p>
     <p class="difficulty easy">POZIOM TRUDNOŚCI: ŁATWY</p>
 
-    <img src="california.png" alt="Riff California – White 2115" class="riff-image">
+    <img
+      src="california.png"
+      alt="Riff California – White 2115"
+      class="riff-image california-image"
+    >
   </div>
 </section>
 
