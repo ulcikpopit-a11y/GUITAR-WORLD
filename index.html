@@ -211,6 +211,88 @@ section img {
 .medium { color: #ffad32; }
 .hard { color: #ff4545; }
 
+/* WYSZUKIWARKA */
+.search-box {
+  max-width: 850px;
+  margin: 25px auto;
+  padding: 25px 18px;
+  background: rgba(30, 30, 30, 0.92);
+  border: 2px solid #b00000;
+  border-radius: 15px;
+  position: relative;
+  z-index: 4;
+}
+
+.search-box h2 {
+  margin-top: 0;
+  color: white;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 550px;
+  padding: 15px;
+  border: 2px solid #8b0000;
+  border-radius: 10px;
+  background: #111;
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #ff3333;
+  box-shadow: 0 0 10px rgba(255,0,0,0.4);
+}
+
+.search-input::placeholder {
+  color: #aaa;
+}
+
+#search-results {
+  margin-top: 20px;
+}
+
+.search-result {
+  background: #181818;
+  border: 1px solid #8b0000;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 12px auto;
+  max-width: 600px;
+}
+
+.search-result h3 {
+  color: #ff4444;
+  margin-top: 0;
+}
+
+.search-result p {
+  margin: 9px 0;
+  font-size: 14px;
+}
+
+.search-result button {
+  margin-top: 10px;
+  padding: 10px 18px;
+  background: #a00000;
+  color: white;
+  border: 1px solid #e00000;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.search-result button:hover {
+  background: #d00000;
+}
+
+.no-results {
+  color: #ff7777;
+  font-weight: bold;
+  padding: 15px;
+}
+
 /* FILTR TRUDNOŚCI */
 .filter-box {
   max-width: 850px;
@@ -247,9 +329,7 @@ section img {
   transition: 0.2s ease;
 }
 
-.filter-button:hover {
-  background: #444;
-}
+.filter-button:hover { background: #444; }
 
 .filter-button.active {
   border-color: white;
@@ -386,6 +466,25 @@ img {
     </a>
   </div>
 </section>
+
+<!-- WYSZUKIWARKA UTWORÓW -->
+<div class="search-box">
+  <h2>🔎 WYSZUKIWARKA UTWORÓW</h2>
+
+  <p>Wpisz nazwę utworu, którego szukasz!</p>
+
+  <input
+    type="search"
+    id="song-search"
+    class="search-input"
+    placeholder="Np. Enter Sandman..."
+    autocomplete="off"
+  >
+
+  <div id="search-results">
+    <p>🎸 Zacznij wpisywać nazwę utworu.</p>
+  </div>
+</div>
 
 <!-- FILTR POZIOMÓW -->
 <div class="filter-box">
@@ -535,6 +634,109 @@ function changeVibe() {
   document.body.style.background = backgrounds[vibe];
   document.body.style.backgroundAttachment = "fixed";
 }
+
+/* WYSZUKIWARKA UTWORÓW */
+const searchInput = document.getElementById("song-search");
+const searchResults = document.getElementById("search-results");
+const allSongs = document.querySelectorAll(".difficulty-item");
+
+function normalizeText(text) {
+  return text
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim();
+}
+
+function searchSongs() {
+  const query = normalizeText(searchInput.value);
+
+  searchResults.innerHTML = "";
+
+  if (query === "") {
+    searchResults.innerHTML =
+      "<p>🎸 Zacznij wpisywać nazwę utworu.</p>";
+    return;
+  }
+
+  let foundSongs = 0;
+
+  allSongs.forEach((song, index) => {
+    const titleElement = song.querySelector("h3");
+    const tuningElement = song.querySelector(".tuning");
+    const difficultyElement = song.querySelector(".difficulty");
+
+    const title = titleElement ? titleElement.textContent : "";
+    const tuning = tuningElement ? tuningElement.textContent : "Brak informacji";
+    const difficulty = difficultyElement
+      ? difficultyElement.textContent
+      : "Brak informacji";
+
+    if (normalizeText(title).includes(query)) {
+      foundSongs++;
+
+      const isTab = song.closest("#taby") !== null;
+      const type = isTab ? "TABULATURA" : "RIFF";
+
+      const result = document.createElement("div");
+      result.className = "search-result";
+
+      const heading = document.createElement("h3");
+      heading.textContent = title;
+
+      const typeText = document.createElement("p");
+      typeText.textContent = "🎸 Rodzaj: " + type;
+
+      const tuningText = document.createElement("p");
+      tuningText.textContent = "🎵 " + tuning;
+
+      const difficultyText = document.createElement("p");
+      difficultyText.textContent = "⭐ " + difficulty;
+
+      const showButton = document.createElement("button");
+      showButton.textContent = "POKAŻ UTWÓR";
+
+      showButton.addEventListener("click", () => {
+        // Przywróć wszystkie utwory, żeby wynik był widoczny.
+        filterButtons.forEach(btn => {
+          btn.classList.remove("active");
+        });
+
+        document.querySelector('[data-filter="all"]').classList.add("active");
+
+        allSongs.forEach(item => {
+          item.classList.remove("hidden");
+        });
+
+        filterInfo.textContent =
+          "Wyświetlasz wszystkie riffy i tabulatury.";
+
+        song.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+      });
+
+      result.appendChild(heading);
+      result.appendChild(typeText);
+      result.appendChild(tuningText);
+      result.appendChild(difficultyText);
+      result.appendChild(showButton);
+
+      searchResults.appendChild(result);
+    }
+  });
+
+  if (foundSongs === 0) {
+    const message = document.createElement("p");
+    message.className = "no-results";
+    message.textContent =
+      "❌ Nie znaleziono takiego utworu. Spróbuj wpisać inną nazwę.";
+    searchResults.appendChild(message);
+  }
+}
+
+searchInput.addEventListener("input", searchSongs);
 
 /* DZIAŁANIE FILTRA */
 const filterButtons = document.querySelectorAll(".filter-button");
