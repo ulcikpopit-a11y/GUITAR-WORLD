@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -998,7 +999,7 @@ filterButtons.forEach(button => {
   });
 });
 
-/* STROIK GITAROWY */
+/* STROIK GITAROWY – POPRAWIONE WYKRYWANIE DŹWIĘKU */
 const tunerStart = document.getElementById("tuner-start");
 const tunerStop = document.getElementById("tuner-stop");
 const tunerNote = document.getElementById("tuner-note");
@@ -1012,6 +1013,10 @@ let analyser = null;
 let microphone = null;
 let tunerAnimation = null;
 let audioStream = null;
+let tunerBuffer = null;
+let lastTunerUpdate = 0;
+let pitchHistory = [];
+let noSignalSince = 0;
 
 const guitarStrings = [
   { name: "E2", frequency: 82.41 },
@@ -1039,57 +1044,149 @@ function frequencyToNote(frequency) {
 
 function detectPitch(buffer, sampleRate) {
   const size = buffer.length;
-  let rms = 0;
+  const analysisSize = Math.min(4096, size);
 
-  for (let i = 0; i < size; i++) {
-    rms += buffer[i] * buffer[i];
+  let mean = 0;
+  for (let i = 0; i < analysisSize; i++) {
+    mean += buffer[i];
+  }
+  mean /= analysisSize;
+
+  let squareSum = 0;
+  for (let i = 0; i < analysisSize; i++) {
+    const value = buffer[i] - mean;
+    squareSum += value * value;
   }
 
-  rms = Math.sqrt(rms / size);
-  if (rms < 0.012) return null;
+  const rms = Math.sqrt(squareSum / analysisSize);
 
-  let bestOffset = -1;
-  let bestCorrelation = 0;
-  const minOffset = Math.floor(sampleRate / 400);
-  const maxOffset = Math.min(Math.floor(sampleRate / 65), size - 1);
+  // Niższy próg wykrywa cichsze szarpnięcia strun.
+  if (rms < 0.0018) return null;
 
-  for (let offset = minOffset; offset <= maxOffset; offset++) {
-    let correlation = 0;
+  const minFrequency = 65;
+  const maxFrequency = 400;
+  const minLag = Math.max(2, Math.floor(sampleRate / maxFrequency));
+  const maxLag = Math.min(
+    Math.floor(sampleRate / minFrequency),
+    size - analysisSize - 1
+  );
 
-    for (let i = 0; i < size - offset; i++) {
-      correlation += buffer[i] * buffer[i + offset];
+  if (maxLag <= minLag) return null;
+
+  const differences = new Float32Array(maxLag + 1);
+  const normalized = new Float32Array(maxLag + 1);
+
+  for (let lag = 1; lag <= maxLag; lag++) {
+    let sum = 0;
+
+    for (let i = 0; i < analysisSize; i++) {
+      const a = buffer[i] - mean;
+      const b = buffer[i + lag] - mean;
+      const delta = a - b;
+      sum += delta * delta;
     }
 
-    correlation /= (size - offset);
+    differences[lag] = sum;
+  }
 
-    if (correlation > bestCorrelation) {
-      bestCorrelation = correlation;
-      bestOffset = offset;
+  normalized[0] = 1;
+  let runningSum = 0;
+
+  for (let lag = 1; lag <= maxLag; lag++) {
+    runningSum += differences[lag];
+    normalized[lag] = runningSum > 0
+      ? differences[lag] * lag / runningSum
+      : 1;
+  }
+
+  const threshold = 0.22;
+  let bestLag = -1;
+
+  for (let lag = minLag; lag < maxLag; lag++) {
+    if (
+      normalized[lag] < threshold &&
+      normalized[lag] <= normalized[lag + 1]
+    ) {
+      bestLag = lag;
+
+      while (
+        bestLag + 1 < maxLag &&
+        normalized[bestLag + 1] < normalized[bestLag]
+      ) {
+        bestLag++;
+      }
+      break;
     }
   }
 
-  if (bestOffset === -1 || bestCorrelation < 0.01) return null;
+  if (bestLag === -1) {
+    let lowestValue = Infinity;
 
-  const frequency = sampleRate / bestOffset;
+    for (let lag = minLag; lag <= maxLag; lag++) {
+      if (normalized[lag] < lowestValue) {
+        lowestValue = normalized[lag];
+        bestLag = lag;
+      }
+    }
 
-  if (frequency < 65 || frequency > 400) return null;
+    if (bestLag === -1 || lowestValue > 0.38) return null;
+  }
+
+  const left = normalized[Math.max(1, bestLag - 1)];
+  const center = normalized[bestLag];
+  const right = normalized[Math.min(maxLag, bestLag + 1)];
+  const denominator = left - 2 * center + right;
+
+  let shift = 0;
+  if (Math.abs(denominator) > 0.000001) {
+    shift = 0.5 * (left - right) / denominator;
+    shift = Math.max(-1, Math.min(1, shift));
+  }
+
+  const refinedLag = bestLag + shift;
+  const frequency = sampleRate / refinedLag;
+
+  if (
+    !Number.isFinite(frequency) ||
+    frequency < minFrequency ||
+    frequency > maxFrequency
+  ) {
+    return null;
+  }
+
   return frequency;
 }
 
+function median(values) {
+  const sorted = [...values].sort((a, b) => a - b);
+  return sorted[Math.floor(sorted.length / 2)];
+}
+
 function updateTuner() {
-  if (!analyser || !audioContext) return;
+  if (!analyser || !audioContext || !tunerBuffer) return;
 
-  const buffer = new Float32Array(analyser.fftSize);
-  analyser.getFloatTimeDomainData(buffer);
+  tunerAnimation = requestAnimationFrame(updateTuner);
 
-  const frequency = detectPitch(buffer, audioContext.sampleRate);
+  const now = performance.now();
+  if (now - lastTunerUpdate < 40) return;
+  lastTunerUpdate = now;
 
-  if (frequency) {
-    const result = frequencyToNote(frequency);
+  analyser.getFloatTimeDomainData(tunerBuffer);
+  const frequency = detectPitch(tunerBuffer, audioContext.sampleRate);
+
+  if (frequency !== null) {
+    noSignalSince = 0;
+
+    pitchHistory.push(frequency);
+    if (pitchHistory.length > 5) pitchHistory.shift();
+
+    const stableFrequency = median(pitchHistory);
+    const result = frequencyToNote(stableFrequency);
     const cents = result.cents;
 
     tunerNote.textContent = result.note + result.octave;
-    tunerFrequency.textContent = "Częstotliwość: " + frequency.toFixed(1) + " Hz";
+    tunerFrequency.textContent =
+      "Częstotliwość: " + stableFrequency.toFixed(1) + " Hz";
 
     const pointerPosition = Math.max(5, Math.min(95, 50 + cents));
     tunerPointer.style.left = pointerPosition + "%";
@@ -1108,15 +1205,18 @@ function updateTuner() {
       tunerPointer.style.background = "#ff4545";
     }
   } else {
-    tunerNote.textContent = "--";
-    tunerFrequency.textContent = "Częstotliwość: -- Hz";
-    tunerStatus.textContent = "Zagraj pojedynczą strunę...";
-    tunerStatus.style.color = "#ffad32";
-    tunerPointer.style.left = "50%";
-    tunerPointer.style.background = "#ff3333";
-  }
+    if (!noSignalSince) noSignalSince = now;
 
-  tunerAnimation = requestAnimationFrame(updateTuner);
+    if (now - noSignalSince > 300) {
+      pitchHistory = [];
+      tunerNote.textContent = "--";
+      tunerFrequency.textContent = "Częstotliwość: -- Hz";
+      tunerStatus.textContent = "Zagraj pojedynczą strunę...";
+      tunerStatus.style.color = "#ffad32";
+      tunerPointer.style.left = "50%";
+      tunerPointer.style.background = "#ff3333";
+    }
+  }
 }
 
 async function startTuner() {
@@ -1133,28 +1233,56 @@ async function startTuner() {
       audio: {
         echoCancellation: false,
         noiseSuppression: false,
-        autoGainControl: false
+        autoGainControl: false,
+        channelCount: { ideal: 1 }
       }
     });
 
-    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    audioContext = new (
+      window.AudioContext || window.webkitAudioContext
+    )({ latencyHint: "interactive" });
+
     await audioContext.resume();
 
     microphone = audioContext.createMediaStreamSource(audioStream);
     analyser = audioContext.createAnalyser();
-    analyser.fftSize = 4096;
-    analyser.smoothingTimeConstant = 0.05;
 
+    analyser.fftSize = 8192;
+    analyser.smoothingTimeConstant = 0;
+    analyser.minDecibels = -100;
+    analyser.maxDecibels = -10;
+
+    tunerBuffer = new Float32Array(analyser.fftSize);
     microphone.connect(analyser);
+
+    lastTunerUpdate = 0;
+    pitchHistory = [];
+    noSignalSince = 0;
 
     tunerStart.disabled = true;
     tunerStop.disabled = false;
     tunerStart.textContent = "STROIK URUCHOMIONY";
     tunerStatus.textContent = "Zagraj pojedynczą strunę...";
     tunerStatus.style.color = "#ffad32";
+    tunerHelp.textContent =
+      "Zagraj jedną strunę, nawet delikatnie, i pozwól jej wybrzmieć. Stroik analizuje dźwięk na bieżąco.";
 
     updateTuner();
   } catch (error) {
+    if (audioStream) {
+      audioStream.getTracks().forEach(track => track.stop());
+      audioStream = null;
+    }
+
+    if (audioContext) {
+      audioContext.close();
+      audioContext = null;
+    }
+
+    analyser = null;
+    microphone = null;
+    tunerBuffer = null;
+
     tunerStatus.textContent = "Nie udało się uruchomić mikrofonu.";
     tunerStatus.style.color = "#ff4545";
     tunerHelp.textContent =
@@ -1180,6 +1308,9 @@ function stopTuner() {
 
   analyser = null;
   microphone = null;
+  tunerBuffer = null;
+  pitchHistory = [];
+  noSignalSince = 0;
 
   tunerStart.disabled = false;
   tunerStop.disabled = true;
