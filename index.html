@@ -57,19 +57,42 @@ header {
   object-fit: contain;
 }
 
+/* MENU */
 nav {
   background: #222;
-  padding: 20px;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  margin: 15px;
+  margin: 8px;
   font-weight: bold;
 }
 
 nav a:hover { color: red; }
+
+/* PRZYCISK ZMIANY TŁA W MENU */
+.vibe-button {
+  position: static;
+  transform: none;
+  background: #b00000;
+  color: white;
+  border: 2px solid gold;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.vibe-button:hover { background: #e00000; }
 
 section { padding: 35px 15px; }
 
@@ -120,24 +143,6 @@ footer {
   padding: 35px 20px;
   margin-top: 30px;
 }
-
-.vibe-button {
-  position: fixed;
-  bottom: 25px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #b00000;
-  color: white;
-  border: 2px solid gold;
-  padding: 14px 25px;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 12px;
-  cursor: pointer;
-  z-index: 9999;
-}
-
-.vibe-button:hover { background: #e00000; }
 
 .guitar-star {
   position: fixed;
@@ -245,13 +250,9 @@ section img {
   box-shadow: 0 0 10px rgba(255,0,0,0.4);
 }
 
-.search-input::placeholder {
-  color: #aaa;
-}
+.search-input::placeholder { color: #aaa; }
 
-#search-results {
-  margin-top: 20px;
-}
+#search-results { margin-top: 20px; }
 
 .search-result {
   background: #181818;
@@ -283,9 +284,7 @@ section img {
   cursor: pointer;
 }
 
-.search-result button:hover {
-  background: #d00000;
-}
+.search-result button:hover { background: #d00000; }
 
 .no-results {
   color: #ff7777;
@@ -341,9 +340,7 @@ section img {
 .filter-button.medium-filter { color: #ffad32; }
 .filter-button.hard-filter { color: #ff4545; }
 
-.difficulty-item.hidden {
-  display: none;
-}
+.difficulty-item.hidden { display: none; }
 
 #filter-info {
   margin: 15px 0 0;
@@ -408,6 +405,12 @@ img {
     margin: 8px;
   }
 
+  .vibe-button {
+    margin: 5px;
+    padding: 9px 12px;
+    font-size: 12px;
+  }
+
   pre {
     font-size: 17px;
     padding: 15px;
@@ -424,10 +427,6 @@ img {
 
 <body>
 
-<button class="vibe-button" onclick="changeVibe()">
-  CHANGE THE VIBE
-</button>
-
 <div class="guitar-star">★</div>
 
 <header>
@@ -442,6 +441,10 @@ img {
   <a href="#taby">TABULATURY</a>
   <a href="#riffy">RIFFY</a>
   <a href="#jak-grac">JAK GRAĆ?</a>
+
+  <button class="vibe-button" onclick="changeVibe()">
+    CHANGE THE VIBE
+  </button>
 </nav>
 
 <section class="welcome">
@@ -661,7 +664,7 @@ function searchSongs() {
 
   let foundSongs = 0;
 
-  allSongs.forEach((song, index) => {
+  allSongs.forEach(song => {
     const titleElement = song.querySelector("h3");
     const tuningElement = song.querySelector(".tuning");
     const difficultyElement = song.querySelector(".difficulty");
@@ -697,7 +700,6 @@ function searchSongs() {
       showButton.textContent = "POKAŻ UTWÓR";
 
       showButton.addEventListener("click", () => {
-        // Przywróć wszystkie utwory, żeby wynik był widoczny.
         filterButtons.forEach(btn => {
           btn.classList.remove("active");
         });
