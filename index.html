@@ -117,7 +117,7 @@ section { padding: 35px 15px; }
 
 footer {
   background: #222;
-  padding: 20px;
+  padding: 35px 20px;
   margin-top: 30px;
 }
 
@@ -198,6 +198,77 @@ section img {
   color: #ffb3b3;
   margin: 8px 0 18px;
   font-weight: bold;
+}
+
+/* POZIOMY TRUDNOŚCI */
+.difficulty {
+  font-size: 15px;
+  font-weight: bold;
+  margin: -8px 0 20px;
+}
+
+.easy { color: #39cf69; }
+.medium { color: #ffad32; }
+.hard { color: #ff4545; }
+
+/* FILTR TRUDNOŚCI */
+.filter-box {
+  max-width: 850px;
+  margin: 25px auto;
+  padding: 22px 15px;
+  background: rgba(30, 30, 30, 0.9);
+  border: 2px solid #b00000;
+  border-radius: 15px;
+  position: relative;
+  z-index: 4;
+}
+
+.filter-box h3 {
+  margin-top: 0;
+  color: white;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-button {
+  padding: 11px 17px;
+  border: 2px solid #555;
+  border-radius: 9px;
+  background: #222;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.filter-button:hover {
+  background: #444;
+}
+
+.filter-button.active {
+  border-color: white;
+  background: #444;
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+.filter-button.easy-filter { color: #39cf69; }
+.filter-button.medium-filter { color: #ffad32; }
+.filter-button.hard-filter { color: #ff4545; }
+
+.difficulty-item.hidden {
+  display: none;
+}
+
+#filter-info {
+  margin: 15px 0 0;
+  color: #ffb3b3;
+  font-size: 14px;
 }
 
 #sparkCanvas {
@@ -316,13 +387,40 @@ img {
   </div>
 </section>
 
+<!-- FILTR POZIOMÓW -->
+<div class="filter-box">
+  <h3>🎸 WYBIERZ POZIOM TRUDNOŚCI</h3>
+
+  <div class="filter-buttons">
+    <button class="filter-button active" data-filter="all">
+      WSZYSTKIE
+    </button>
+
+    <button class="filter-button easy-filter" data-filter="easy">
+      🟢 ŁATWY
+    </button>
+
+    <button class="filter-button medium-filter" data-filter="medium">
+      🟡 ŚREDNI
+    </button>
+
+    <button class="filter-button hard-filter" data-filter="hard">
+      🔴 TRUDNY
+    </button>
+  </div>
+
+  <p id="filter-info">Wyświetlasz wszystkie riffy i tabulatury.</p>
+</div>
+
 <section id="taby">
   <h2>🎸 TABULATURY</h2>
   <p>Twoje miejsce do nauki utworów!</p>
 
-  <div>
+  <div class="difficulty-item" data-levels="easy">
     <h3>🎂 HAPPY BIRTHDAY 🎸</h3>
     <p class="tuning">Strojenie klasyczne: E A D G B E</p>
+    <p class="difficulty easy">POZIOM TRUDNOŚCI: ŁATWY</p>
+
     <p>Tabulatura – część 1</p>
     <img src="happybirthday1.jpg" width="300" alt="Happy Birthday część 1">
 
@@ -330,9 +428,15 @@ img {
     <img src="happybirthday2.jpg" width="300" alt="Happy Birthday część 2">
   </div>
 
-  <div>
+  <div class="difficulty-item" data-levels="easy medium">
     <h3>🔥 CHIVAS NOWYBATMAN</h3>
     <p class="tuning">Strojenie klasyczne: E A D G B E</p>
+    <p class="difficulty">
+      <span class="easy">ŁATWY</span>
+      <span> / </span>
+      <span class="medium">ŚREDNI</span>
+    </p>
+
     <p>🎸 Tabulatura – część 1</p>
     <img src="batman1.jpg" width="300" alt="Batman część 1">
 
@@ -340,9 +444,15 @@ img {
     <img src="batman2.jpg" width="300" alt="Batman część 2">
   </div>
 
-  <div>
+  <div class="difficulty-item" data-levels="hard medium">
     <h3>🔥 ENTER SANDMAN – METALLICA 🎸</h3>
     <p class="tuning">Strojenie: E A D G B E (standardowe)</p>
+    <p class="difficulty">
+      <span class="hard">TRUDNY</span>
+      <span> / </span>
+      <span class="medium">ŚREDNI</span>
+    </p>
+
     <img src="enter-sandman.jpg" width="300" alt="Enter Sandman – Metallica">
   </div>
 </section>
@@ -351,9 +461,11 @@ img {
   <h2>🤘 RIFFY</h2>
   <p>Najlepsze gitarowe riffy.</p>
 
-  <div class="riff">
+  <div class="riff difficulty-item" data-levels="easy">
     <h3>SMOKE ON THE WATER 🤘</h3>
     <p class="tuning">Strojenie klasyczne: E A D G B E</p>
+    <p class="difficulty easy">POZIOM TRUDNOŚCI: ŁATWY</p>
+
     <pre>
 E|------------------------------|
 B|------------------------------|
@@ -364,9 +476,11 @@ E|------------------------------|
 </pre>
   </div>
 
-  <div class="riff">
+  <div class="riff difficulty-item" data-levels="medium">
     <h3>ENTER SANDMAN – METALLICA 🔥</h3>
     <p class="tuning">Strojenie: E A D G B E (standardowe)</p>
+    <p class="difficulty medium">POZIOM TRUDNOŚCI: ŚREDNI</p>
+
     <pre>
 E|-----------------------------
 B|-----------------------------
@@ -377,9 +491,11 @@ E|-0----6-5--------------------
     </pre>
   </div>
 
-  <div class="riff">
+  <div class="riff difficulty-item" data-levels="easy">
     <h3>CALIFORNIA – WHITE 2115 🌴</h3>
     <p class="tuning">Strojenie klasyczne: E A D G B E</p>
+    <p class="difficulty easy">POZIOM TRUDNOŚCI: ŁATWY</p>
+
     <img src="california.png" alt="Riff California – White 2115" class="riff-image">
   </div>
 </section>
@@ -420,6 +536,46 @@ function changeVibe() {
   document.body.style.backgroundAttachment = "fixed";
 }
 
+/* DZIAŁANIE FILTRA */
+const filterButtons = document.querySelectorAll(".filter-button");
+const difficultyItems = document.querySelectorAll(".difficulty-item");
+const filterInfo = document.getElementById("filter-info");
+
+const filterMessages = {
+  all: "Wyświetlasz wszystkie riffy i tabulatury.",
+  easy: "Wyświetlasz łatwe riffy i tabulatury.",
+  medium: "Wyświetlasz średnie riffy i tabulatury.",
+  hard: "Wyświetlasz trudne riffy i tabulatury."
+};
+
+filterButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const selectedLevel = button.dataset.filter;
+
+    filterButtons.forEach(btn => {
+      btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    difficultyItems.forEach(item => {
+      const levels = item.dataset.levels.split(" ");
+
+      if (
+        selectedLevel === "all" ||
+        levels.includes(selectedLevel)
+      ) {
+        item.classList.remove("hidden");
+      } else {
+        item.classList.add("hidden");
+      }
+    });
+
+    filterInfo.textContent = filterMessages[selectedLevel];
+  });
+});
+
+/* EFEKT ISKIER */
 const canvas = document.getElementById("sparkCanvas");
 const ctx = canvas.getContext("2d");
 let sparks = [];
