@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gitara od podstaw | Guitar World</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #eee;
+  background: linear-gradient(to bottom, #8b0000 0%, #350000 25%, #111 65%, #000 100%);
+}
+
+header {
+  text-align: center;
+  padding: 45px 20px 30px;
+  background: rgba(0,0,0,0.65);
+  border-bottom: 2px solid #a00000;
+}
+
+header h1 {
+  color: #ff2525;
+  font-size: clamp(32px, 7vw, 55px);
+  letter-spacing: 4px;
+  margin: 0;
+  text-shadow: 0 0 15px #8b0000;
+}
+
+header p {
+  color: #ccc;
+  letter-spacing: 2px;
+  margin-top: 12px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 18px 10px;
+  background: #090909;
+  border-bottom: 1px solid #650000;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  border: 1px solid #a00000;
+  padding: 11px 18px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 13px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background: #a00000;
+  box-shadow: 0 0 12px #a00000;
+}
+
+main {
+  max-width: 1050px;
+  margin: auto;
+  padding: 25px 18px 50px;
+}
+
+.intro {
+  text-align: center;
+  padding: 35px 20px;
+  margin: 20px 0 35px;
+  background: rgba(0,0,0,0.65);
+  border: 1px solid #650000;
+  border-radius: 10px;
+}
+
+.intro h2 {
+  color: #ff3030;
+  font-size: 27px;
+}
+
+.intro p {
+  line-height: 1.8;
+  color: #ddd;
+}
+
+section {
+  background: rgba(10,10,10,0.88);
+  padding: 25px;
+  margin: 25px 0;
+  border-left: 4px solid #a00000;
+  border-radius: 7px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.4);
+  scroll-margin-top: 20px;
+}
+
+section h2 {
+  color: #ff3030;
+  font-size: 23px;
+  margin-top: 0;
+  border-bottom: 1px solid #550000;
+  padding-bottom: 12px;
+}
+
+section p {
+  color: #ddd;
+  line-height: 1.8;
+}
+
+section ul {
+  color: #ddd;
+  line-height: 2;
+  padding-left: 22px;
+}
+
+.highlight {
+  color: #ff5050;
+  font-weight: bold;
+}
+
+.example {
+  background: #050505;
+  border: 1px solid #650000;
+  border-radius: 6px;
+  padding: 18px;
+  margin: 18px 0;
+  overflow-x: auto;
+}
+
+.example pre {
+  color: #ff5555;
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.tip {
+  background: #260000;
+  border-left: 3px solid #ff3030;
+  padding: 12px 16px;
+  margin-top: 18px;
+  color: #eee;
+  line-height: 1.7;
+}
+
+footer {
+  text-align: center;
+  padding: 25px 15px;
+  background: #050505;
+  border-top: 1px solid #650000;
+  color: #999;
+  font-size: 13px;
+}
+
+.top-button {
+  display: block;
+  width: fit-content;
+  margin: 30px auto 0;
+  padding: 13px 23px;
+  background: #900000;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.top-button:hover {
+  background: #d00000;
+  box-shadow: 0 0 15px #900000;
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 35px 12px 25px;
+  }
+
+  nav {
+    gap: 8px;
+  }
+
+  nav a {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+
+  main {
+    padding: 15px 12px 35px;
+  }
+
+  section {
+    padding: 19px;
+  }
+
+  section h2 {
+    font-size: 20px;
+  }
+
+  .intro {
+    padding: 25px 15px;
+  }
+}
+</style>
+</head>
+
+<body id="gora">
+
+<header>
+  <h1>GITARA OD PODSTAW</h1>
+  <p>YOUR JOURNEY STARTS HERE</p>
+</header>
+
+<nav>
+  <a href="guitar-world.html">STRONA GŁÓWNA</a>
+  <a href="#budowa">BUDOWA GITARY</a>
+  <a href="#tabulatury">TABULATURY</a>
+  <a href="#riffy">RIFFY</a>
+  <a href="#strojenie">STROJENIE</a>
+  <a href="#techniki">TECHNIKI</a>
+  <a href="#bledy">BŁĘDY</a>
+</nav>
+
+<main>
+
+<div class="intro">
+  <h2>Witaj w świecie gitary! 🎸</h2>
+  <p>
+    Dopiero zaczynasz swoją przygodę z gitarą?
+    A może chcesz uporządkować swoją wiedzę?
+    Jesteś w dobrym miejscu!
+  </p>
+  <p>
+    Znajdziesz tutaj podstawowe informacje, praktyczne wskazówki
+    i wyjaśnienia, które pomogą Ci zrobić pierwsze kroki
+    w świecie gitarowego grania.
+  </p>
+</div>
+
+<section id="budowa">
+  <h2>01. Budowa gitary</h2>
+  <p>
+    Zanim zaczniesz grać, warto poznać swoją gitarę.
+    Każda jej część ma określoną funkcję.
+  </p>
+  <ul>
+    <li><span class="highlight">Główka</span> – znajduje się na końcu gryfu i zawiera klucze.</li>
+    <li><span class="highlight">Klucze</span> – służą do strojenia strun.</li>
+    <li><span class="highlight">Gryf</span> – część, na której znajdują się progi.</li>
+    <li><span class="highlight">Progi</span> – metalowe elementy pomagające uzyskać różne dźwięki.</li>
+    <li><span class="highlight">Korpus</span> – główna część gitary.</li>
+    <li><span class="highlight">Przetworniki</span> – w gitarze elektrycznej odbierają drgania strun.</li>
+    <li><span class="highlight">Mostek</span> – mocuje struny przy korpusie.</li>
+  </ul>
+  <div class="tip">
+    Wskazówka: zapamiętaj nazwy części gitary, ponieważ będą pojawiać się w dalszych lekcjach.
+  </div>
+</section>
+
+<section id="tabulatury">
+  <h2>02. Jak czytać tabulatury?</h2>
+  <p>
+    Tabulatura, czyli TAB, to prosty sposób zapisywania muzyki gitarowej.
+    Pokazuje, na którym progu i której strunie należy zagrać dźwięk.
+  </p>
+  <div class="example">
+    <pre>
+e|----------------|
+B|----------------|
+G|----------------|
+D|----------------|
+A|------2---------|
+E|--0-------------|
+    </pre>
+  </div>
+  <ul>
+    <li>Linie oznaczają sześć strun gitary.</li>
+    <li>Cyfra 0 oznacza zagranie pustej struny.</li>
+    <li>Cyfra 2 oznacza naciśnięcie drugiego progu.</li>
+    <li>Cyfry czytamy od lewej do prawej.</li>
+  </ul>
+  <div class="tip">
+    Pamiętaj: górna linia to najcieńsza struna, a dolna to najgrubsza.
+  </div>
+</section>
+
+<section id="riffy">
+  <h2>03. Czym różni się riff od tabulatury?</h2>
+  <p>
+    Te dwa pojęcia często są ze sobą mylone, ale oznaczają coś innego.
+  </p>
+  <p>
+    <span class="highlight">Riff</span> to charakterystyczny fragment muzyczny,
+    czyli sekwencja dźwięków, która często powtarza się w utworze.
+  </p>
+  <p>
+    <span class="highlight">Tabulatura</span> to sposób zapisania tego,
+    jak taki fragment zagrać na gitarze.
+  </p>
+  <div class="tip">
+    W skrócie: riff to muzyka, a tabulatura to zapis pokazujący, jak ją zagrać.
+  </div>
+</section>
+
+<section id="strojenie">
+  <h2>04. Strojenie gitary</h2>
+  <p>
+    Dobrze nastrojona gitara to podstawa dobrego brzmienia.
+    Standardowy strój sześciostrunowej gitary to:
+  </p>
+  <div class="example">
+    <pre>
+1. E – najcieńsza struna
+2. B
+3. G
+4. D
+5. A
+6. E – najgrubsza struna
+    </pre>
+  </div>
+  <p>
+    Do strojenia możesz użyć elektronicznego stroika
+    lub aplikacji tunera.
+  </p>
+</section>
+
+<section id="techniki">
+  <h2>05. Podstawowe techniki gitarowe</h2>
+  <p>W grze na gitarze znajdziesz wiele ciekawych technik. Oto kilka podstawowych:</p>
+  <ul>
+    <li><span class="highlight">Downstroke</span> – uderzanie kostką w dół.</li>
+    <li><span class="highlight">Upstroke</span> – uderzanie kostką w górę.</li>
+    <li><span class="highlight">Alternate picking</span> – naprzemienne uderzanie kostką w dół i w górę.</li>
+    <li><span class="highlight">Hammer-on</span> – wydobywanie kolejnego dźwięku przez uderzenie palcem w próg.</li>
+    <li><span class="highlight">Pull-off</span> – przejście na niższy dźwięk przez oderwanie palca od struny.</li>
+    <li><span class="highlight">Bending</span> – podciąganie struny w celu podwyższenia dźwięku.</li>
+  </ul>
+  <div class="tip">
+    Nie musisz znać wszystkich technik od razu. Najlepiej poznawać je stopniowo.
+  </div>
+</section>
+
+<section id="pojecia">
+  <h2>06. Gitarowy słownik</h2>
+  <ul>
+    <li><span class="highlight">Riff</span> – charakterystyczny motyw muzyczny.</li>
+    <li><span class="highlight">Solo</span> – fragment, w którym gitara prowadzi melodię.</li>
+    <li><span class="highlight">Power chord</span> – akord zbudowany najczęściej z dwóch różnych dźwięków.</li>
+    <li><span class="highlight">Tuning</span> – strój gitary.</li>
+    <li><span class="highlight">Distortion</span> – efekt zniekształcający brzmienie gitary.</li>
+    <li><span class="highlight">Gain</span> – poziom wzmocnienia sygnału, wpływający na przesterowanie.</li>
+    <li><span class="highlight">Tempo</span> – szybkość wykonywania utworu.</li>
+  </ul>
+</section>
+
+<section id="pierwsze-kroki">
+  <h2>07. Twoje pierwsze kroki</h2>
+  <p>Nie wiesz, od czego zacząć? Oto kilka prostych wskazówek:</p>
+  <ul>
+    <li>Poznaj nazwy i układ strun.</li>
+    <li>Naucz się prawidłowo trzymać gitarę i kostkę.</li>
+    <li>Ćwicz dociskanie strun i grę pojedynczych dźwięków.</li>
+    <li>Poznaj podstawowe akordy.</li>
+    <li>Spróbuj zagrać swój pierwszy prosty riff.</li>
+    <li>Ćwicz regularnie i nie spiesz się z nauką.</li>
+  </ul>
+</section>
+
+<section id="bledy">
+  <h2>08. Najczęstsze błędy początkujących</h2>
+  <ul>
+    <li>Zbyt mocne dociskanie strun.</li>
+    <li>Pomijanie strojenia gitary.</li>
+    <li>Zbyt szybkie granie bez opanowania rytmu.</li>
+    <li>Nieprawidłowe trzymanie kostki.</li>
+    <li>Brak cierpliwości podczas nauki nowych technik.</li>
+    <li>Próba nauczenia się wszystkiego naraz.</li>
+  </ul>
+  <div class="tip">
+    Każdy gitarzysta kiedyś zaczynał. Błędy są częścią nauki, więc nie zniechęcaj się!
+  </div>
+</section>
+
+<a href="#gora" class="top-button">↑ POWRÓT NA GÓRĘ</a>
+
+</main>
+
+<footer>
+  <p>GUITAR WORLD © 2026</p>
+  <p>PLAY LOUD. LEARN MORE. ROCK ON.</p>
+</footer>
+
+</body>
+</html>
