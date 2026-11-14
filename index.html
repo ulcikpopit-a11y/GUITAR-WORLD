@@ -88,11 +88,20 @@ section { padding: 35px 15px; }
   font-size: 17px;
 }
 
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 15px;
+}
+
 .about-button {
   display: inline-block;
   position: static;
   transform: none;
-  margin-top: 15px;
+  margin-top: 0;
   padding: 13px 28px;
   background: #a00000;
   color: white;
@@ -300,9 +309,15 @@ img {
 
   <p><strong>Chwyć gitarę i zaczynamy! 🔥</strong></p>
 
-  <a href="o-stronie.html" class="about-button">
-    🎸 O STRONIE
-  </a>
+  <div class="buttons-container">
+    <a href="o-stronie.html" class="about-button">
+      🎸 O STRONIE
+    </a>
+
+    <a href="gitara-od-podstaw.html" class="about-button">
+      🤘 GITARA OD PODSTAW
+    </a>
+  </div>
 </section>
 
 <section id="taby">
