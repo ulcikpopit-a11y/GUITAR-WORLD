@@ -1,17 +1,13 @@
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Guitar World – Tabulatury, riffy i poradnik gitarowy</title>
-
 <meta name="description" content="Poznaj Guitar World – znajdź tabulatury gitarowe, popularne riffy rockowe i metalowe, skorzystaj z darmowego stroika online i poznaj podstawy gry na gitarze.">
-
 <meta name="robots" content="index, follow">
-
 <link rel="canonical" href="https://ulcikpopit-a11y.github.io/GUITAR-WORLD/">
-
 <meta property="og:type" content="website">
 <meta property="og:title" content="Guitar World – Tabulatury i riffy gitarowe">
 <meta property="og:description" content="Tabulatury, riffy rockowe i metalowe, stroik gitarowy online oraz poradnik dla początkujących.">
@@ -263,7 +259,6 @@ section img {
 }
 
 .search-input::placeholder { color: #aaa; }
-
 #search-results { margin-top: 20px; }
 
 .search-result {
@@ -363,12 +358,7 @@ section img {
   z-index: 1;
   opacity: 0.22;
   filter: blur(18px);
-  background: radial-gradient(
-    ellipse at 40% 70%,
-    rgba(180,180,180,0.7),
-    rgba(100,100,100,0.25) 45%,
-    transparent 75%
-  );
+  background: radial-gradient(ellipse at 40% 70%, rgba(180,180,180,0.7), rgba(100,100,100,0.25) 45%, transparent 75%);
   animation: smokeRise 7s ease-in-out infinite;
 }
 
@@ -461,7 +451,6 @@ img { max-width: 90%; height: auto; }
 }
 
 .tuner-button:hover, .challenge-button:hover { background: #d00000; }
-
 .tuner-button.stop { background: #333; border-color: #777; }
 
 .string-list {
@@ -515,20 +504,11 @@ img { max-width: 90%; height: auto; }
 
 .challenge-card h3 { margin-top: 0; }
 .challenge-card p { line-height: 1.5; }
-
 .challenge-card.easy-card { border-top: 4px solid #39cf69; }
 .challenge-card.medium-card { border-top: 4px solid #ffad32; }
 .challenge-card.hard-card { border-top: 4px solid #ff4545; }
-
-.challenge-card.completed {
-  opacity: 0.65;
-  border-color: #39cf69;
-}
-
-.challenge-card.completed .challenge-done {
-  background: #176b32;
-  border-color: #39cf69;
-}
+.challenge-card.completed { opacity: 0.65; border-color: #39cf69; }
+.challenge-card.completed .challenge-done { background: #176b32; border-color: #39cf69; }
 
 .challenge-done {
   padding: 10px;
@@ -556,6 +536,7 @@ img { max-width: 90%; height: auto; }
 }
 
 .challenge-random h3 { color: #ff4444; }
+
 /* METRONOM GUITAR WORLD */
 .metronome-box {
   max-width: 650px;
@@ -568,72 +549,141 @@ img { max-width: 90%; height: auto; }
 }
 
 .metronome-box h2 { margin-top: 0; color: #ff3333; }
-.metronome-display {
-  margin: 18px auto;
-  color: white;
-  font-size: 54px;
-  font-weight: bold;
-  text-shadow: 0 0 12px red;
-}
+.metronome-display { margin: 18px auto; color: white; font-size: 54px; font-weight: bold; text-shadow: 0 0 12px red; }
 .metronome-display small { display: block; font-size: 15px; color: #ffb3b3; text-shadow: none; }
 .metronome-range { width: min(420px, 90%); accent-color: #d00000; cursor: pointer; }
 .metronome-bpm-row { display: flex; justify-content: center; align-items: center; gap: 12px; flex-wrap: wrap; }
-.metronome-bpm-input {
-  width: 90px; padding: 10px; color: white; background: #111;
-  border: 2px solid #8b0000; border-radius: 8px; font-size: 18px; text-align: center;
-}
+.metronome-bpm-input { width: 90px; padding: 10px; color: white; background: #111; border: 2px solid #8b0000; border-radius: 8px; font-size: 18px; text-align: center; }
 .metronome-beats { display: flex; justify-content: center; gap: 13px; margin: 22px 0; }
-.metronome-beat {
-  width: 22px; height: 22px; border-radius: 50%; background: #4a1717;
-  border: 2px solid #a00000; transition: transform 0.08s, background 0.08s, box-shadow 0.08s;
-}
+.metronome-beat { width: 22px; height: 22px; border-radius: 50%; background: #4a1717; border: 2px solid #a00000; transition: transform 0.08s, background 0.08s, box-shadow 0.08s; }
 .metronome-beat.active { background: #ff2424; box-shadow: 0 0 18px #ff1717; transform: scale(1.35); }
 .metronome-beat:first-child.active { background: #ffd0d0; box-shadow: 0 0 22px #ff3333; transform: scale(1.6); }
 .metronome-controls { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
-.metronome-button {
-  padding: 12px 22px; background: #a00000; color: white; border: 2px solid #d00000;
-  border-radius: 9px; font-size: 15px; font-weight: bold; cursor: pointer;
-}
+.metronome-button { padding: 12px 22px; background: #a00000; color: white; border: 2px solid #d00000; border-radius: 9px; font-size: 15px; font-weight: bold; cursor: pointer; }
 .metronome-button:hover { background: #d00000; }
 .metronome-button:disabled { opacity: 0.55; cursor: not-allowed; }
 .metronome-button.shutdown { background: #222; border-color: #777; }
 .metronome-status { min-height: 24px; color: #ffb3b3; font-weight: bold; }
+
+/* BIBLIOTEKA AKORDÓW */
+.chords-library {
+  max-width: 1100px;
+  margin: 25px auto;
+  padding: 28px 18px;
+  background: rgba(20, 20, 20, 0.94);
+  border: 2px solid #b00000;
+  border-radius: 16px;
+  box-shadow: 0 0 18px rgba(150,0,0,0.25);
+}
+
+.chords-library > h2 { color: #ff3333; margin-top: 0; }
+
+.chords-intro {
+  color: #ccc;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 10px auto 22px;
+}
+
+.chord-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0 25px;
+}
+
+.chord-filter {
+  padding: 11px 18px;
+  background: #222;
+  color: white;
+  border: 2px solid #666;
+  border-radius: 9px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.chord-filter:hover,
+.chord-filter.active {
+  background: #8b0000;
+  border-color: #ff3333;
+}
+
+.chords-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.chord-card {
+  background: #1b1b1b;
+  border: 1px solid #700000;
+  border-radius: 13px;
+  padding: 18px 10px;
+  min-width: 0;
+}
+
+.chord-card h3 {
+  color: #ff4444;
+  font-size: 27px;
+  margin: 0 0 5px;
+}
+
+.chord-type {
+  color: #bbb;
+  font-size: 13px;
+  margin: 0 0 12px;
+}
+
+.chord-diagram {
+  width: 190px;
+  max-width: 100%;
+  height: 185px;
+  display: block;
+  margin: 0 auto;
+}
+
+.chord-description {
+  color: #ccc;
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 10px auto 0;
+}
+
+.chord-legend {
+  margin: 25px auto 0;
+  max-width: 750px;
+  padding: 17px;
+  background: #111;
+  border: 1px solid #700000;
+  border-radius: 12px;
+  color: #ddd;
+  line-height: 1.8;
+}
+
+.chord-legend h3 { color: #ff4444; margin-top: 0; }
+.chord-legend strong { color: white; }
+.chord-card.chord-hidden { display: none; }
+
+@media (max-width: 800px) {
+  .chords-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
 @media (max-width: 600px) {
   .metronome-display { font-size: 46px; }
   .metronome-box { padding: 22px 12px; }
-}
-
-@media (max-width: 700px) {
   .challenge-grid { grid-template-columns: 1fr; }
   .challenge-card { min-height: 170px; }
-}
-
-@media (max-width: 600px) {
   h1 { font-size: 32px; letter-spacing: 2px; }
   .header-guitar { width: 130px; }
-
-  nav a {
-    display: inline-block;
-    margin: 8px;
-  }
-
-  .vibe-button {
-    margin: 5px;
-    padding: 9px 12px;
-    font-size: 12px;
-  }
-
+  nav a { display: inline-block; margin: 8px; }
+  .vibe-button { margin: 5px; padding: 9px 12px; font-size: 12px; }
   pre { font-size: 17px; padding: 15px; }
-
-  .guitar-star {
-    font-size: 42px;
-    right: 12px;
-    top: 12px;
-  }
-
+  .guitar-star { font-size: 42px; right: 12px; top: 12px; }
   .riff-image { width: 95%; height: 260px; }
   .california-image { height: 400px; }
   .tuner-note { font-size: 55px; }
+  .chords-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -654,31 +704,18 @@ img { max-width: 90%; height: auto; }
   <a href="#taby">TABULATURY</a>
   <a href="#riffy">RIFFY</a>
   <a href="#jak-grac">JAK GRAĆ?</a>
+  <a href="#akordy">AKORDY</a>
   <a href="#stroik">STROIK</a>
   <a href="#metronom">METRONOM</a>
   <a href="#wyzwania">WYZWANIA</a>
-
-  <button class="vibe-button" onclick="changeVibe()">
-    CHANGE THE VIBE
-  </button>
+  <button class="vibe-button" onclick="changeVibe()">CHANGE THE VIBE</button>
 </nav>
 
 <section class="welcome">
   <h2> WITAJ W GUITAR WORLD! </h2>
-
-  <p>
-    Witaj w miejscu, gdzie królują gitary, rock i metal!
-    Znajdziesz tutaj gitarowe riffy oraz tabulatury,
-    dzięki którym możesz poznawać nowe utwory i uczyć się grać.
-  </p>
-
-  <p>
-    Strona jest przeznaczona dla początkujących gitarzystów,
-    osób uczących się gry na gitarze oraz fanów rocka i metalu.
-  </p>
-
+  <p>Witaj w miejscu, gdzie królują gitary, rock i metal! Znajdziesz tutaj gitarowe riffy oraz tabulatury, dzięki którym możesz poznawać nowe utwory i uczyć się grać.</p>
+  <p>Strona jest przeznaczona dla początkujących gitarzystów, osób uczących się gry na gitarze oraz fanów rocka i metalu.</p>
   <p><strong>Chwyć gitarę i zaczynamy! </strong></p>
-
   <div class="buttons-container">
     <a href="o-stronie.html" class="about-button"> O STRONIE</a>
   </div>
@@ -687,30 +724,18 @@ img { max-width: 90%; height: auto; }
 <div class="search-box">
   <h2> WYSZUKIWARKA UTWORÓW</h2>
   <p>Wpisz nazwę utworu, którego szukasz!</p>
-
-  <input
-    type="search"
-    id="song-search"
-    class="search-input"
-    placeholder="Np. Enter Sandman..."
-    autocomplete="off"
-  >
-
-  <div id="search-results">
-    <p> Zacznij wpisywać nazwę utworu.</p>
-  </div>
+  <input type="search" id="song-search" class="search-input" placeholder="Np. Enter Sandman..." autocomplete="off">
+  <div id="search-results"><p> Zacznij wpisywać nazwę utworu.</p></div>
 </div>
 
 <div class="filter-box">
   <h3> WYBIERZ POZIOM TRUDNOŚCI</h3>
-
   <div class="filter-buttons">
     <button class="filter-button active" data-filter="all">WSZYSTKIE</button>
     <button class="filter-button easy-filter" data-filter="easy"> ŁATWY</button>
     <button class="filter-button medium-filter" data-filter="medium"> ŚREDNI</button>
     <button class="filter-button hard-filter" data-filter="hard"> TRUDNY</button>
   </div>
-
   <p id="filter-info">Wyświetlasz wszystkie riffy i tabulatury.</p>
 </div>
 
@@ -731,9 +756,7 @@ img { max-width: 90%; height: auto; }
   <div class="difficulty-item" data-levels="easy medium">
     <h3> CHIVAS NOWYBATMAN</h3>
     <p class="tuning">Strojenie klasyczne: E A D G B E</p>
-    <p class="difficulty">
-      <span class="easy">ŁATWY</span> / <span class="medium">ŚREDNI</span>
-    </p>
+    <p class="difficulty"><span class="easy">ŁATWY</span> / <span class="medium">ŚREDNI</span></p>
     <p> Tabulatura – część 1</p>
     <img src="batman1.jpg" width="300" alt="Batman część 1">
     <p> Tabulatura – część 2</p>
@@ -743,9 +766,7 @@ img { max-width: 90%; height: auto; }
   <div class="difficulty-item" data-levels="hard medium">
     <h3> ENTER SANDMAN – METALLICA </h3>
     <p class="tuning">Strojenie: E A D G B E (standardowe)</p>
-    <p class="difficulty">
-      <span class="hard">TRUDNY</span> / <span class="medium">ŚREDNI</span>
-    </p>
+    <p class="difficulty"><span class="hard">TRUDNY</span> / <span class="medium">ŚREDNI</span></p>
     <img src="enter-sandman.jpg" width="300" alt="Enter Sandman – Metallica">
   </div>
 
@@ -805,6 +826,36 @@ E|-0----6-5--------------------
   </div>
 </section>
 
+<!-- BIBLIOTEKA AKORDÓW -->
+<section id="akordy">
+  <div class="chords-library">
+    <h2>BIBLIOTEKA PODSTAWOWYCH AKORDÓW</h2>
+    <p class="chords-intro">
+      Poznaj podstawowe chwyty gitarowe. Wybierz akord, sprawdź diagram
+      i ułóż palce na odpowiednich progach.
+    </p>
+
+    <div class="chord-filters">
+      <button class="chord-filter active" data-chord-filter="all">WSZYSTKIE</button>
+      <button class="chord-filter" data-chord-filter="major">DUROWE</button>
+      <button class="chord-filter" data-chord-filter="minor">MOLOWE</button>
+    </div>
+
+    <div class="chords-grid" id="chords-grid"></div>
+
+    <div class="chord-legend">
+      <h3>JAK CZYTAĆ DIAGRAMY?</h3>
+      <strong>●</strong> Kropka – miejsce, w którym należy docisnąć strunę palcem.<br>
+      <strong>1</strong> – palec wskazujący, <strong>2</strong> – środkowy,
+      <strong>3</strong> – serdeczny, <strong>4</strong> – mały.<br>
+      <strong>O</strong> – struna grana na pusto, bez dociskania.<br>
+      <strong>X</strong> – struny nie należy uderzać.<br>
+      Pionowe linie oznaczają struny, a poziome – progi gitary.
+      Diagramy pokazują gitarę w standardowym stroju E A D G B E.
+    </div>
+  </div>
+</section>
+
 <!-- STROIK -->
 <section id="stroik">
   <div class="tuner-box">
@@ -829,7 +880,6 @@ E|-0----6-5--------------------
     </div>
 
     <p class="tuner-status" id="tuner-status">Kliknij START, aby rozpocząć</p>
-
     <button class="tuner-button" id="tuner-start"> URUCHOM STROIK</button>
     <button class="tuner-button stop" id="tuner-stop" disabled>ZATRZYMAJ</button>
 
@@ -877,86 +927,53 @@ E|-0----6-5--------------------
 <section id="wyzwania">
   <div class="challenge-box">
     <h2> WYZWANIA GITAROWE</h2>
-    <p class="challenge-intro">
-      Podejmij wyzwanie, ćwicz gitarę i zdobywaj kolejne osiągnięcia!
-    </p>
+    <p class="challenge-intro">Podejmij wyzwanie, ćwicz gitarę i zdobywaj kolejne osiągnięcia!</p>
 
     <div class="challenge-random">
       <h3> LOSOWE WYZWANIE</h3>
       <p id="random-challenge">Kliknij przycisk i wylosuj swoje zadanie!</p>
-      <button class="challenge-button" id="random-challenge-button">
-        LOSUJ WYZWANIE
-      </button>
+      <button class="challenge-button" id="random-challenge-button">LOSuj WYZWANIE</button>
     </div>
 
     <div class="challenge-grid">
       <div class="challenge-card easy-card">
-        <div>
-          <h3 class="easy"> ŁATWY</h3>
-          <p>Przećwicz zmianę między dwoma prostymi akordami przez 5 minut.</p>
-        </div>
+        <div><h3 class="easy"> ŁATWY</h3><p>Przećwicz zmianę między dwoma prostymi akordami przez 5 minut.</p></div>
         <button class="challenge-done">ZROBIONE ✓</button>
       </div>
-
       <div class="challenge-card easy-card">
-        <div>
-          <h3 class="easy"> ŁATWY</h3>
-          <p>Zagraj prosty riff powoli i postaraj się zachować równy rytm.</p>
-        </div>
+        <div><h3 class="easy"> ŁATWY</h3><p>Zagraj prosty riff powoli i postaraj się zachować równy rytm.</p></div>
         <button class="challenge-done">ZROBIONE ✓</button>
       </div>
-
       <div class="challenge-card medium-card">
-        <div>
-          <h3 class="medium"> ŚREDNI</h3>
-          <p>Przećwicz kostkowanie naprzemienne przez kilka minut.</p>
-        </div>
+        <div><h3 class="medium"> ŚREDNI</h3><p>Przećwicz kostkowanie naprzemienne przez kilka minut.</p></div>
         <button class="challenge-done">ZROBIONE ✓</button>
       </div>
-
       <div class="challenge-card medium-card">
-        <div>
-          <h3 class="medium"> ŚREDNI</h3>
-          <p>Zagraj wybrany riff trzy razy z rzędu bez zatrzymywania.</p>
-        </div>
+        <div><h3 class="medium"> ŚREDNI</h3><p>Zagraj wybrany riff trzy razy z rzędu bez zatrzymywania.</p></div>
         <button class="challenge-done">ZROBIONE ✓</button>
       </div>
-
       <div class="challenge-card hard-card">
-        <div>
-          <h3 class="hard"> TRUDNY</h3>
-          <p>Przećwicz trudniejszy fragment utworu, pilnując dokładności i rytmu.</p>
-        </div>
+        <div><h3 class="hard"> TRUDNY</h3><p>Przećwicz trudniejszy fragment utworu, pilnując dokładności i rytmu.</p></div>
         <button class="challenge-done">ZROBIONE ✓</button>
       </div>
-
       <div class="challenge-card hard-card">
-        <div>
-          <h3 class="hard"> TRUDNY</h3>
-          <p>Spróbuj zagrać cały wybrany utwór od początku do końca.</p>
-        </div>
+        <div><h3 class="hard"> TRUDNY</h3><p>Spróbuj zagrać cały wybrany utwór od początku do końca.</p></div>
         <button class="challenge-done">ZROBIONE ✓</button>
       </div>
     </div>
 
-    <p class="challenge-counter" id="challenge-counter">
-      Wykonane wyzwania: 0 / 6
-    </p>
+    <p class="challenge-counter" id="challenge-counter">Wykonane wyzwania: 0 / 6</p>
   </div>
 </section>
 
 <section id="jak-grac">
   <h2> JAK GRAĆ?</h2>
   <div class="buttons-container">
-    <a href="gitara-od-podstaw.html" class="about-button">
-      GITARA OD PODSTAW
-    </a>
+    <a href="gitara-od-podstaw.html" class="about-button">GITARA OD PODSTAW</a>
   </div>
 </section>
 
-<footer>
-  GUITAR WORLD © 2026 ig:Ulc1xx
-</footer>
+<footer>GUITAR WORLD © 2026 ig:Ulc1xx</footer>
 
 <canvas id="sparkCanvas"></canvas>
 <div class="corner-smoke"></div>
@@ -974,7 +991,6 @@ function changeVibe() {
     "linear-gradient(to bottom, #003b2f, #001a14, #000000)",
     "linear-gradient(to bottom, #402060, #170b2b, #000000)"
   ];
-
   vibe = (vibe + 1) % backgrounds.length;
   document.body.style.background = backgrounds[vibe];
   document.body.style.backgroundAttachment = "fixed";
@@ -986,10 +1002,7 @@ const searchResults = document.getElementById("search-results");
 const allSongs = document.querySelectorAll(".difficulty-item");
 
 function normalizeText(text) {
-  return text.toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .trim();
+  return text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
 }
 
 function searchSongs() {
@@ -1007,40 +1020,32 @@ function searchSongs() {
     const titleElement = song.querySelector("h3");
     const tuningElement = song.querySelector(".tuning");
     const difficultyElement = song.querySelector(".difficulty");
-
     const title = titleElement ? titleElement.textContent : "";
     const tuning = tuningElement ? tuningElement.textContent : "Brak informacji";
     const difficulty = difficultyElement ? difficultyElement.textContent : "Brak informacji";
 
     if (normalizeText(title).includes(query)) {
       foundSongs++;
-
       const type = song.closest("#taby") ? "TABULATURA" : "RIFF";
       const result = document.createElement("div");
       result.className = "search-result";
 
       const heading = document.createElement("h3");
       heading.textContent = title;
-
       const typeText = document.createElement("p");
       typeText.textContent = " Rodzaj: " + type;
-
       const tuningText = document.createElement("p");
       tuningText.textContent = " " + tuning;
-
       const difficultyText = document.createElement("p");
       difficultyText.textContent = " " + difficulty;
-
       const showButton = document.createElement("button");
       showButton.textContent = "POKAŻ UTWÓR";
 
       showButton.addEventListener("click", () => {
         filterButtons.forEach(btn => btn.classList.remove("active"));
         document.querySelector('[data-filter="all"]').classList.add("active");
-
         allSongs.forEach(item => item.classList.remove("hidden"));
         filterInfo.textContent = "Wyświetlasz wszystkie riffy i tabulatury.";
-
         song.scrollIntoView({ behavior: "smooth", block: "center" });
       });
 
@@ -1056,7 +1061,6 @@ function searchSongs() {
     searchResults.appendChild(message);
   }
 }
-
 searchInput.addEventListener("input", searchSongs);
 
 /* FILTR TRUDNOŚCI */
@@ -1074,21 +1078,202 @@ const filterMessages = {
 filterButtons.forEach(button => {
   button.addEventListener("click", () => {
     const selectedLevel = button.dataset.filter;
-
     filterButtons.forEach(btn => btn.classList.remove("active"));
     button.classList.add("active");
 
     difficultyItems.forEach(item => {
       const levels = item.dataset.levels.split(" ");
-      item.classList.toggle(
-        "hidden",
-        selectedLevel !== "all" && !levels.includes(selectedLevel)
-      );
+      item.classList.toggle("hidden", selectedLevel !== "all" && !levels.includes(selectedLevel));
     });
-
     filterInfo.textContent = filterMessages[selectedLevel];
   });
 });
+
+/* BIBLIOTEKA AKORDÓW */
+const chordData = [
+  {
+    name: "C",
+    type: "major",
+    typeName: "Akord durowy",
+    strings: ["X", "3", "2", "0", "1", "0"],
+    fingers: [[1,3,3],[2,2,2],[4,1,1]],
+    description: "C-dur – jeden z najczęściej używanych akordów."
+  },
+  {
+    name: "D",
+    type: "major",
+    typeName: "Akord durowy",
+    strings: ["X", "X", "0", "2", "3", "2"],
+    fingers: [[3,2,1],[4,3,3],[5,2,2]],
+    description: "D-dur – zagraj pięć najcieńszych strun."
+  },
+  {
+    name: "E",
+    type: "major",
+    typeName: "Akord durowy",
+    strings: ["0", "2", "2", "1", "0", "0"],
+    fingers: [[1,2,2],[2,2,3],[3,1,1]],
+    description: "E-dur – możesz uderzyć wszystkie sześć strun."
+  },
+  {
+    name: "G",
+    type: "major",
+    typeName: "Akord durowy",
+    strings: ["3", "2", "0", "0", "0", "3"],
+    fingers: [[0,3,2],[1,2,1],[5,3,3]],
+    description: "G-dur – popularny chwyt wykorzystywany w wielu piosenkach."
+  },
+  {
+    name: "A",
+    type: "major",
+    typeName: "Akord durowy",
+    strings: ["X", "0", "2", "2", "2", "0"],
+    fingers: [[2,2,1],[3,2,2],[4,2,3]],
+    description: "A-dur – trzy palce ustawione obok siebie na drugim progu."
+  },
+  {
+    name: "Am",
+    type: "minor",
+    typeName: "Akord molowy",
+    strings: ["X", "0", "2", "2", "1", "0"],
+    fingers: [[2,2,2],[3,2,3],[4,1,1]],
+    description: "A-moll – bardzo popularny akord molowy."
+  },
+  {
+    name: "Dm",
+    type: "minor",
+    typeName: "Akord molowy",
+    strings: ["X", "X", "0", "2", "3", "1"],
+    fingers: [[3,2,2],[4,3,3],[5,1,1]],
+    description: "D-moll – graj cztery najcieńsze struny."
+  },
+  {
+    name: "Em",
+    type: "minor",
+    typeName: "Akord molowy",
+    strings: ["0", "2", "2", "0", "0", "0"],
+    fingers: [[1,2,2],[2,2,3]],
+    description: "E-moll – jeden z najprostszych chwytów na gitarze."
+  },
+  {
+    name: "F",
+    type: "major",
+    typeName: "Akord durowy",
+    strings: ["X", "X", "3", "2", "1", "1"],
+    fingers: [[2,3,3],[3,2,2],[4,1,1],[5,1,1]],
+    description: "F-dur – uproszczony chwyt z małą poprzeczką palca wskazującego."
+  }
+];
+
+const chordsGrid = document.getElementById("chords-grid");
+
+function createChordDiagram(chord) {
+  const ns = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(ns, "svg");
+  svg.setAttribute("viewBox", "0 0 190 185");
+  svg.setAttribute("class", "chord-diagram");
+  svg.setAttribute("role", "img");
+  svg.setAttribute("aria-label", "Diagram chwytu akordu " + chord.name);
+
+  const left = 35;
+  const right = 155;
+  const top = 35;
+  const bottom = 135;
+  const stringGap = 24;
+  const fretGap = 25;
+
+  function addLine(x1, y1, x2, y2, width, color) {
+    const line = document.createElementNS(ns, "line");
+    line.setAttribute("x1", x1);
+    line.setAttribute("y1", y1);
+    line.setAttribute("x2", x2);
+    line.setAttribute("y2", y2);
+    line.setAttribute("stroke", color);
+    line.setAttribute("stroke-width", width);
+    svg.appendChild(line);
+  }
+
+  function addText(x, y, content, color, size, weight) {
+    const text = document.createElementNS(ns, "text");
+    text.setAttribute("x", x);
+    text.setAttribute("y", y);
+    text.setAttribute("fill", color);
+    text.setAttribute("font-size", size);
+    text.setAttribute("font-weight", weight || "bold");
+    text.setAttribute("text-anchor", "middle");
+    text.textContent = content;
+    svg.appendChild(text);
+  }
+
+  /* Struny */
+  for (let i = 0; i < 6; i++) {
+    const x = left + i * stringGap;
+    addLine(x, top, x, bottom, i === 0 || i === 5 ? 2.2 : 1.3, "#ddd");
+    addText(x, 19, chord.strings[i] === "X" ? "X" : chord.strings[i] === "0" ? "O" : "", "#ffb3b3", 13);
+  }
+
+  /* Progi */
+  for (let fret = 0; fret <= 4; fret++) {
+    const y = top + fret * fretGap;
+    addLine(left, y, right, y, fret === 0 ? 4 : 1.5, fret === 0 ? "#fff" : "#aaa");
+  }
+
+  /* Palce */
+  chord.fingers.forEach(([stringIndex, fret, finger]) => {
+    const x = left + stringIndex * stringGap;
+    const y = top + (fret - 0.5) * fretGap;
+
+    const circle = document.createElementNS(ns, "circle");
+    circle.setAttribute("cx", x);
+    circle.setAttribute("cy", y);
+    circle.setAttribute("r", 9);
+    circle.setAttribute("fill", "#c00000");
+    circle.setAttribute("stroke", "#ff7777");
+    circle.setAttribute("stroke-width", 1.2);
+    svg.appendChild(circle);
+
+    addText(x, y + 4, String(finger), "#fff", 10);
+  });
+
+  return svg;
+}
+
+function renderChords(filter = "all") {
+  chordsGrid.innerHTML = "";
+
+  chordData
+    .filter(chord => filter === "all" || chord.type === filter)
+    .forEach(chord => {
+      const card = document.createElement("article");
+      card.className = "chord-card";
+
+      const heading = document.createElement("h3");
+      heading.textContent = chord.name;
+
+      const type = document.createElement("p");
+      type.className = "chord-type";
+      type.textContent = chord.typeName;
+
+      const diagram = createChordDiagram(chord);
+
+      const description = document.createElement("p");
+      description.className = "chord-description";
+      description.textContent = chord.description;
+
+      card.append(heading, type, diagram, description);
+      chordsGrid.appendChild(card);
+    });
+}
+
+document.querySelectorAll(".chord-filter").forEach(button => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll(".chord-filter").forEach(item => item.classList.remove("active"));
+    button.classList.add("active");
+    renderChords(button.dataset.chordFilter);
+  });
+});
+
+renderChords();
 
 /* STROIK GITAROWY – POPRAWIONE WYKRYWANIE DŹWIĘKU */
 const tunerStart = document.getElementById("tuner-start");
@@ -1119,28 +1304,21 @@ const guitarStrings = [
 ];
 
 function frequencyToNote(frequency) {
-  const noteNames = [
-    "C", "C#", "D", "D#", "E", "F",
-    "F#", "G", "G#", "A", "A#", "B"
-  ];
-
+  const noteNames = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
   const midi = Math.round(69 + 12 * Math.log2(frequency / 440));
   const note = noteNames[(midi % 12 + 12) % 12];
   const octave = Math.floor(midi / 12) - 1;
   const exactFrequency = 440 * Math.pow(2, (midi - 69) / 12);
   const cents = 1200 * Math.log2(frequency / exactFrequency);
-
   return { note, octave, cents, midi };
 }
 
 function detectPitch(buffer, sampleRate) {
   const size = buffer.length;
   const analysisSize = Math.min(4096, size);
-
   let mean = 0;
-  for (let i = 0; i < analysisSize; i++) {
-    mean += buffer[i];
-  }
+
+  for (let i = 0; i < analysisSize; i++) mean += buffer[i];
   mean /= analysisSize;
 
   let squareSum = 0;
@@ -1150,17 +1328,12 @@ function detectPitch(buffer, sampleRate) {
   }
 
   const rms = Math.sqrt(squareSum / analysisSize);
-
   if (rms < 0.0018) return null;
 
   const minFrequency = 65;
   const maxFrequency = 400;
   const minLag = Math.max(2, Math.floor(sampleRate / maxFrequency));
-  const maxLag = Math.min(
-    Math.floor(sampleRate / minFrequency),
-    size - analysisSize - 1
-  );
-
+  const maxLag = Math.min(Math.floor(sampleRate / minFrequency), size - analysisSize - 1);
   if (maxLag <= minLag) return null;
 
   const differences = new Float32Array(maxLag + 1);
@@ -1168,14 +1341,12 @@ function detectPitch(buffer, sampleRate) {
 
   for (let lag = 1; lag <= maxLag; lag++) {
     let sum = 0;
-
     for (let i = 0; i < analysisSize; i++) {
       const a = buffer[i] - mean;
       const b = buffer[i + lag] - mean;
       const delta = a - b;
       sum += delta * delta;
     }
-
     differences[lag] = sum;
   }
 
@@ -1184,41 +1355,28 @@ function detectPitch(buffer, sampleRate) {
 
   for (let lag = 1; lag <= maxLag; lag++) {
     runningSum += differences[lag];
-    normalized[lag] = runningSum > 0
-      ? differences[lag] * lag / runningSum
-      : 1;
+    normalized[lag] = runningSum > 0 ? differences[lag] * lag / runningSum : 1;
   }
 
   const threshold = 0.22;
   let bestLag = -1;
 
   for (let lag = minLag; lag < maxLag; lag++) {
-    if (
-      normalized[lag] < threshold &&
-      normalized[lag] <= normalized[lag + 1]
-    ) {
+    if (normalized[lag] < threshold && normalized[lag] <= normalized[lag + 1]) {
       bestLag = lag;
-
-      while (
-        bestLag + 1 < maxLag &&
-        normalized[bestLag + 1] < normalized[bestLag]
-      ) {
-        bestLag++;
-      }
+      while (bestLag + 1 < maxLag && normalized[bestLag + 1] < normalized[bestLag]) bestLag++;
       break;
     }
   }
 
   if (bestLag === -1) {
     let lowestValue = Infinity;
-
     for (let lag = minLag; lag <= maxLag; lag++) {
       if (normalized[lag] < lowestValue) {
         lowestValue = normalized[lag];
         bestLag = lag;
       }
     }
-
     if (bestLag === -1 || lowestValue > 0.38) return null;
   }
 
@@ -1226,8 +1384,8 @@ function detectPitch(buffer, sampleRate) {
   const center = normalized[bestLag];
   const right = normalized[Math.min(maxLag, bestLag + 1)];
   const denominator = left - 2 * center + right;
-
   let shift = 0;
+
   if (Math.abs(denominator) > 0.000001) {
     shift = 0.5 * (left - right) / denominator;
     shift = Math.max(-1, Math.min(1, shift));
@@ -1236,14 +1394,7 @@ function detectPitch(buffer, sampleRate) {
   const refinedLag = bestLag + shift;
   const frequency = sampleRate / refinedLag;
 
-  if (
-    !Number.isFinite(frequency) ||
-    frequency < minFrequency ||
-    frequency > maxFrequency
-  ) {
-    return null;
-  }
-
+  if (!Number.isFinite(frequency) || frequency < minFrequency || frequency > maxFrequency) return null;
   return frequency;
 }
 
@@ -1254,7 +1405,6 @@ function median(values) {
 
 function updateTuner() {
   if (!analyser || !audioContext || !tunerBuffer) return;
-
   tunerAnimation = requestAnimationFrame(updateTuner);
 
   const now = performance.now();
@@ -1266,7 +1416,6 @@ function updateTuner() {
 
   if (frequency !== null) {
     noSignalSince = 0;
-
     pitchHistory.push(frequency);
     if (pitchHistory.length > 5) pitchHistory.shift();
 
@@ -1275,9 +1424,7 @@ function updateTuner() {
     const cents = result.cents;
 
     tunerNote.textContent = result.note + result.octave;
-    tunerFrequency.textContent =
-      "Częstotliwość: " + stableFrequency.toFixed(1) + " Hz";
-
+    tunerFrequency.textContent = "Częstotliwość: " + stableFrequency.toFixed(1) + " Hz";
     const pointerPosition = Math.max(5, Math.min(95, 50 + cents));
     tunerPointer.style.left = pointerPosition + "%";
 
@@ -1296,7 +1443,6 @@ function updateTuner() {
     }
   } else {
     if (!noSignalSince) noSignalSince = now;
-
     if (now - noSignalSince > 300) {
       pitchHistory = [];
       tunerNote.textContent = "--";
@@ -1313,8 +1459,7 @@ async function startTuner() {
   if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
     tunerStatus.textContent = "Mikrofon niedostępny w tej przeglądarce.";
     tunerStatus.style.color = "#ff4545";
-    tunerHelp.textContent =
-      "Otwórz stronę przez HTTPS lub localhost i użyj aktualnej przeglądarki.";
+    tunerHelp.textContent = "Otwórz stronę przez HTTPS lub localhost i użyj aktualnej przeglądarki.";
     return;
   }
 
@@ -1328,15 +1473,11 @@ async function startTuner() {
       }
     });
 
-    audioContext = new (
-      window.AudioContext || window.webkitAudioContext
-    )({ latencyHint: "interactive" });
-
+    audioContext = new (window.AudioContext || window.webkitAudioContext)({ latencyHint: "interactive" });
     await audioContext.resume();
 
     microphone = audioContext.createMediaStreamSource(audioStream);
     analyser = audioContext.createAnalyser();
-
     analyser.fftSize = 8192;
     analyser.smoothingTimeConstant = 0;
     analyser.minDecibels = -100;
@@ -1344,7 +1485,6 @@ async function startTuner() {
 
     tunerBuffer = new Float32Array(analyser.fftSize);
     microphone.connect(analyser);
-
     lastTunerUpdate = 0;
     pitchHistory = [];
     noSignalSince = 0;
@@ -1354,29 +1494,23 @@ async function startTuner() {
     tunerStart.textContent = "STROIK URUCHOMIONY";
     tunerStatus.textContent = "Zagraj pojedynczą strunę...";
     tunerStatus.style.color = "#ffad32";
-    tunerHelp.textContent =
-      "Zagraj jedną strunę, nawet delikatnie, i pozwól jej wybrzmieć. Stroik analizuje dźwięk na bieżąco.";
-
+    tunerHelp.textContent = "Zagraj jedną strunę, nawet delikatnie, i pozwól jej wybrzmieć. Stroik analizuje dźwięk na bieżąco.";
     updateTuner();
   } catch (error) {
     if (audioStream) {
       audioStream.getTracks().forEach(track => track.stop());
       audioStream = null;
     }
-
     if (audioContext) {
       audioContext.close();
       audioContext = null;
     }
-
     analyser = null;
     microphone = null;
     tunerBuffer = null;
-
     tunerStatus.textContent = "Nie udało się uruchomić mikrofonu.";
     tunerStatus.style.color = "#ff4545";
-    tunerHelp.textContent =
-      "Sprawdź, czy zezwoliłeś na dostęp do mikrofonu w przeglądarce.";
+    tunerHelp.textContent = "Sprawdź, czy zezwoliłeś na dostęp do mikrofonu w przeglądarce.";
   }
 }
 
@@ -1385,12 +1519,10 @@ function stopTuner() {
     cancelAnimationFrame(tunerAnimation);
     tunerAnimation = null;
   }
-
   if (audioStream) {
     audioStream.getTracks().forEach(track => track.stop());
     audioStream = null;
   }
-
   if (audioContext) {
     audioContext.close();
     audioContext = null;
@@ -1401,7 +1533,6 @@ function stopTuner() {
   tunerBuffer = null;
   pitchHistory = [];
   noSignalSince = 0;
-
   tunerStart.disabled = false;
   tunerStop.disabled = true;
   tunerStart.textContent = " URUCHOM STROIK";
@@ -1424,7 +1555,6 @@ const challengeDoneButtons = document.querySelectorAll(".challenge-done");
 function updateChallengeCounter() {
   const completed = document.querySelectorAll(".challenge-card.completed").length;
   challengeCounter.textContent = "Wykonane wyzwania: " + completed + " / " + challengeCards.length;
-
   if (completed === challengeCards.length) {
     challengeCounter.textContent += " GRATULACJE! WSZYSTKIE WYZWANIA UKOŃCZONE!";
   }
@@ -1434,7 +1564,6 @@ challengeDoneButtons.forEach(button => {
   button.addEventListener("click", () => {
     const card = button.closest(".challenge-card");
     const completed = card.classList.toggle("completed");
-
     button.textContent = completed ? "WYKONANE ✓" : "ZROBIONE ✓";
     updateChallengeCounter();
   });
@@ -1455,8 +1584,7 @@ const randomChallenges = [
 
 document.getElementById("random-challenge-button").addEventListener("click", () => {
   const randomIndex = Math.floor(Math.random() * randomChallenges.length);
-  document.getElementById("random-challenge").textContent =
-    " " + randomChallenges[randomIndex];
+  document.getElementById("random-challenge").textContent = " " + randomChallenges[randomIndex];
 });
 
 /* METRONOM — działa podczas przewijania i korzystania z sekcji strony */
@@ -1491,9 +1619,7 @@ document.getElementById("random-challenge-button").addEventListener("click", () 
 
   function flashBeat(currentBeat) {
     beatLights.forEach((light, index) => light.classList.toggle("active", index === currentBeat));
-    window.setTimeout(() => {
-      beatLights[currentBeat].classList.remove("active");
-    }, 110);
+    window.setTimeout(() => beatLights[currentBeat].classList.remove("active"), 110);
   }
 
   function clickSound(currentBeat) {
@@ -1531,6 +1657,7 @@ document.getElementById("random-challenge-button").addEventListener("click", () 
     try {
       if (!audioContext || audioContext.state === "closed") audioContext = new AudioContextClass();
       if (audioContext.state === "suspended") await audioContext.resume();
+
       if (isRunning) {
         window.clearInterval(timer);
         timer = null;
@@ -1540,6 +1667,7 @@ document.getElementById("random-challenge-button").addEventListener("click", () 
         beatLights.forEach(light => light.classList.remove("active"));
         return;
       }
+
       isRunning = true;
       beat = 0;
       tick();
@@ -1597,12 +1725,9 @@ for (let i = 0; i < 65; i++) {
 
 function animateSparks() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-
   sparks.forEach(s => {
     s.alpha += s.speed;
-
     if (s.alpha > 1 || s.alpha < 0) s.speed *= -1;
-
     ctx.beginPath();
     ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
     ctx.fillStyle = `rgba(255, 45, 20, ${Math.max(0, s.alpha) * 0.55})`;
@@ -1610,7 +1735,6 @@ function animateSparks() {
     ctx.shadowColor = "red";
     ctx.fill();
   });
-
   requestAnimationFrame(animateSparks);
 }
 
