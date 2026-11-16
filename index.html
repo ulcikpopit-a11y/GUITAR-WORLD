@@ -18,26 +18,6 @@
 <meta property="og:url" content="https://ulcikpopit-a11y.github.io/GUITAR-WORLD/">
 <meta property="og:locale" content="pl_PL">
 
-<!-- DODATKOWE DANE SEO -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Guitar World – Tabulatury, riffy i nauka gry na gitarze">
-<meta name="twitter:description" content="Darmowe tabulatury gitarowe, riffy rockowe i metalowe, stroik online oraz poradnik gry na gitarze dla początkujących.">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Guitar World",
-  "url": "https://ulcikpopit-a11y.github.io/GUITAR-WORLD/",
-  "description": "Darmowe tabulatury gitarowe, riffy rockowe i metalowe, stroik gitarowy online oraz poradnik nauki gry na gitarze.",
-  "inLanguage": "pl-PL",
-  "about": {
-    "@type": "Thing",
-    "name": "Gra na gitarze, tabulatury i riffy gitarowe"
-  }
-}
-</script>
-
 <style>
 * { box-sizing: border-box; }
 
@@ -576,6 +556,52 @@ img { max-width: 90%; height: auto; }
 }
 
 .challenge-random h3 { color: #ff4444; }
+/* METRONOM GUITAR WORLD */
+.metronome-box {
+  max-width: 650px;
+  margin: 25px auto;
+  padding: 28px 20px;
+  background: rgba(20, 20, 20, 0.94);
+  border: 2px solid #b00000;
+  border-radius: 15px;
+  box-shadow: 0 0 18px rgba(176, 0, 0, 0.25);
+}
+
+.metronome-box h2 { margin-top: 0; color: #ff3333; }
+.metronome-display {
+  margin: 18px auto;
+  color: white;
+  font-size: 54px;
+  font-weight: bold;
+  text-shadow: 0 0 12px red;
+}
+.metronome-display small { display: block; font-size: 15px; color: #ffb3b3; text-shadow: none; }
+.metronome-range { width: min(420px, 90%); accent-color: #d00000; cursor: pointer; }
+.metronome-bpm-row { display: flex; justify-content: center; align-items: center; gap: 12px; flex-wrap: wrap; }
+.metronome-bpm-input {
+  width: 90px; padding: 10px; color: white; background: #111;
+  border: 2px solid #8b0000; border-radius: 8px; font-size: 18px; text-align: center;
+}
+.metronome-beats { display: flex; justify-content: center; gap: 13px; margin: 22px 0; }
+.metronome-beat {
+  width: 22px; height: 22px; border-radius: 50%; background: #4a1717;
+  border: 2px solid #a00000; transition: transform 0.08s, background 0.08s, box-shadow 0.08s;
+}
+.metronome-beat.active { background: #ff2424; box-shadow: 0 0 18px #ff1717; transform: scale(1.35); }
+.metronome-beat:first-child.active { background: #ffd0d0; box-shadow: 0 0 22px #ff3333; transform: scale(1.6); }
+.metronome-controls { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+.metronome-button {
+  padding: 12px 22px; background: #a00000; color: white; border: 2px solid #d00000;
+  border-radius: 9px; font-size: 15px; font-weight: bold; cursor: pointer;
+}
+.metronome-button:hover { background: #d00000; }
+.metronome-button:disabled { opacity: 0.55; cursor: not-allowed; }
+.metronome-button.shutdown { background: #222; border-color: #777; }
+.metronome-status { min-height: 24px; color: #ffb3b3; font-weight: bold; }
+@media (max-width: 600px) {
+  .metronome-display { font-size: 46px; }
+  .metronome-box { padding: 22px 12px; }
+}
 
 @media (max-width: 700px) {
   .challenge-grid { grid-template-columns: 1fr; }
@@ -629,6 +655,7 @@ img { max-width: 90%; height: auto; }
   <a href="#riffy">RIFFY</a>
   <a href="#jak-grac">JAK GRAĆ?</a>
   <a href="#stroik">STROIK</a>
+  <a href="#metronom">METRONOM</a>
   <a href="#wyzwania">WYZWANIA</a>
 
   <button class="vibe-button" onclick="changeVibe()">
@@ -811,6 +838,38 @@ E|-0----6-5--------------------
       i poczekaj na odczyt. Zielony kolor oznacza, że dźwięk jest
       nastrojony. Stroik rozpoznaje dźwięki w standardowym zakresie gitary.
     </p>
+  </div>
+</section>
+
+<!-- METRONOM -->
+<section id="metronom">
+  <div class="metronome-box">
+    <h2>METRONOM GITAROWY</h2>
+    <p>Ustaw tempo i ćwicz równo w rytmie 4/4.</p>
+
+    <div class="metronome-display" id="metronome-value">100 BPM
+      <small>uderzeń na minutę</small>
+    </div>
+
+    <div class="metronome-bpm-row">
+      <label for="metronome-range">TEMPO</label>
+      <input class="metronome-range" id="metronome-range" type="range" min="40" max="240" value="100">
+      <input class="metronome-bpm-input" id="metronome-number" type="number" min="40" max="240" value="100" aria-label="Tempo w BPM">
+    </div>
+
+    <div class="metronome-beats" aria-label="Cztery uderzenia na takt">
+      <span class="metronome-beat" id="metronome-beat-0"></span>
+      <span class="metronome-beat" id="metronome-beat-1"></span>
+      <span class="metronome-beat" id="metronome-beat-2"></span>
+      <span class="metronome-beat" id="metronome-beat-3"></span>
+    </div>
+
+    <div class="metronome-controls">
+      <button class="metronome-button" id="metronome-toggle" type="button">START</button>
+      <button class="metronome-button shutdown" id="metronome-off" type="button">WYŁĄCZ</button>
+    </div>
+    <p class="metronome-status" id="metronome-status" aria-live="polite">Metronom jest wyłączony.</p>
+    <p><small>Pierwsze uderzenie w takcie jest mocniejsze, kolejne trzy cichsze.</small></p>
   </div>
 </section>
 
@@ -1092,7 +1151,6 @@ function detectPitch(buffer, sampleRate) {
 
   const rms = Math.sqrt(squareSum / analysisSize);
 
-  // Niższy próg wykrywa cichsze szarpnięcia strun.
   if (rms < 0.0018) return null;
 
   const minFrequency = 65;
@@ -1400,6 +1458,119 @@ document.getElementById("random-challenge-button").addEventListener("click", () 
   document.getElementById("random-challenge").textContent =
     " " + randomChallenges[randomIndex];
 });
+
+/* METRONOM — działa podczas przewijania i korzystania z sekcji strony */
+(() => {
+  const range = document.getElementById("metronome-range");
+  const number = document.getElementById("metronome-number");
+  const value = document.getElementById("metronome-value");
+  const toggle = document.getElementById("metronome-toggle");
+  const off = document.getElementById("metronome-off");
+  const status = document.getElementById("metronome-status");
+  const beatLights = [0, 1, 2, 3].map(i => document.getElementById(`metronome-beat-${i}`));
+
+  let bpm = 100;
+  let beat = 0;
+  let timer = null;
+  let audioContext = null;
+  let isRunning = false;
+
+  function showTempo() {
+    value.innerHTML = `${bpm} BPM<small>uderzeń na minutę</small>`;
+  }
+
+  function setTempo(raw) {
+    const parsed = Number(raw);
+    if (!Number.isFinite(parsed)) return;
+    bpm = Math.max(40, Math.min(240, Math.round(parsed)));
+    range.value = bpm;
+    number.value = bpm;
+    showTempo();
+    if (isRunning) restartClock();
+  }
+
+  function flashBeat(currentBeat) {
+    beatLights.forEach((light, index) => light.classList.toggle("active", index === currentBeat));
+    window.setTimeout(() => {
+      beatLights[currentBeat].classList.remove("active");
+    }, 110);
+  }
+
+  function clickSound(currentBeat) {
+    if (!audioContext || audioContext.state !== "running") return;
+    const oscillator = audioContext.createOscillator();
+    const gain = audioContext.createGain();
+    const strong = currentBeat === 0;
+    oscillator.type = "sine";
+    oscillator.frequency.setValueAtTime(strong ? 1250 : 850, audioContext.currentTime);
+    gain.gain.setValueAtTime(strong ? 0.34 : 0.16, audioContext.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.075);
+    oscillator.connect(gain);
+    gain.connect(audioContext.destination);
+    oscillator.start();
+    oscillator.stop(audioContext.currentTime + 0.08);
+  }
+
+  function tick() {
+    flashBeat(beat);
+    clickSound(beat);
+    beat = (beat + 1) % 4;
+  }
+
+  function restartClock() {
+    if (timer !== null) window.clearInterval(timer);
+    timer = window.setInterval(tick, 60000 / bpm);
+  }
+
+  async function startMetronome() {
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContextClass) {
+      status.textContent = "Ta przeglądarka nie obsługuje dźwięku metronomu.";
+      return;
+    }
+    try {
+      if (!audioContext || audioContext.state === "closed") audioContext = new AudioContextClass();
+      if (audioContext.state === "suspended") await audioContext.resume();
+      if (isRunning) {
+        window.clearInterval(timer);
+        timer = null;
+        isRunning = false;
+        toggle.textContent = "START";
+        status.textContent = "Metronom wstrzymany. Kliknij START, aby wznowić.";
+        beatLights.forEach(light => light.classList.remove("active"));
+        return;
+      }
+      isRunning = true;
+      beat = 0;
+      tick();
+      restartClock();
+      toggle.textContent = "STOP";
+      status.textContent = "Metronom działa — możesz przeglądać pozostałe sekcje.";
+    } catch (error) {
+      status.textContent = "Nie udało się uruchomić dźwięku. Spróbuj ponownie.";
+    }
+  }
+
+  async function turnOff() {
+    if (timer !== null) window.clearInterval(timer);
+    timer = null;
+    isRunning = false;
+    beat = 0;
+    toggle.textContent = "START";
+    beatLights.forEach(light => light.classList.remove("active"));
+    if (audioContext && audioContext.state !== "closed") {
+      await audioContext.close();
+      audioContext = null;
+    }
+    status.textContent = "Metronom jest wyłączony.";
+  }
+
+  range.addEventListener("input", () => setTempo(range.value));
+  number.addEventListener("change", () => setTempo(number.value));
+  toggle.addEventListener("click", startMetronome);
+  off.addEventListener("click", turnOff);
+  showTempo();
+})();
 
 /* EFEKT ISKIER */
 const canvas = document.getElementById("sparkCanvas");
