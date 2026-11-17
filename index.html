@@ -241,63 +241,45 @@ section img {
 }
 
 .search-input {
-  width: 100%;
+  width: 90%;
   max-width: 550px;
-  padding: 15px;
-  border: 2px solid #8b0000;
-  border-radius: 10px;
+  padding: 14px;
+  border-radius: 8px;
+  border: 2px solid #b00000;
   background: #111;
   color: white;
   font-size: 16px;
-  outline: none;
 }
-
-.search-input:focus {
-  border-color: #ff3333;
-  box-shadow: 0 0 10px rgba(255,0,0,0.4);
-}
-
-.search-input::placeholder { color: #aaa; }
-#search-results { margin-top: 20px; }
 
 .search-result {
-  background: #181818;
-  border: 1px solid #8b0000;
-  border-radius: 10px;
+  max-width: 550px;
+  margin: 15px auto;
   padding: 15px;
-  margin: 12px auto;
-  max-width: 600px;
+  background: #222;
+  border: 1px solid #900;
+  border-radius: 10px;
 }
-
-.search-result h3 { color: #ff4444; margin-top: 0; }
-.search-result p { margin: 9px 0; font-size: 14px; }
 
 .search-result button {
-  margin-top: 10px;
   padding: 10px 18px;
   background: #a00000;
+  border: 1px solid red;
   color: white;
-  border: 1px solid #e00000;
-  border-radius: 8px;
-  font-weight: bold;
+  border-radius: 7px;
   cursor: pointer;
+  font-weight: bold;
 }
 
-.search-result button:hover { background: #d00000; }
-.no-results { color: #ff7777; font-weight: bold; padding: 15px; }
+.no-results { color: #ff9999; }
 
 .filter-box {
   max-width: 850px;
   margin: 25px auto;
-  padding: 22px 15px;
-  background: rgba(30, 30, 30, 0.9);
-  border: 2px solid #b00000;
-  border-radius: 15px;
-  position: relative;
-  z-index: 4;
+  padding: 20px;
+  background: rgba(25, 25, 25, 0.9);
+  border: 2px solid #900;
+  border-radius: 12px;
 }
-
-.filter-box h3 { margin-top: 0; color: white; }
 
 .filter-buttons {
   display: flex;
@@ -307,281 +289,69 @@ section img {
 }
 
 .filter-button {
-  padding: 11px 17px;
-  border: 2px solid #555;
-  border-radius: 9px;
-  background: #222;
-  color: white;
-  font-weight: bold;
-  font-size: 14px;
-  cursor: pointer;
-  transition: 0.2s ease;
-}
-
-.filter-button:hover { background: #444; }
-
-.filter-button.active {
-  border-color: white;
-  background: #444;
-  box-shadow: 0 0 10px rgba(255,255,255,0.3);
-}
-
-.filter-button.easy-filter { color: #39cf69; }
-.filter-button.medium-filter { color: #ffad32; }
-.filter-button.hard-filter { color: #ff4545; }
-
-.difficulty-item.hidden { display: none; }
-
-#filter-info {
-  margin: 15px 0 0;
-  color: #ffb3b3;
-  font-size: 14px;
-}
-
-#sparkCanvas {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.corner-smoke {
-  position: fixed;
-  bottom: -35px;
-  left: -45px;
-  width: 190px;
-  height: 190px;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.22;
-  filter: blur(18px);
-  background: radial-gradient(ellipse at 40% 70%, rgba(180,180,180,0.7), rgba(100,100,100,0.25) 45%, transparent 75%);
-  animation: smokeRise 7s ease-in-out infinite;
-}
-
-@keyframes smokeRise {
-  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.15; }
-  50% { transform: translate(12px, -35px) scale(1.25); opacity: 0.3; }
-}
-
-img { max-width: 90%; height: auto; }
-
-/* STROIK */
-.tuner-box, .challenge-box {
-  max-width: 850px;
-  margin: 25px auto;
-  padding: 28px 18px;
-  background: rgba(20, 20, 20, 0.94);
-  border: 2px solid #b00000;
-  border-radius: 16px;
-  box-shadow: 0 0 18px rgba(150,0,0,0.25);
-}
-
-.tuner-box h2, .challenge-box h2 { color: white; }
-
-.tuner-note {
-  font-size: 65px;
-  font-weight: bold;
-  color: #ff3333;
-  margin: 15px 0 5px;
-  text-shadow: 0 0 15px rgba(255,0,0,0.5);
-}
-
-.tuner-frequency {
-  color: #bbb;
-  font-size: 15px;
-  margin: 5px;
-}
-
-.tuner-meter {
-  width: 100%;
-  max-width: 430px;
-  height: 14px;
-  background: #333;
-  border-radius: 20px;
-  margin: 25px auto 12px;
-  position: relative;
-  overflow: hidden;
-  border: 1px solid #666;
-}
-
-.tuner-meter-center {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  height: 100%;
-  width: 3px;
-  background: white;
-  z-index: 2;
-}
-
-.tuner-meter-pointer {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  height: 100%;
-  width: 7px;
-  background: #ff3333;
-  border-radius: 5px;
-  transform: translateX(-50%);
-  transition: left 0.12s linear, background 0.12s linear;
-}
-
-.tuner-status {
-  font-size: 20px;
-  font-weight: bold;
-  min-height: 28px;
-  color: #ffad32;
-}
-
-.tuner-button, .challenge-button {
-  padding: 13px 22px;
-  background: #a00000;
-  color: white;
-  border: 2px solid #e00000;
-  border-radius: 10px;
-  font-size: 15px;
-  font-weight: bold;
-  cursor: pointer;
-  margin: 8px;
-  transition: 0.2s;
-}
-
-.tuner-button:hover, .challenge-button:hover { background: #d00000; }
-.tuner-button.stop { background: #333; border-color: #777; }
-
-.string-list {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 9px;
-  margin: 20px 0;
-}
-
-.string-pill {
-  background: #292929;
-  border: 1px solid #8b0000;
-  padding: 9px 13px;
-  border-radius: 9px;
-  color: #ffb3b3;
-  font-weight: bold;
-}
-
-.tuner-help {
-  color: #bbb;
-  font-size: 13px;
-  line-height: 1.6;
-  max-width: 600px;
-  margin: 18px auto 0;
-}
-
-/* WYZWANIA */
-.challenge-intro {
-  color: #ccc;
-  line-height: 1.6;
-}
-
-.challenge-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 13px;
-  margin-top: 22px;
-}
-
-.challenge-card {
-  background: #222;
-  border: 1px solid #6b0000;
-  border-radius: 12px;
-  padding: 18px 12px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 210px;
-}
-
-.challenge-card h3 { margin-top: 0; }
-.challenge-card p { line-height: 1.5; }
-.challenge-card.easy-card { border-top: 4px solid #39cf69; }
-.challenge-card.medium-card { border-top: 4px solid #ffad32; }
-.challenge-card.hard-card { border-top: 4px solid #ff4545; }
-.challenge-card.completed { opacity: 0.65; border-color: #39cf69; }
-.challenge-card.completed .challenge-done { background: #176b32; border-color: #39cf69; }
-
-.challenge-done {
-  padding: 10px;
-  background: #a00000;
-  color: white;
-  border: 1px solid #e00000;
+  padding: 11px 18px;
+  border: 2px solid #900;
   border-radius: 8px;
+  background: #222;
+  color: white;
   font-weight: bold;
   cursor: pointer;
 }
 
-.challenge-counter {
-  color: #ffb3b3;
-  margin-top: 20px;
-  font-weight: bold;
+.filter-button.active,
+.filter-button:hover {
+  background: #a00000;
 }
 
-.challenge-random {
-  background: #171717;
-  border: 2px dashed #b00000;
+.easy-filter { border-color: #39cf69; }
+.medium-filter { border-color: #ffad32; }
+.hard-filter { border-color: #ff4545; }
+
+.hidden { display: none !important; }
+
+.difficulty-item {
+  max-width: 900px;
+  margin: 35px auto;
+  padding: 25px;
+  background: rgba(25, 25, 25, 0.88);
+  border: 2px solid #900;
   border-radius: 12px;
-  padding: 18px;
-  margin: 20px auto;
-  max-width: 650px;
 }
 
-.challenge-random h3 { color: #ff4444; }
+.difficulty-item img {
+  max-width: 95%;
+  height: auto;
+}
 
-/* METRONOM GUITAR WORLD */
-.metronome-box {
-  max-width: 650px;
-  margin: 25px auto;
-  padding: 28px 20px;
-  background: rgba(20, 20, 20, 0.94);
-  border: 2px solid #b00000;
+.riff {
+  max-width: 950px;
+  margin: 35px auto;
+  padding: 25px;
+  background: rgba(25, 25, 25, 0.9);
+  border: 2px solid #900;
+  border-radius: 12px;
+}
+
+.chords-library,
+.tuner-box,
+.metronome-box,
+.challenge-box,
+.practice-timer-box,
+.guitar-notebook-box {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  background: rgba(25, 25, 25, 0.94);
+  border: 2px solid #a00000;
   border-radius: 15px;
-  box-shadow: 0 0 18px rgba(176, 0, 0, 0.25);
+  box-shadow: 0 0 20px rgba(180, 0, 0, 0.18);
 }
-
-.metronome-box h2 { margin-top: 0; color: #ff3333; }
-.metronome-display { margin: 18px auto; color: white; font-size: 54px; font-weight: bold; text-shadow: 0 0 12px red; }
-.metronome-display small { display: block; font-size: 15px; color: #ffb3b3; text-shadow: none; }
-.metronome-range { width: min(420px, 90%); accent-color: #d00000; cursor: pointer; }
-.metronome-bpm-row { display: flex; justify-content: center; align-items: center; gap: 12px; flex-wrap: wrap; }
-.metronome-bpm-input { width: 90px; padding: 10px; color: white; background: #111; border: 2px solid #8b0000; border-radius: 8px; font-size: 18px; text-align: center; }
-.metronome-beats { display: flex; justify-content: center; gap: 13px; margin: 22px 0; }
-.metronome-beat { width: 22px; height: 22px; border-radius: 50%; background: #4a1717; border: 2px solid #a00000; transition: transform 0.08s, background 0.08s, box-shadow 0.08s; }
-.metronome-beat.active { background: #ff2424; box-shadow: 0 0 18px #ff1717; transform: scale(1.35); }
-.metronome-beat:first-child.active { background: #ffd0d0; box-shadow: 0 0 22px #ff3333; transform: scale(1.6); }
-.metronome-controls { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
-.metronome-button { padding: 12px 22px; background: #a00000; color: white; border: 2px solid #d00000; border-radius: 9px; font-size: 15px; font-weight: bold; cursor: pointer; }
-.metronome-button:hover { background: #d00000; }
-.metronome-button:disabled { opacity: 0.55; cursor: not-allowed; }
-.metronome-button.shutdown { background: #222; border-color: #777; }
-.metronome-status { min-height: 24px; color: #ffb3b3; font-weight: bold; }
-
-/* BIBLIOTEKA AKORDÓW */
-.chords-library {
-  max-width: 1100px;
-  margin: 25px auto;
-  padding: 28px 18px;
-  background: rgba(20, 20, 20, 0.94);
-  border: 2px solid #b00000;
-  border-radius: 16px;
-  box-shadow: 0 0 18px rgba(150,0,0,0.25);
-}
-
-.chords-library > h2 { color: #ff3333; margin-top: 0; }
 
 .chords-intro {
-  color: #ccc;
-  line-height: 1.6;
   max-width: 700px;
-  margin: 10px auto 22px;
+  margin: 15px auto 25px;
+  line-height: 1.6;
+  color: #ddd;
 }
 
 .chord-filters {
@@ -589,100 +359,576 @@ img { max-width: 90%; height: auto; }
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
-  margin: 20px 0 25px;
+  margin: 20px 0 30px;
 }
 
 .chord-filter {
-  padding: 11px 18px;
+  padding: 10px 20px;
   background: #222;
   color: white;
-  border: 2px solid #666;
-  border-radius: 9px;
+  border: 2px solid #900;
+  border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
 }
 
-.chord-filter:hover,
-.chord-filter.active {
-  background: #8b0000;
-  border-color: #ff3333;
-}
+.chord-filter.active,
+.chord-filter:hover { background: #a00000; }
 
 .chords-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
 }
 
 .chord-card {
-  background: #1b1b1b;
-  border: 1px solid #700000;
-  border-radius: 13px;
-  padding: 18px 10px;
-  min-width: 0;
+  padding: 18px 12px;
+  background: #111;
+  border: 1px solid #900;
+  border-radius: 12px;
 }
 
 .chord-card h3 {
-  color: #ff4444;
+  margin: 0;
   font-size: 27px;
-  margin: 0 0 5px;
+  color: #ff4444;
 }
 
 .chord-type {
   color: #bbb;
   font-size: 13px;
-  margin: 0 0 12px;
+  margin: 5px 0;
 }
 
 .chord-diagram {
+  display: block;
   width: 190px;
   max-width: 100%;
-  height: 185px;
-  display: block;
-  margin: 0 auto;
+  height: auto;
+  margin: 8px auto;
 }
 
 .chord-description {
-  color: #ccc;
+  min-height: 40px;
+  color: #ddd;
   font-size: 13px;
   line-height: 1.5;
-  margin: 10px auto 0;
 }
 
 .chord-legend {
-  margin: 25px auto 0;
+  margin: 30px auto 0;
+  padding: 20px;
   max-width: 750px;
-  padding: 17px;
   background: #111;
-  border: 1px solid #700000;
-  border-radius: 12px;
+  border: 1px solid #700;
+  border-radius: 10px;
+  line-height: 1.9;
   color: #ddd;
-  line-height: 1.8;
 }
 
-.chord-legend h3 { color: #ff4444; margin-top: 0; }
-.chord-legend strong { color: white; }
-.chord-card.chord-hidden { display: none; }
+.chord-legend h3 { color: #ff4444; }
 
-@media (max-width: 800px) {
-  .chords-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.tuner-box { max-width: 750px; }
+
+.string-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 9px;
+  margin: 22px 0;
+}
+
+.string-pill {
+  padding: 8px 13px;
+  background: #111;
+  border: 1px solid #900;
+  border-radius: 20px;
+  color: #ffb3b3;
+  font-weight: bold;
+}
+
+.tuner-note {
+  font-size: 65px;
+  font-weight: bold;
+  color: #ff3333;
+  margin: 15px 0 0;
+}
+
+.tuner-frequency { color: #bbb; }
+
+.tuner-meter {
+  position: relative;
+  max-width: 500px;
+  height: 18px;
+  margin: 35px auto 20px;
+  border-radius: 20px;
+  background: linear-gradient(to right, #ff3333, #ffad32 35%, #39cf69 50%, #ffad32 65%, #ff3333);
+}
+
+.tuner-meter-center {
+  position: absolute;
+  left: 50%;
+  top: -8px;
+  width: 3px;
+  height: 34px;
+  background: white;
+  transform: translateX(-50%);
+}
+
+.tuner-meter-pointer {
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  width: 5px;
+  height: 32px;
+  background: red;
+  border-radius: 5px;
+  transform: translateX(-50%);
+  transition: left 0.12s ease;
+}
+
+.tuner-status {
+  min-height: 25px;
+  font-weight: bold;
+  color: #ffad32;
+}
+
+.tuner-button {
+  padding: 12px 22px;
+  margin: 7px;
+  background: #a00000;
+  color: white;
+  border: 2px solid #d00000;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.tuner-button.stop { background: #333; }
+
+.tuner-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.tuner-help {
+  max-width: 600px;
+  margin: 20px auto 0;
+  color: #aaa;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.metronome-box { max-width: 750px; }
+
+.metronome-display {
+  margin: 25px auto;
+  font-size: 48px;
+  font-weight: bold;
+  color: #ff3333;
+}
+
+.metronome-display small {
+  display: block;
+  margin-top: 5px;
+  color: #aaa;
+  font-size: 13px;
+  font-weight: normal;
+}
+
+.metronome-bpm-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 25px auto;
+}
+
+.metronome-bpm-row label {
+  color: #ffb3b3;
+  font-weight: bold;
+}
+
+.metronome-range {
+  width: 55%;
+  accent-color: #c00000;
+}
+
+.metronome-bpm-input {
+  width: 75px;
+  padding: 9px;
+  color: white;
+  background: #111;
+  border: 1px solid #900;
+  border-radius: 7px;
+  text-align: center;
+}
+
+.metronome-beats {
+  display: flex;
+  justify-content: center;
+  gap: 17px;
+  margin: 30px auto;
+}
+
+.metronome-beat {
+  width: 25px;
+  height: 25px;
+  background: #444;
+  border: 2px solid #777;
+  border-radius: 50%;
+  transition: background 0.08s ease, transform 0.08s ease;
+}
+
+.metronome-beat.active {
+  background: #ff2222;
+  border-color: #ff7777;
+  box-shadow: 0 0 15px red;
+  transform: scale(1.25);
+}
+
+.metronome-button {
+  padding: 12px 25px;
+  margin: 7px;
+  background: #a00000;
+  color: white;
+  border: 2px solid #d00000;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.metronome-button.shutdown { background: #333; }
+
+.metronome-status {
+  color: #ffb3b3;
+  min-height: 22px;
+}
+
+.challenge-box { max-width: 1000px; }
+
+.challenge-intro { color: #ddd; }
+
+.challenge-random {
+  max-width: 700px;
+  margin: 25px auto;
+  padding: 20px;
+  background: #111;
+  border: 1px solid #900;
+  border-radius: 10px;
+}
+
+.challenge-random h3 { color: #ff4444; }
+
+.challenge-button {
+  padding: 11px 20px;
+  background: #a00000;
+  color: white;
+  border: 1px solid red;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.challenge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.challenge-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px;
+  background: #111;
+  border: 1px solid #700;
+  border-radius: 10px;
+}
+
+.challenge-card.completed {
+  border-color: #39cf69;
+  background: rgba(20, 60, 30, 0.5);
+}
+
+.challenge-card h3 { margin: 0; }
+
+.challenge-card p {
+  color: #ddd;
+  line-height: 1.5;
+}
+
+.challenge-done {
+  padding: 9px 14px;
+  background: #333;
+  color: white;
+  border: 1px solid #900;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.challenge-card.completed .challenge-done {
+  background: #17652d;
+  border-color: #39cf69;
+}
+
+.challenge-counter {
+  margin-top: 25px;
+  color: #ffb3b3;
+  font-weight: bold;
+}
+
+/* LICZNIK CZASU ĆWICZEŃ */
+.practice-timer-box {
+  max-width: 850px;
+}
+
+.practice-intro {
+  max-width: 650px;
+  margin: 15px auto 25px;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.practice-timer-display {
+  margin: 25px auto;
+  padding: 25px 10px;
+  background: #080808;
+  border: 2px solid #700;
+  border-radius: 12px;
+  box-shadow: inset 0 0 20px rgba(180, 0, 0, 0.15);
+}
+
+.practice-timer-label {
+  color: #ff7777;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.practice-time {
+  margin: 12px 0;
+  color: #ff3333;
+  font-size: clamp(38px, 8vw, 65px);
+  font-weight: bold;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 15px rgba(255, 0, 0, 0.35);
+}
+
+.practice-status {
+  min-height: 22px;
+  color: #ffb3b3;
+  font-weight: bold;
+}
+
+.practice-controls {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px auto;
+}
+
+.practice-button {
+  padding: 13px 25px;
+  background: #a00000;
+  color: white;
+  border: 2px solid #d00000;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.practice-button:hover { background: #d00000; }
+.practice-button.pause { background: #333; border-color: #777; }
+.practice-button.reset { background: #171717; border-color: #900; }
+
+.practice-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.practice-stat {
+  padding: 20px;
+  background: #111;
+  border: 1px solid #900;
+  border-radius: 10px;
+}
+
+.practice-stat span {
+  display: block;
+  color: #bbb;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.practice-stat strong {
+  color: #ff4444;
+  font-size: 27px;
+  font-variant-numeric: tabular-nums;
+}
+
+.practice-note {
+  color: #999;
+  font-size: 12px;
+  line-height: 1.6;
+  margin-top: 20px;
+}
+
+/* NOTATNIK GITARZYSTY */
+.guitar-notebook-box {
+  max-width: 850px;
+}
+
+.notebook-intro {
+  color: #ccc;
+  line-height: 1.6;
+  max-width: 650px;
+  margin: 15px auto 25px;
+}
+
+.notebook-form {
+  max-width: 650px;
+  margin: 0 auto 30px;
+  padding: 22px;
+  background: #111;
+  border: 1px solid #700;
+  border-radius: 12px;
+}
+
+.notebook-label {
+  display: block;
+  margin: 15px 0 8px;
+  color: #ff7777;
+  font-weight: bold;
+  text-align: left;
+}
+
+.notebook-input,
+.notebook-textarea,
+.notebook-select {
+  display: block;
+  width: 100%;
+  padding: 13px;
+  background: #080808;
+  color: white;
+  border: 1px solid #900;
+  border-radius: 7px;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+}
+
+.notebook-textarea {
+  min-height: 150px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.notebook-input:focus,
+.notebook-textarea:focus,
+.notebook-select:focus {
+  outline: 2px solid #c00000;
+  border-color: #ff4444;
+}
+
+.notebook-save {
+  margin-top: 18px;
+  padding: 12px 24px;
+  background: #a00000;
+  color: white;
+  border: 2px solid #d00000;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.notebook-save:hover { background: #d00000; }
+
+.notebook-list {
+  display: grid;
+  gap: 15px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.notebook-entry {
+  padding: 20px;
+  text-align: left;
+  background: #111;
+  border: 1px solid #900;
+  border-left: 4px solid #b00000;
+  border-radius: 10px;
+  overflow-wrap: anywhere;
+}
+
+.notebook-entry h3 {
+  margin: 0 0 10px;
+  color: #ff5555;
+  text-align: left;
+}
+
+.notebook-entry p {
+  color: #ddd;
+  line-height: 1.6;
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+.notebook-entry-meta {
+  color: #999;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.notebook-entry-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.notebook-entry-actions button {
+  padding: 8px 13px;
+  background: #292929;
+  color: white;
+  border: 1px solid #900;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.notebook-entry-actions button:hover { background: #a00000; }
+
+.notebook-empty {
+  color: #aaa;
+  padding: 25px;
+  background: #111;
+  border: 1px dashed #700;
+  border-radius: 10px;
+}
+
+.notebook-message {
+  min-height: 20px;
+  color: #39cf69;
+  font-size: 13px;
 }
 
 @media (max-width: 600px) {
-  .metronome-display { font-size: 46px; }
-  .metronome-box { padding: 22px 12px; }
-  .challenge-grid { grid-template-columns: 1fr; }
-  .challenge-card { min-height: 170px; }
-  h1 { font-size: 32px; letter-spacing: 2px; }
-  .header-guitar { width: 130px; }
-  nav a { display: inline-block; margin: 8px; }
-  .vibe-button { margin: 5px; padding: 9px 12px; font-size: 12px; }
-  pre { font-size: 17px; padding: 15px; }
-  .guitar-star { font-size: 42px; right: 12px; top: 12px; }
-  .riff-image { width: 95%; height: 260px; }
-  .california-image { height: 400px; }
-  .tuner-note { font-size: 55px; }
-  .chords-grid { grid-template-columns: 1fr; }
+  header { padding: 25px 12px; }
+  h1 { font-size: 34px; letter-spacing: 3px; }
+  .header-guitar { width: 110px; }
+  nav { gap: 5px; }
+  nav a { margin: 5px; font-size: 13px; }
+  .practice-timer-box,
+  .guitar-notebook-box { padding: 22px 13px; }
+  .practice-button { padding: 12px 17px; }
 }
 </style>
 </head>
@@ -706,6 +952,8 @@ img { max-width: 90%; height: auto; }
   <a href="#akordy">AKORDY</a>
   <a href="#stroik">STROIK</a>
   <a href="#metronom">METRONOM</a>
+  <a href="#czas-cwiczen">CZAS ĆWICZEŃ</a>
+  <a href="#notatnik">NOTATNIK</a>
   <a href="#wyzwania">WYZWANIA</a>
   <button class="vibe-button" onclick="changeVibe()">CHANGE THE VIBE</button>
 </nav>
@@ -919,6 +1167,89 @@ E|-0----6-5--------------------
     </div>
     <p class="metronome-status" id="metronome-status" aria-live="polite">Metronom jest wyłączony.</p>
     <p><small>Pierwsze uderzenie w takcie jest mocniejsze, kolejne trzy cichsze.</small></p>
+  </div>
+</section>
+
+<!-- LICZNIK CZASU ĆWICZEŃ -->
+<section id="czas-cwiczen">
+  <div class="practice-timer-box">
+    <h2>LICZNIK CZASU ĆWICZEŃ</h2>
+    <p class="practice-intro">
+      Mierz czas poświęcony na naukę riffów, tabulatur i gry na gitarze.
+      Włącz licznik, kiedy zaczynasz ćwiczyć!
+    </p>
+
+    <div class="practice-timer-display">
+      <div class="practice-timer-label">AKTUALNA SESJA</div>
+      <div class="practice-time" id="practice-session-time">00:00:00</div>
+      <p class="practice-status" id="practice-status" aria-live="polite">Licznik jest zatrzymany.</p>
+    </div>
+
+    <div class="practice-controls">
+      <button class="practice-button" id="practice-start" type="button">START</button>
+      <button class="practice-button pause" id="practice-pause" type="button">PAUZA</button>
+      <button class="practice-button reset" id="practice-reset" type="button">RESET SESJI</button>
+    </div>
+
+    <div class="practice-stats">
+      <div class="practice-stat">
+        <span>ŁĄCZNY CZAS ĆWICZEŃ</span>
+        <strong id="practice-total-time">00:00:00</strong>
+      </div>
+    </div>
+
+    <p class="practice-note">
+      Łączny czas jest zapisywany w przeglądarce i pozostaje zachowany
+      po odświeżeniu strony. Reset sesji nie usuwa łącznego czasu ćwiczeń.
+    </p>
+  </div>
+</section>
+
+<!-- NOTATNIK GITARZYSTY -->
+<section id="notatnik">
+  <div class="guitar-notebook-box">
+    <h2>NOTATNIK GITARZYSTY</h2>
+    <p class="notebook-intro">
+      Zapisuj pomysły na riffy, własne tabulatury, ćwiczenia,
+      postępy i wszystko, co chcesz zachować na później.
+    </p>
+
+    <div class="notebook-form">
+      <label class="notebook-label" for="notebook-title">TYTUŁ NOTATKI</label>
+      <input
+        class="notebook-input"
+        id="notebook-title"
+        type="text"
+        maxlength="80"
+        placeholder="Np. Nowy riff w stylu rockowym"
+      >
+
+      <label class="notebook-label" for="notebook-category">KATEGORIA</label>
+      <select class="notebook-select" id="notebook-category">
+        <option value="Pomysł na riff">Pomysł na riff</option>
+        <option value="Tabulatura">Tabulatura</option>
+        <option value="Ćwiczenia">Ćwiczenia</option>
+        <option value="Utwór do nauki">Utwór do nauki</option>
+        <option value="Postępy">Postępy</option>
+        <option value="Inne">Inne</option>
+      </select>
+
+      <label class="notebook-label" for="notebook-content">TREŚĆ NOTATKI</label>
+      <textarea
+        class="notebook-textarea"
+        id="notebook-content"
+        maxlength="10000"
+        placeholder="Zapisz tutaj swoje pomysły, ćwiczenia, tabulatury lub postępy..."
+      ></textarea>
+
+      <button class="notebook-save" id="notebook-save" type="button">ZAPISZ NOTATKĘ</button>
+      <p class="notebook-message" id="notebook-message" aria-live="polite"></p>
+    </div>
+
+    <h3>TWOJE ZAPISANE NOTATKI</h3>
+    <div class="notebook-list" id="notebook-list">
+      <p class="notebook-empty">Nie masz jeszcze żadnych notatek. Dodaj pierwszą powyżej!</p>
+    </div>
   </div>
 </section>
 
@@ -1204,20 +1535,17 @@ function createChordDiagram(chord) {
     svg.appendChild(text);
   }
 
-  /* Struny */
   for (let i = 0; i < 6; i++) {
     const x = left + i * stringGap;
     addLine(x, top, x, bottom, i === 0 || i === 5 ? 2.2 : 1.3, "#ddd");
     addText(x, 19, chord.strings[i] === "X" ? "X" : chord.strings[i] === "0" ? "O" : "", "#ffb3b3", 13);
   }
 
-  /* Progi */
   for (let fret = 0; fret <= 4; fret++) {
     const y = top + fret * fretGap;
     addLine(left, y, right, y, fret === 0 ? 4 : 1.5, fret === 0 ? "#fff" : "#aaa");
   }
 
-  /* Palce */
   chord.fingers.forEach(([stringIndex, fret, finger]) => {
     const x = left + stringIndex * stringGap;
     const y = top + (fret - 0.5) * fretGap;
@@ -1545,6 +1873,309 @@ function stopTuner() {
 
 tunerStart.addEventListener("click", startTuner);
 tunerStop.addEventListener("click", stopTuner);
+
+/* LICZNIK CZASU ĆWICZEŃ */
+(() => {
+  const sessionDisplay = document.getElementById("practice-session-time");
+  const totalDisplay = document.getElementById("practice-total-time");
+  const status = document.getElementById("practice-status");
+  const startButton = document.getElementById("practice-start");
+  const pauseButton = document.getElementById("practice-pause");
+  const resetButton = document.getElementById("practice-reset");
+
+  const STORAGE_KEY = "guitarWorldTotalPracticeTime";
+
+  let sessionMilliseconds = 0;
+  let totalMilliseconds = 0;
+  let runningSince = null;
+  let interval = null;
+  let lastTick = null;
+
+  try {
+    totalMilliseconds = Number(localStorage.getItem(STORAGE_KEY)) || 0;
+    if (!Number.isFinite(totalMilliseconds) || totalMilliseconds < 0) {
+      totalMilliseconds = 0;
+    }
+  } catch (error) {
+    totalMilliseconds = 0;
+  }
+
+  function formatTime(milliseconds) {
+    const seconds = Math.floor(milliseconds / 1000);
+    const hours = Math.floor(seconds / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    const remainingSeconds = seconds % 60;
+
+    return [hours, minutes, remainingSeconds]
+      .map(value => String(value).padStart(2, "0"))
+      .join(":");
+  }
+
+  function saveTotal() {
+    try {
+      localStorage.setItem(STORAGE_KEY, String(totalMilliseconds));
+    } catch (error) {
+      status.textContent = "Nie udało się zapisać czasu w przeglądarce.";
+    }
+  }
+
+  function render() {
+    sessionDisplay.textContent = formatTime(sessionMilliseconds);
+    totalDisplay.textContent = formatTime(totalMilliseconds);
+  }
+
+  function addElapsedTime() {
+    if (runningSince === null || lastTick === null) return;
+
+    const now = Date.now();
+    const difference = Math.max(0, now - lastTick);
+
+    sessionMilliseconds += difference;
+    totalMilliseconds += difference;
+    lastTick = now;
+
+    render();
+    saveTotal();
+  }
+
+  function startTimer() {
+    if (runningSince !== null) return;
+
+    runningSince = Date.now();
+    lastTick = runningSince;
+
+    interval = window.setInterval(addElapsedTime, 250);
+    status.textContent = "Ćwiczenia trwają — powodzenia!";
+    startButton.disabled = true;
+  }
+
+  function pauseTimer() {
+    if (runningSince === null) {
+      status.textContent = "Licznik jest już zatrzymany.";
+      return;
+    }
+
+    addElapsedTime();
+    runningSince = null;
+    lastTick = null;
+
+    if (interval !== null) {
+      window.clearInterval(interval);
+      interval = null;
+    }
+
+    saveTotal();
+    status.textContent = "Pauza — możesz odpocząć.";
+    startButton.disabled = false;
+  }
+
+  function resetSession() {
+    const wasRunning = runningSince !== null;
+
+    sessionMilliseconds = 0;
+
+    if (wasRunning) {
+      runningSince = Date.now();
+      lastTick = runningSince;
+    }
+
+    render();
+    status.textContent = wasRunning
+      ? "Sesja wyzerowana. Licznik nadal działa."
+      : "Sesja wyzerowana.";
+
+    saveTotal();
+  }
+
+  startButton.addEventListener("click", startTimer);
+  pauseButton.addEventListener("click", pauseTimer);
+  resetButton.addEventListener("click", resetSession);
+
+  window.addEventListener("pagehide", () => {
+    if (runningSince !== null) {
+      addElapsedTime();
+      runningSince = null;
+      lastTick = null;
+      if (interval !== null) window.clearInterval(interval);
+      interval = null;
+    }
+    saveTotal();
+  });
+
+  render();
+})();
+
+/* NOTATNIK GITARZYSTY */
+(() => {
+  const titleInput = document.getElementById("notebook-title");
+  const categoryInput = document.getElementById("notebook-category");
+  const contentInput = document.getElementById("notebook-content");
+  const saveButton = document.getElementById("notebook-save");
+  const list = document.getElementById("notebook-list");
+  const message = document.getElementById("notebook-message");
+
+  const STORAGE_KEY = "guitarWorldNotebook";
+  let notes = [];
+  let editingId = null;
+
+  function loadNotes() {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      const parsed = saved ? JSON.parse(saved) : [];
+      notes = Array.isArray(parsed) ? parsed : [];
+    } catch (error) {
+      notes = [];
+    }
+  }
+
+  function saveNotes() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(notes));
+      return true;
+    } catch (error) {
+      message.textContent = "Nie udało się zapisać notatek w przeglądarce.";
+      return false;
+    }
+  }
+
+  function createElement(tag, className, text) {
+    const element = document.createElement(tag);
+    if (className) element.className = className;
+    if (text !== undefined) element.textContent = text;
+    return element;
+  }
+
+  function renderNotes() {
+    list.innerHTML = "";
+
+    if (notes.length === 0) {
+      list.appendChild(createElement(
+        "p",
+        "notebook-empty",
+        "Nie masz jeszcze żadnych notatek. Dodaj pierwszą powyżej!"
+      ));
+      return;
+    }
+
+    notes.forEach(note => {
+      const entry = createElement("article", "notebook-entry");
+      const heading = createElement("h3", "", note.title);
+      const meta = createElement(
+        "div",
+        "notebook-entry-meta",
+        note.category + " • " + note.date
+      );
+      const content = createElement("p", "", note.content);
+
+      const actions = createElement("div", "notebook-entry-actions");
+
+      const editButton = createElement("button", "", "EDYTUJ");
+      editButton.type = "button";
+      editButton.addEventListener("click", () => editNote(note.id));
+
+      const deleteButton = createElement("button", "", "USUŃ");
+      deleteButton.type = "button";
+      deleteButton.addEventListener("click", () => deleteNote(note.id));
+
+      actions.append(editButton, deleteButton);
+      entry.append(heading, meta, content, actions);
+      list.appendChild(entry);
+    });
+  }
+
+  function clearForm() {
+    titleInput.value = "";
+    contentInput.value = "";
+    categoryInput.value = "Pomysł na riff";
+    editingId = null;
+    saveButton.textContent = "ZAPISZ NOTATKĘ";
+  }
+
+  function editNote(id) {
+    const note = notes.find(item => item.id === id);
+    if (!note) return;
+
+    editingId = id;
+    titleInput.value = note.title;
+    contentInput.value = note.content;
+    categoryInput.value = note.category;
+    saveButton.textContent = "ZAPISZ ZMIANY";
+    message.textContent = "Edytujesz wybraną notatkę.";
+
+    document.getElementById("notatnik").scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+
+    titleInput.focus();
+  }
+
+  function deleteNote(id) {
+    const confirmed = window.confirm("Czy na pewno chcesz usunąć tę notatkę?");
+    if (!confirmed) return;
+
+    notes = notes.filter(note => note.id !== id);
+
+    if (!saveNotes()) return;
+
+    if (editingId === id) clearForm();
+
+    renderNotes();
+    message.textContent = "Notatka została usunięta.";
+  }
+
+  function saveNote() {
+    const title = titleInput.value.trim();
+    const content = contentInput.value.trim();
+    const category = categoryInput.value;
+
+    if (!title || !content) {
+      message.textContent = "Uzupełnij tytuł i treść notatki.";
+      return;
+    }
+
+    if (editingId !== null) {
+      const note = notes.find(item => item.id === editingId);
+      if (!note) return;
+
+      note.title = title;
+      note.content = content;
+      note.category = category;
+      note.date = new Date().toLocaleDateString("pl-PL");
+
+      if (!saveNotes()) return;
+
+      clearForm();
+      renderNotes();
+      message.textContent = "Zmiany zostały zapisane!";
+      return;
+    }
+
+    const newNote = {
+      id: Date.now().toString() + Math.random().toString(16).slice(2),
+      title,
+      content,
+      category,
+      date: new Date().toLocaleDateString("pl-PL")
+    };
+
+    notes.unshift(newNote);
+
+    if (!saveNotes()) {
+      notes.shift();
+      return;
+    }
+
+    clearForm();
+    renderNotes();
+    message.textContent = "Notatka została zapisana!";
+  }
+
+  saveButton.addEventListener("click", saveNote);
+
+  loadNotes();
+  renderNotes();
+})();
 
 /* WYZWANIA GITAROWE */
 const challengeCards = document.querySelectorAll(".challenge-card");
