@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -337,7 +338,8 @@ section img {
 .metronome-box,
 .challenge-box,
 .practice-timer-box,
-.guitar-notebook-box {
+.guitar-notebook-box,
+.chord-training-box {
   max-width: 1000px;
   margin: 0 auto;
   padding: 30px 20px;
@@ -427,6 +429,155 @@ section img {
 }
 
 .chord-legend h3 { color: #ff4444; }
+
+/* TRENING AKORDÓW */
+.chord-training-box {
+  max-width: 850px;
+}
+
+.training-intro {
+  max-width: 650px;
+  margin: 15px auto 25px;
+  color: #ccc;
+  line-height: 1.7;
+}
+
+.training-settings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px auto;
+}
+
+.training-settings label {
+  color: #ffb3b3;
+  font-weight: bold;
+}
+
+.training-settings select {
+  padding: 10px 14px;
+  background: #111;
+  color: white;
+  border: 1px solid #900;
+  border-radius: 7px;
+  font-size: 15px;
+}
+
+.training-card {
+  max-width: 500px;
+  margin: 25px auto;
+  padding: 25px 15px;
+  background: #090909;
+  border: 2px solid #700;
+  border-radius: 15px;
+  box-shadow: inset 0 0 25px rgba(180, 0, 0, 0.15);
+}
+
+.training-label {
+  color: #ff7777;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.training-chord-name {
+  margin: 12px 0 0;
+  color: #ff3333;
+  font-size: 76px;
+  font-weight: bold;
+  text-shadow: 0 0 18px rgba(255, 0, 0, 0.4);
+}
+
+.training-diagram {
+  width: 210px;
+  max-width: 90%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.training-feedback {
+  min-height: 28px;
+  margin: 12px auto;
+  color: #ffb3b3;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.training-progress {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 17px;
+  background: #111;
+  border: 1px solid #700;
+  border-radius: 10px;
+}
+
+.training-progress strong {
+  color: #ff4444;
+  font-size: 25px;
+}
+
+.training-progress p {
+  margin: 7px 0;
+  color: #ccc;
+}
+
+.training-progress-bar {
+  height: 12px;
+  margin-top: 13px;
+  overflow: hidden;
+  background: #333;
+  border-radius: 20px;
+}
+
+.training-progress-fill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(to right, #8b0000, #ff3333);
+  border-radius: 20px;
+  transition: width 0.3s ease;
+}
+
+.training-controls {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px auto;
+}
+
+.training-button {
+  padding: 13px 22px;
+  background: #a00000;
+  color: white;
+  border: 2px solid #d00000;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.training-button:hover { background: #d00000; }
+.training-button.stop { background: #333; border-color: #777; }
+.training-button:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.training-help {
+  max-width: 650px;
+  margin: 20px auto 0;
+  color: #999;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.training-status {
+  min-height: 24px;
+  color: #ffad32;
+  font-weight: bold;
+}
+
+.training-success { color: #39cf69 !important; }
+.training-error { color: #ff4545 !important; }
 
 .tuner-box { max-width: 750px; }
 
@@ -927,8 +1078,10 @@ section img {
   nav { gap: 5px; }
   nav a { margin: 5px; font-size: 13px; }
   .practice-timer-box,
-  .guitar-notebook-box { padding: 22px 13px; }
+  .guitar-notebook-box,
+  .chord-training-box { padding: 22px 13px; }
   .practice-button { padding: 12px 17px; }
+  .training-chord-name { font-size: 60px; }
 }
 </style>
 </head>
@@ -950,6 +1103,7 @@ section img {
   <a href="#riffy">RIFFY</a>
   <a href="#jak-grac">JAK GRAĆ?</a>
   <a href="#akordy">AKORDY</a>
+  <a href="#trening-akordow">TRENING AKORDÓW</a>
   <a href="#stroik">STROIK</a>
   <a href="#metronom">METRONOM</a>
   <a href="#czas-cwiczen">CZAS ĆWICZEŃ</a>
@@ -1073,7 +1227,6 @@ E|-0----6-5--------------------
   </div>
 </section>
 
-<!-- BIBLIOTEKA AKORDÓW -->
 <section id="akordy">
   <div class="chords-library">
     <h2>BIBLIOTEKA PODSTAWOWYCH AKORDÓW</h2>
@@ -1100,6 +1253,68 @@ E|-0----6-5--------------------
       Pionowe linie oznaczają struny, a poziome – progi gitary.
       Diagramy pokazują gitarę w standardowym stroju E A D G B E.
     </div>
+  </div>
+</section>
+
+<!-- NOWA SEKCJA: TRENING AKORDÓW -->
+<section id="trening-akordow">
+  <div class="chord-training-box">
+    <h2>TRENING AKORDÓW</h2>
+    <p class="training-intro">
+      Sprawdź, jak szybko potrafisz zmieniać akordy!
+      Zagraj akord pokazany na ekranie, a mikrofon spróbuje rozpoznać,
+      czy udało Ci się zagrać właściwy chwyt.
+    </p>
+
+    <div class="training-settings">
+      <label for="training-mode">TRYB TRENINGU:</label>
+      <select id="training-mode">
+        <option value="all">Wszystkie podstawowe akordy</option>
+        <option value="major">Tylko akordy durowe</option>
+        <option value="minor">Tylko akordy molowe</option>
+      </select>
+    </div>
+
+    <div class="training-card">
+      <div class="training-label">ZAGRAJ TEN AKORD</div>
+      <div class="training-chord-name" id="training-chord-name">Am</div>
+      <div id="training-diagram"></div>
+      <p class="training-feedback" id="training-feedback">
+        Kliknij START TRENINGU, aby rozpocząć.
+      </p>
+    </div>
+
+    <div class="training-progress">
+      <p>POPRAWNIE ZAGRANE AKORDY</p>
+      <strong id="training-score">0</strong>
+      <p>AKTUALNA SERIA: <strong id="training-streak">0</strong></p>
+      <div class="training-progress-bar">
+        <div class="training-progress-fill" id="training-progress-fill"></div>
+      </div>
+      <p id="training-round">Runda: 0</p>
+    </div>
+
+    <p class="training-status" id="training-status" aria-live="polite">
+      Mikrofon nie jest uruchomiony.
+    </p>
+
+    <div class="training-controls">
+      <button class="training-button" id="training-start" type="button">
+        START TRENINGU
+      </button>
+      <button class="training-button stop" id="training-stop" type="button" disabled>
+        ZAKOŃCZ TRENING
+      </button>
+    </div>
+
+    <p class="training-help">
+      Jak to działa? Zagraj wszystkie dźwięki akordu jednocześnie,
+      tak jak podczas normalnego grania na gitarze. System analizuje
+      dźwięk z mikrofonu i szuka nut pasujących do wyświetlonego akordu.
+      Najlepsze rezultaty uzyskasz w cichym pomieszczeniu, gdy gitara
+      znajduje się blisko mikrofonu. Wykrywanie jest orientacyjne i może
+      pomylić się przy dużym hałasie lub mocno zniekształconym brzmieniu.
+    </p>
   </div>
 </section>
 
@@ -1216,13 +1431,7 @@ E|-0----6-5--------------------
 
     <div class="notebook-form">
       <label class="notebook-label" for="notebook-title">TYTUŁ NOTATKI</label>
-      <input
-        class="notebook-input"
-        id="notebook-title"
-        type="text"
-        maxlength="80"
-        placeholder="Np. Nowy riff w stylu rockowym"
-      >
+      <input class="notebook-input" id="notebook-title" type="text" maxlength="80" placeholder="Np. Nowy riff w stylu rockowym">
 
       <label class="notebook-label" for="notebook-category">KATEGORIA</label>
       <select class="notebook-select" id="notebook-category">
@@ -1235,12 +1444,7 @@ E|-0----6-5--------------------
       </select>
 
       <label class="notebook-label" for="notebook-content">TREŚĆ NOTATKI</label>
-      <textarea
-        class="notebook-textarea"
-        id="notebook-content"
-        maxlength="10000"
-        placeholder="Zapisz tutaj swoje pomysły, ćwiczenia, tabulatury lub postępy..."
-      ></textarea>
+      <textarea class="notebook-textarea" id="notebook-content" maxlength="10000" placeholder="Zapisz tutaj swoje pomysły, ćwiczenia, tabulatury lub postępy..."></textarea>
 
       <button class="notebook-save" id="notebook-save" type="button">ZAPISZ NOTATKĘ</button>
       <p class="notebook-message" id="notebook-message" aria-live="polite"></p>
@@ -1601,6 +1805,363 @@ document.querySelectorAll(".chord-filter").forEach(button => {
 });
 
 renderChords();
+
+/* TRENING AKORDÓW – ROZPOZNAWANIE DŹWIĘKU Z MIKROFONU */
+(() => {
+  const startButton = document.getElementById("training-start");
+  const stopButton = document.getElementById("training-stop");
+  const modeSelect = document.getElementById("training-mode");
+  const chordName = document.getElementById("training-chord-name");
+  const diagramBox = document.getElementById("training-diagram");
+  const feedback = document.getElementById("training-feedback");
+  const status = document.getElementById("training-status");
+  const scoreDisplay = document.getElementById("training-score");
+  const streakDisplay = document.getElementById("training-streak");
+  const roundDisplay = document.getElementById("training-round");
+  const progressFill = document.getElementById("training-progress-fill");
+
+  const chordPitchClasses = {
+    C: [0, 4, 7],
+    D: [2, 6, 9],
+    E: [4, 8, 11],
+    G: [7, 11, 2],
+    A: [9, 1, 4],
+    Am: [9, 0, 4],
+    Dm: [2, 5, 9],
+    Em: [4, 7, 11],
+    F: [5, 9, 0]
+  };
+
+  let audioContext = null;
+  let analyser = null;
+  let stream = null;
+  let source = null;
+  let frequencyData = null;
+  let animationFrame = null;
+
+  let currentChord = null;
+  let score = 0;
+  let streak = 0;
+  let round = 0;
+  let matchingFrames = 0;
+  let isRunning = false;
+  let isWaitingForNext = false;
+  let lastDetectionTime = 0;
+  let previousChordName = null;
+  let nextChordTimeout = null;
+
+  function getAvailableChords() {
+    const mode = modeSelect.value;
+    return chordData.filter(chord => mode === "all" || chord.type === mode);
+  }
+
+  function chooseNextChord() {
+    const available = getAvailableChords();
+
+    if (!available.length) return null;
+
+    let choices = available.filter(chord => chord.name !== previousChordName);
+
+    if (!choices.length) choices = available;
+
+    const selected = choices[Math.floor(Math.random() * choices.length)];
+    previousChordName = selected.name;
+
+    return selected;
+  }
+
+  function showChord(chord) {
+    if (!chord) return;
+
+    currentChord = chord;
+    chordName.textContent = chord.name;
+    diagramBox.innerHTML = "";
+
+    const diagram = createChordDiagram(chord);
+    diagram.classList.add("training-diagram");
+    diagramBox.appendChild(diagram);
+
+    feedback.textContent = "Zagraj akord " + chord.name + "...";
+    feedback.className = "training-feedback";
+    matchingFrames = 0;
+    isWaitingForNext = false;
+  }
+
+  function updateProgress() {
+    scoreDisplay.textContent = score;
+    streakDisplay.textContent = streak;
+    roundDisplay.textContent = "Runda: " + round;
+    progressFill.style.width = Math.min(100, (score % 10) * 10) + "%";
+  }
+
+  function getPitchClass(frequency) {
+    if (!Number.isFinite(frequency) || frequency <= 0) return null;
+    const midi = Math.round(69 + 12 * Math.log2(frequency / 440));
+    return ((midi % 12) + 12) % 12;
+  }
+
+  /*
+    Analiza widma:
+    - wyszukuje wyraźne piki częstotliwości,
+    - przypisuje je do klas dźwięków,
+    - sprawdza, czy występują dźwięki tworzące aktualny akord.
+  */
+  function detectChordMatch() {
+    if (!analyser || !frequencyData || !currentChord) return false;
+
+    analyser.getFloatFrequencyData(frequencyData);
+
+    const sampleRate = audioContext.sampleRate;
+    const fftSize = analyser.fftSize;
+    const binWidth = sampleRate / fftSize;
+    const pitchEnergy = new Array(12).fill(0);
+
+    let strongestPeak = 0;
+    let totalEnergy = 0;
+
+    const minFrequency = 70;
+    const maxFrequency = 650;
+
+    const minBin = Math.max(2, Math.floor(minFrequency / binWidth));
+    const maxBin = Math.min(frequencyData.length - 2, Math.ceil(maxFrequency / binWidth));
+
+    for (let bin = minBin + 1; bin < maxBin; bin++) {
+      const db = frequencyData[bin];
+
+      if (!Number.isFinite(db) || db < -68) continue;
+
+      if (
+        db > frequencyData[bin - 1] &&
+        db >= frequencyData[bin + 1]
+      ) {
+        const frequency = bin * binWidth;
+        const pitchClass = getPitchClass(frequency);
+
+        if (pitchClass === null) continue;
+
+        const strength = Math.pow(10, db / 20);
+
+        pitchEnergy[pitchClass] += strength;
+        totalEnergy += strength;
+        strongestPeak = Math.max(strongestPeak, strength);
+      }
+    }
+
+    if (strongestPeak < 0.001 || totalEnergy < 0.002) return false;
+
+    const expected = chordPitchClasses[currentChord.name];
+    if (!expected) return false;
+
+    const expectedEnergy = expected.map(note => pitchEnergy[note]);
+    const maximumExpected = Math.max(...expectedEnergy);
+
+    if (maximumExpected <= 0) return false;
+
+    const presentNotes = expectedEnergy.filter(
+      energy => energy >= maximumExpected * 0.13
+    ).length;
+
+    const expectedTotal = expectedEnergy.reduce((sum, energy) => sum + energy, 0);
+    const coverage = expectedTotal / totalEnergy;
+
+    /*
+      Wymagamy obecności trzech składników akordu oraz
+      odpowiednio dużego udziału ich energii w wykrytym sygnale.
+    */
+    return presentNotes >= 3 && coverage >= 0.52;
+  }
+
+  function completeChord() {
+    if (!isRunning || isWaitingForNext) return;
+
+    isWaitingForNext = true;
+    score++;
+    streak++;
+    round++;
+
+    updateProgress();
+
+    feedback.textContent = "✓ DOBRZE! Akord " + currentChord.name + " zaliczony!";
+    feedback.className = "training-feedback training-success";
+
+    status.textContent = "Świetnie! Przygotuj się na kolejny akord.";
+    status.className = "training-status training-success";
+
+    nextChordTimeout = window.setTimeout(() => {
+      if (!isRunning) return;
+
+      const next = chooseNextChord();
+      showChord(next);
+
+      status.textContent = "Słucham... zagraj wyświetlony akord.";
+      status.className = "training-status";
+    }, 1100);
+  }
+
+  function analyseAudio() {
+    if (!isRunning || !analyser) return;
+
+    animationFrame = requestAnimationFrame(analyseAudio);
+
+    const now = performance.now();
+
+    if (now - lastDetectionTime < 100) return;
+    lastDetectionTime = now;
+
+    if (isWaitingForNext) return;
+
+    const matched = detectChordMatch();
+
+    if (matched) {
+      matchingFrames++;
+
+      if (matchingFrames >= 5) {
+        completeChord();
+      } else {
+        feedback.textContent = "Wykrywam dźwięki... utrzymaj akord.";
+      }
+    } else {
+      matchingFrames = 0;
+      feedback.textContent = "Zagraj akord " + currentChord.name + "...";
+    }
+  }
+
+  async function startTraining() {
+    if (isRunning) return;
+
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+      status.textContent = "Mikrofon jest niedostępny. Otwórz stronę przez HTTPS.";
+      status.className = "training-status training-error";
+      return;
+    }
+
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+
+    if (!AudioContextClass) {
+      status.textContent = "Twoja przeglądarka nie obsługuje analizy dźwięku.";
+      status.className = "training-status training-error";
+      return;
+    }
+
+    startButton.disabled = true;
+    status.textContent = "Czekam na dostęp do mikrofonu...";
+    status.className = "training-status";
+
+    try {
+      stream = await navigator.mediaDevices.getUserMedia({
+        audio: {
+          echoCancellation: false,
+          noiseSuppression: false,
+          autoGainControl: false,
+          channelCount: { ideal: 1 }
+        }
+      });
+
+      audioContext = new AudioContextClass({ latencyHint: "interactive" });
+      await audioContext.resume();
+
+      source = audioContext.createMediaStreamSource(stream);
+      analyser = audioContext.createAnalyser();
+
+      analyser.fftSize = 16384;
+      analyser.smoothingTimeConstant = 0.15;
+      analyser.minDecibels = -100;
+      analyser.maxDecibels = -10;
+
+      frequencyData = new Float32Array(analyser.frequencyBinCount);
+
+      source.connect(analyser);
+
+      score = 0;
+      streak = 0;
+      round = 0;
+      previousChordName = null;
+      matchingFrames = 0;
+      lastDetectionTime = 0;
+      isRunning = true;
+
+      const firstChord = chooseNextChord();
+      showChord(firstChord);
+      updateProgress();
+
+      startButton.disabled = true;
+      stopButton.disabled = false;
+
+      status.textContent = "Mikrofon działa! Zagraj pokazany akord.";
+      status.className = "training-status training-success";
+
+      analyseAudio();
+
+    } catch (error) {
+      stopAudio();
+
+      startButton.disabled = false;
+      stopButton.disabled = true;
+
+      status.textContent = "Nie udało się uruchomić mikrofonu.";
+      status.className = "training-status training-error";
+
+      feedback.textContent = "Sprawdź uprawnienia mikrofonu w przeglądarce.";
+    }
+  }
+
+  function stopAudio() {
+    isRunning = false;
+    matchingFrames = 0;
+
+    if (animationFrame !== null) {
+      cancelAnimationFrame(animationFrame);
+      animationFrame = null;
+    }
+
+    if (nextChordTimeout !== null) {
+      clearTimeout(nextChordTimeout);
+      nextChordTimeout = null;
+    }
+
+    if (stream) {
+      stream.getTracks().forEach(track => track.stop());
+      stream = null;
+    }
+
+    if (audioContext && audioContext.state !== "closed") {
+      audioContext.close();
+    }
+
+    audioContext = null;
+    analyser = null;
+    source = null;
+    frequencyData = null;
+
+    startButton.disabled = false;
+    stopButton.disabled = true;
+  }
+
+  function endTraining() {
+    if (!isRunning) return;
+
+    stopAudio();
+
+    status.textContent = "Trening zakończony. Wynik: " + score + " poprawnych akordów.";
+    status.className = "training-status";
+
+    feedback.textContent = "Kliknij START TRENINGU, aby spróbować ponownie.";
+  }
+
+  modeSelect.addEventListener("change", () => {
+    if (!isRunning) {
+      const available = getAvailableChords();
+      if (available.length) showChord(available[0]);
+    }
+  });
+
+  startButton.addEventListener("click", startTraining);
+  stopButton.addEventListener("click", endTraining);
+
+  window.addEventListener("pagehide", stopAudio);
+
+  showChord(chordData.find(chord => chord.name === "Am"));
+})();
 
 /* STROIK GITAROWY – POPRAWIONE WYKRYWANIE DŹWIĘKU */
 const tunerStart = document.getElementById("tuner-start");
