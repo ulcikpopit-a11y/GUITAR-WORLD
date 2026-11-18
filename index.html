@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -431,9 +430,7 @@ section img {
 .chord-legend h3 { color: #ff4444; }
 
 /* TRENING AKORDÓW */
-.chord-training-box {
-  max-width: 850px;
-}
+.chord-training-box { max-width: 850px; }
 
 .training-intro {
   max-width: 650px;
@@ -757,86 +754,8 @@ section img {
   min-height: 22px;
 }
 
-.challenge-box { max-width: 1000px; }
-
-.challenge-intro { color: #ddd; }
-
-.challenge-random {
-  max-width: 700px;
-  margin: 25px auto;
-  padding: 20px;
-  background: #111;
-  border: 1px solid #900;
-  border-radius: 10px;
-}
-
-.challenge-random h3 { color: #ff4444; }
-
-.challenge-button {
-  padding: 11px 20px;
-  background: #a00000;
-  color: white;
-  border: 1px solid red;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.challenge-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 15px;
-  margin-top: 25px;
-}
-
-.challenge-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 18px;
-  background: #111;
-  border: 1px solid #700;
-  border-radius: 10px;
-}
-
-.challenge-card.completed {
-  border-color: #39cf69;
-  background: rgba(20, 60, 30, 0.5);
-}
-
-.challenge-card h3 { margin: 0; }
-
-.challenge-card p {
-  color: #ddd;
-  line-height: 1.5;
-}
-
-.challenge-done {
-  padding: 9px 14px;
-  background: #333;
-  color: white;
-  border: 1px solid #900;
-  border-radius: 7px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.challenge-card.completed .challenge-done {
-  background: #17652d;
-  border-color: #39cf69;
-}
-
-.challenge-counter {
-  margin-top: 25px;
-  color: #ffb3b3;
-  font-weight: bold;
-}
-
 /* LICZNIK CZASU ĆWICZEŃ */
-.practice-timer-box {
-  max-width: 850px;
-}
+.practice-timer-box { max-width: 850px; }
 
 .practice-intro {
   max-width: 650px;
@@ -934,9 +853,7 @@ section img {
 }
 
 /* NOTATNIK GITARZYSTY */
-.guitar-notebook-box {
-  max-width: 850px;
-}
+.guitar-notebook-box { max-width: 850px; }
 
 .notebook-intro {
   color: #ccc;
@@ -1071,6 +988,296 @@ section img {
   font-size: 13px;
 }
 
+/* ROZBUDOWANE WYZWANIA */
+.challenge-box { max-width: 1000px; }
+
+.challenge-intro {
+  color: #ddd;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 15px auto 25px;
+}
+
+.challenge-dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin: 25px 0;
+}
+
+.challenge-stat {
+  padding: 18px 10px;
+  background: #101010;
+  border: 1px solid #700;
+  border-radius: 10px;
+}
+
+.challenge-stat span {
+  display: block;
+  color: #aaa;
+  font-size: 12px;
+  margin-bottom: 9px;
+}
+
+.challenge-stat strong {
+  display: block;
+  color: #ff4444;
+  font-size: 27px;
+}
+
+.challenge-level-box {
+  margin: 20px 0;
+  padding: 22px;
+  background: #090909;
+  border: 1px solid #900;
+  border-radius: 12px;
+}
+
+.challenge-level-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: #ffb3b3;
+  font-weight: bold;
+}
+
+.challenge-level-heading strong {
+  color: #ff4444;
+  font-size: 22px;
+}
+
+.challenge-xp-bar {
+  width: 100%;
+  height: 15px;
+  margin: 15px 0 8px;
+  overflow: hidden;
+  background: #333;
+  border-radius: 20px;
+}
+
+.challenge-xp-fill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(to right, #8b0000, #ff3333, #ffad32);
+  border-radius: 20px;
+  transition: width 0.4s ease;
+}
+
+.challenge-xp-info {
+  color: #aaa;
+  font-size: 12px;
+}
+
+.challenge-random {
+  max-width: 700px;
+  margin: 25px auto;
+  padding: 20px;
+  background: #111;
+  border: 1px solid #900;
+  border-radius: 10px;
+}
+
+.challenge-random h3 { color: #ff4444; }
+
+.challenge-random p {
+  color: #eee;
+  line-height: 1.6;
+  min-height: 25px;
+}
+
+.challenge-button {
+  padding: 11px 20px;
+  background: #a00000;
+  color: white;
+  border: 1px solid red;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.challenge-button:hover { background: #d00000; }
+
+.daily-challenge {
+  margin: 25px 0;
+  padding: 24px 18px;
+  background: linear-gradient(145deg, #250000, #111);
+  border: 2px solid #c00000;
+  border-radius: 13px;
+  box-shadow: 0 0 18px rgba(180, 0, 0, 0.18);
+}
+
+.daily-challenge h3 {
+  margin-top: 0;
+  color: #ff5555;
+}
+
+.daily-challenge-task {
+  font-size: 17px;
+  color: #fff;
+  line-height: 1.6;
+  max-width: 650px;
+  margin: 15px auto;
+}
+
+.daily-reward {
+  color: #ffbd45;
+  font-weight: bold;
+  margin: 12px 0;
+}
+
+.daily-challenge.completed {
+  border-color: #39cf69;
+  background: linear-gradient(145deg, #10351a, #111);
+}
+
+.daily-challenge.completed h3 { color: #39cf69; }
+
+.challenge-section-title {
+  margin: 35px 0 15px;
+  color: #ff5555;
+}
+
+.challenge-filter-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 20px 0;
+}
+
+.challenge-filter {
+  padding: 9px 15px;
+  color: white;
+  background: #222;
+  border: 1px solid #900;
+  border-radius: 7px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.challenge-filter.active,
+.challenge-filter:hover {
+  background: #a00000;
+}
+
+.challenge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.challenge-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px;
+  background: #111;
+  border: 1px solid #700;
+  border-radius: 10px;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.challenge-card.completed {
+  border-color: #39cf69;
+  background: rgba(20, 60, 30, 0.5);
+}
+
+.challenge-card h3 { margin: 0; }
+
+.challenge-card p {
+  color: #ddd;
+  line-height: 1.5;
+}
+
+.challenge-card .challenge-reward {
+  color: #ffbd45;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.challenge-card .challenge-done {
+  padding: 10px 14px;
+  background: #a00000;
+  color: white;
+  border: 1px solid red;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.challenge-card .challenge-done:hover { background: #d00000; }
+
+.challenge-card.completed .challenge-done {
+  background: #17652d;
+  border-color: #39cf69;
+  cursor: default;
+}
+
+.challenge-card.completed .challenge-done:hover {
+  background: #17652d;
+}
+
+.challenge-counter {
+  margin-top: 25px;
+  color: #ffb3b3;
+  font-weight: bold;
+  line-height: 1.6;
+}
+
+.challenge-achievements {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.challenge-achievement {
+  padding: 17px 10px;
+  background: #101010;
+  border: 1px solid #444;
+  border-radius: 10px;
+  opacity: 0.45;
+  filter: grayscale(1);
+}
+
+.challenge-achievement.unlocked {
+  opacity: 1;
+  filter: none;
+  border-color: #d6a52d;
+  background: rgba(70, 48, 5, 0.25);
+}
+
+.achievement-icon {
+  font-size: 30px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.challenge-achievement strong {
+  display: block;
+  color: #ffcf55;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+.challenge-achievement small {
+  color: #aaa;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.challenge-notice {
+  min-height: 24px;
+  margin: 15px auto;
+  color: #39cf69;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
 @media (max-width: 600px) {
   header { padding: 25px 12px; }
   h1 { font-size: 34px; letter-spacing: 3px; }
@@ -1082,6 +1289,8 @@ section img {
   .chord-training-box { padding: 22px 13px; }
   .practice-button { padding: 12px 17px; }
   .training-chord-name { font-size: 60px; }
+  .challenge-level-heading { justify-content: center; }
+  .challenge-stat strong { font-size: 23px; }
 }
 </style>
 </head>
@@ -1256,7 +1465,6 @@ E|-0----6-5--------------------
   </div>
 </section>
 
-<!-- NOWA SEKCJA: TRENING AKORDÓW -->
 <section id="trening-akordow">
   <div class="chord-training-box">
     <h2>TRENING AKORDÓW</h2>
@@ -1310,7 +1518,7 @@ E|-0----6-5--------------------
     <p class="training-help">
       Jak to działa? Zagraj wszystkie dźwięki akordu jednocześnie,
       tak jak podczas normalnego grania na gitarze. System analizuje
-      dźwięk z mikrofonu i szuka nut pasujących do wyświetlonego akordu.
+      dźwięk z mikrofonu i szuka nut pasujących do tego akordu.
       Najlepsze rezultaty uzyskasz w cichym pomieszczeniu, gdy gitara
       znajduje się blisko mikrofonu. Wykrywanie jest orientacyjne i może
       pomylić się przy dużym hałasie lub mocno zniekształconym brzmieniu.
@@ -1318,7 +1526,6 @@ E|-0----6-5--------------------
   </div>
 </section>
 
-<!-- STROIK -->
 <section id="stroik">
   <div class="tuner-box">
     <h2> STROIK GITAROWY ONLINE</h2>
@@ -1353,7 +1560,6 @@ E|-0----6-5--------------------
   </div>
 </section>
 
-<!-- METRONOM -->
 <section id="metronom">
   <div class="metronome-box">
     <h2>METRONOM GITAROWY</h2>
@@ -1385,7 +1591,6 @@ E|-0----6-5--------------------
   </div>
 </section>
 
-<!-- LICZNIK CZASU ĆWICZEŃ -->
 <section id="czas-cwiczen">
   <div class="practice-timer-box">
     <h2>LICZNIK CZASU ĆWICZEŃ</h2>
@@ -1420,7 +1625,6 @@ E|-0----6-5--------------------
   </div>
 </section>
 
-<!-- NOTATNIK GITARZYSTY -->
 <section id="notatnik">
   <div class="guitar-notebook-box">
     <h2>NOTATNIK GITARZYSTY</h2>
@@ -1457,46 +1661,238 @@ E|-0----6-5--------------------
   </div>
 </section>
 
-<!-- WYZWANIA -->
+<!-- ROZBUDOWANE WYZWANIA -->
 <section id="wyzwania">
   <div class="challenge-box">
-    <h2> WYZWANIA GITAROWE</h2>
-    <p class="challenge-intro">Podejmij wyzwanie, ćwicz gitarę i zdobywaj kolejne osiągnięcia!</p>
+    <h2>WYZWANIA GITAROWE</h2>
+    <p class="challenge-intro">
+      Podejmuj wyzwania, zdobywaj punkty XP, odblokowuj poziomy
+      i buduj swoją gitarową serię!
+    </p>
+
+    <div class="challenge-dashboard">
+      <div class="challenge-stat">
+        <span>POZIOM</span>
+        <strong id="challenge-level">1</strong>
+      </div>
+      <div class="challenge-stat">
+        <span>ZDOBYTE XP</span>
+        <strong id="challenge-total-xp">0</strong>
+      </div>
+      <div class="challenge-stat">
+        <span>UKOŃCZONE ZADANIA</span>
+        <strong id="challenge-completed-count">0</strong>
+      </div>
+      <div class="challenge-stat">
+        <span>SERIA DNI</span>
+        <strong id="challenge-streak">0 🔥</strong>
+      </div>
+    </div>
+
+    <div class="challenge-level-box">
+      <div class="challenge-level-heading">
+        <span id="challenge-level-name">POCZĄTKUJĄCY GITARZYSTA</span>
+        <strong id="challenge-xp-progress">0 / 100 XP</strong>
+      </div>
+      <div class="challenge-xp-bar">
+        <div class="challenge-xp-fill" id="challenge-xp-fill"></div>
+      </div>
+      <div class="challenge-xp-info" id="challenge-next-level">
+        Zdobądź 100 XP, aby awansować na kolejny poziom!
+      </div>
+    </div>
+
+    <div class="daily-challenge" id="daily-challenge">
+      <h3>🔥 WYZWANIE DNIA</h3>
+      <p class="daily-challenge-task" id="daily-challenge-task">
+        Ładowanie dzisiejszego wyzwania...
+      </p>
+      <p class="daily-reward" id="daily-challenge-reward">NAGRODA: +50 XP</p>
+      <button class="challenge-button" id="daily-challenge-done" type="button">
+        UKOŃCZ WYZWANIE DNIA
+      </button>
+    </div>
 
     <div class="challenge-random">
-      <h3> LOSOWE WYZWANIE</h3>
+      <h3>🎲 LOSOWE WYZWANIE</h3>
       <p id="random-challenge">Kliknij przycisk i wylosuj swoje zadanie!</p>
-      <button class="challenge-button" id="random-challenge-button">LOSuj WYZWANIE</button>
+      <button class="challenge-button" id="random-challenge-button" type="button">
+        LOSUJ WYZWANIE
+      </button>
     </div>
 
-    <div class="challenge-grid">
-      <div class="challenge-card easy-card">
-        <div><h3 class="easy"> ŁATWY</h3><p>Przećwicz zmianę między dwoma prostymi akordami przez 5 minut.</p></div>
-        <button class="challenge-done">ZROBIONE ✓</button>
-      </div>
-      <div class="challenge-card easy-card">
-        <div><h3 class="easy"> ŁATWY</h3><p>Zagraj prosty riff powoli i postaraj się zachować równy rytm.</p></div>
-        <button class="challenge-done">ZROBIONE ✓</button>
-      </div>
-      <div class="challenge-card medium-card">
-        <div><h3 class="medium"> ŚREDNI</h3><p>Przećwicz kostkowanie naprzemienne przez kilka minut.</p></div>
-        <button class="challenge-done">ZROBIONE ✓</button>
-      </div>
-      <div class="challenge-card medium-card">
-        <div><h3 class="medium"> ŚREDNI</h3><p>Zagraj wybrany riff trzy razy z rzędu bez zatrzymywania.</p></div>
-        <button class="challenge-done">ZROBIONE ✓</button>
-      </div>
-      <div class="challenge-card hard-card">
-        <div><h3 class="hard"> TRUDNY</h3><p>Przećwicz trudniejszy fragment utworu, pilnując dokładności i rytmu.</p></div>
-        <button class="challenge-done">ZROBIONE ✓</button>
-      </div>
-      <div class="challenge-card hard-card">
-        <div><h3 class="hard"> TRUDNY</h3><p>Spróbuj zagrać cały wybrany utwór od początku do końca.</p></div>
-        <button class="challenge-done">ZROBIONE ✓</button>
-      </div>
+    <h3 class="challenge-section-title">WYBIERZ SWOJE WYZWANIE</h3>
+
+    <div class="challenge-filter-row">
+      <button class="challenge-filter active" data-challenge-filter="all">WSZYSTKIE</button>
+      <button class="challenge-filter" data-challenge-filter="easy">ŁATWE</button>
+      <button class="challenge-filter" data-challenge-filter="medium">ŚREDNIE</button>
+      <button class="challenge-filter" data-challenge-filter="hard">TRUDNE</button>
     </div>
 
-    <p class="challenge-counter" id="challenge-counter">Wykonane wyzwania: 0 / 6</p>
+    <div class="challenge-grid" id="challenge-grid">
+
+      <article class="challenge-card easy-card" data-id="challenge-1" data-difficulty="easy" data-xp="20">
+        <div>
+          <h3 class="easy">🟢 ŁATWY</h3>
+          <p>Przećwicz zmianę między dwoma prostymi akordami przez 5 minut.</p>
+          <p class="challenge-reward">NAGRODA: +20 XP</p>
+        </div>
+        <button class="challenge-done" type="button">ZROBIONE ✓</button>
+      </article>
+
+      <article class="challenge-card easy-card" data-id="challenge-2" data-difficulty="easy" data-xp="20">
+        <div>
+          <h3 class="easy">🟢 ŁATWY</h3>
+          <p>Zagraj prosty riff powoli i postaraj się zachować równy rytm.</p>
+          <p class="challenge-reward">NAGRODA: +20 XP</p>
+        </div>
+        <button class="challenge-done" type="button">ZROBIONE ✓</button>
+      </article>
+
+      <article class="challenge-card easy-card" data-id="challenge-3" data-difficulty="easy" data-xp="25">
+        <div>
+          <h3 class="easy">🟢 ŁATWY</h3>
+          <p>Nastroj gitarę i sprawdź każdą z sześciu strun.</p>
+          <p class="challenge-reward">NAGRODA: +25 XP</p>
+        </div>
+        <button class="challenge-done" type="button">ZROBIONE ✓</button>
+      </article>
+
+      <article class="challenge-card easy-card" data-id="challenge-4" data-difficulty="easy" data-xp="25">
+        <div>
+          <h3 class="easy">🟢 ŁATWY</h3>
+          <p>Naucz się jednego nowego akordu i zagraj go kilka razy.</p>
+          <p class="challenge-reward">NAGRODA: +25 XP</p>
+        </div>
+        <button class="challenge-done" type="button">ZROBIONE ✓</button>
+      </article>
+
+      <article class="challenge-card medium-card" data-id="challenge-5" data-difficulty="medium" data-xp="40">
+        <div>
+          <h3 class="medium">🟠 ŚREDNI</h3>
+          <p>Przećwicz kostkowanie naprzemienne przez 10 minut.</p>
+          <p class="challenge-reward">NAGRODA: +40 XP</p>
+        </div>
+        <button class="challenge-done" type="button">ZROBIONE ✓</button>
+      </article>
+
+      <article class="challenge-card medium-card" data-id="challenge-6" data-difficulty="medium" data-xp="40">
+        <div>
+          <h3 class="medium">🟠 ŚREDNI</h3>
+          <p>Zagraj wybrany riff trzy razy z rzędu bez zatrzymywania.</p>
+          <p class="challenge-reward">NAGRODA: +40 XP</p>
+        </div>
+        <button class="challenge-done" type="button">ZROBIONE ✓</button>
+      </article>
+
+      <article class="challenge-card medium-card" data-id="challenge-7" data-difficulty="medium" data-xp="45">
+        <div>
+          <h3 class="medium">🟠 ŚREDNI</h3>
+          <p>Wybierz jeden utwór i ćwicz jego trudniejszy fragment przez 15 minut.</p>
+          <p class="challenge-reward">NAGRODA: +45 XP</p>
+        </div>
+        <button class="challenge-done" type="button">ZROBIONE ✓</button>
+      </article>
+
+      <article class="challenge-card medium-card" data-id="challenge-8" data-difficulty="medium" data-xp="45">
+        <div>
+          <h3 class="medium">🟠 ŚREDNI</h3>
+          <p>Ustaw metronom i zagraj riff w trzech różnych tempach.</p>
+          <p class="challenge-reward">NAGRODA: +45 XP</p>
+        </div>
+        <button class="challenge-done" type="button">ZROBIONE ✓</button>
+      </article>
+
+      <article class="challenge-card hard-card" data-id="challenge-9" data-difficulty="hard" data-xp="70">
+        <div>
+          <h3 class="hard">🔴 TRUDNY</h3>
+          <p>Spróbuj zagrać cały wybrany utwór od początku do końca.</p>
+          <p class="challenge-reward">NAGRODA: +70 XP</p>
+        </div>
+        <button class="challenge-done" type="button">ZROBIONE ✓</button>
+      </article>
+
+      <article class="challenge-card hard-card" data-id="challenge-10" data-difficulty="hard" data-xp="75">
+        <div>
+          <h3 class="hard">🔴 TRUDNY</h3>
+          <p>Naucz się trudnego riffu i spróbuj zagrać go bez patrzenia na tabulaturę.</p>
+          <p class="challenge-reward">NAGRODA: +75 XP</p>
+        </div>
+        <button class="challenge-done" type="button">ZROBIONE ✓</button>
+      </article>
+
+      <article class="challenge-card hard-card" data-id="challenge-11" data-difficulty="hard" data-xp="80">
+        <div>
+          <h3 class="hard">🔴 TRUDNY</h3>
+          <p>Ćwicz zmianę akordów przez 15 minut, starając się utrzymać płynność.</p>
+          <p class="challenge-reward">NAGRODA: +80 XP</p>
+        </div>
+        <button class="challenge-done" type="button">ZROBIONE ✓</button>
+      </article>
+
+      <article class="challenge-card hard-card" data-id="challenge-12" data-difficulty="hard" data-xp="100">
+        <div>
+          <h3 class="hard">🔴 TRUDNY</h3>
+          <p>Nagraj własne wykonanie wybranego riffu i sprawdź, co możesz poprawić.</p>
+          <p class="challenge-reward">NAGRODA: +100 XP</p>
+        </div>
+        <button class="challenge-done" type="button">ZROBIONE ✓</button>
+      </article>
+
+    </div>
+
+    <p class="challenge-counter" id="challenge-counter">
+      Wykonane wyzwania: 0 / 12
+    </p>
+
+    <p class="challenge-notice" id="challenge-notice" aria-live="polite"></p>
+
+    <h3 class="challenge-section-title">🏆 TWOJE ODZNAKI</h3>
+    <p class="challenge-intro">Odblokowuj odznaki za kolejne osiągnięcia gitarowe.</p>
+
+    <div class="challenge-achievements" id="challenge-achievements">
+      <div class="challenge-achievement" data-achievement="first">
+        <span class="achievement-icon">🎸</span>
+        <strong>PIERWSZY KROK</strong>
+        <small>Ukończ pierwsze wyzwanie</small>
+      </div>
+      <div class="challenge-achievement" data-achievement="five">
+        <span class="achievement-icon">🔥</span>
+        <strong>ROZGRZEWKA</strong>
+        <small>Ukończ 5 wyzwań</small>
+      </div>
+      <div class="challenge-achievement" data-achievement="all">
+        <span class="achievement-icon">🏆</span>
+        <strong>MISTRZ WYZWAŃ</strong>
+        <small>Ukończ wszystkie 12 wyzwań</small>
+      </div>
+      <div class="challenge-achievement" data-achievement="xp100">
+        <span class="achievement-icon">⭐</span>
+        <strong>PIERWSZE 100 XP</strong>
+        <small>Zdobądź 100 punktów XP</small>
+      </div>
+      <div class="challenge-achievement" data-achievement="level5">
+        <span class="achievement-icon">🎖️</span>
+        <strong>GITAROWY LEVEL 5</strong>
+        <small>Osiągnij poziom 5</small>
+      </div>
+      <div class="challenge-achievement" data-achievement="daily">
+        <span class="achievement-icon">📅</span>
+        <strong>CODZIENNY TRENING</strong>
+        <small>Ukończ 3 wyzwania dnia</small>
+      </div>
+      <div class="challenge-achievement" data-achievement="streak3">
+        <span class="achievement-icon">🔥</span>
+        <strong>TRZY DNI Z RZĘDU</strong>
+        <small>Utrzymaj serię 3 dni</small>
+      </div>
+      <div class="challenge-achievement" data-achievement="streak7">
+        <span class="achievement-icon">👑</span>
+        <strong>GITAROWA REGULARNOŚĆ</strong>
+        <small>Utrzymaj serię 7 dni</small>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1857,16 +2253,13 @@ renderChords();
 
   function chooseNextChord() {
     const available = getAvailableChords();
-
     if (!available.length) return null;
 
     let choices = available.filter(chord => chord.name !== previousChordName);
-
     if (!choices.length) choices = available;
 
     const selected = choices[Math.floor(Math.random() * choices.length)];
     previousChordName = selected.name;
-
     return selected;
   }
 
@@ -1900,12 +2293,6 @@ renderChords();
     return ((midi % 12) + 12) % 12;
   }
 
-  /*
-    Analiza widma:
-    - wyszukuje wyraźne piki częstotliwości,
-    - przypisuje je do klas dźwięków,
-    - sprawdza, czy występują dźwięki tworzące aktualny akord.
-  */
   function detectChordMatch() {
     if (!analyser || !frequencyData || !currentChord) return false;
 
@@ -1930,17 +2317,12 @@ renderChords();
 
       if (!Number.isFinite(db) || db < -68) continue;
 
-      if (
-        db > frequencyData[bin - 1] &&
-        db >= frequencyData[bin + 1]
-      ) {
+      if (db > frequencyData[bin - 1] && db >= frequencyData[bin + 1]) {
         const frequency = bin * binWidth;
         const pitchClass = getPitchClass(frequency);
-
         if (pitchClass === null) continue;
 
         const strength = Math.pow(10, db / 20);
-
         pitchEnergy[pitchClass] += strength;
         totalEnergy += strength;
         strongestPeak = Math.max(strongestPeak, strength);
@@ -1954,7 +2336,6 @@ renderChords();
 
     const expectedEnergy = expected.map(note => pitchEnergy[note]);
     const maximumExpected = Math.max(...expectedEnergy);
-
     if (maximumExpected <= 0) return false;
 
     const presentNotes = expectedEnergy.filter(
@@ -1964,10 +2345,6 @@ renderChords();
     const expectedTotal = expectedEnergy.reduce((sum, energy) => sum + energy, 0);
     const coverage = expectedTotal / totalEnergy;
 
-    /*
-      Wymagamy obecności trzech składników akordu oraz
-      odpowiednio dużego udziału ich energii w wykrytym sygnale.
-    */
     return presentNotes >= 3 && coverage >= 0.52;
   }
 
@@ -2002,7 +2379,6 @@ renderChords();
     if (!isRunning || !analyser) return;
 
     animationFrame = requestAnimationFrame(analyseAudio);
-
     const now = performance.now();
 
     if (now - lastDetectionTime < 100) return;
@@ -2069,7 +2445,6 @@ renderChords();
       analyser.maxDecibels = -10;
 
       frequencyData = new Float32Array(analyser.frequencyBinCount);
-
       source.connect(analyser);
 
       score = 0;
@@ -2157,13 +2532,12 @@ renderChords();
 
   startButton.addEventListener("click", startTraining);
   stopButton.addEventListener("click", endTraining);
-
   window.addEventListener("pagehide", stopAudio);
 
   showChord(chordData.find(chord => chord.name === "Am"));
 })();
 
-/* STROIK GITAROWY – POPRAWIONE WYKRYWANIE DŹWIĘKU */
+/* STROIK GITAROWY */
 const tunerStart = document.getElementById("tuner-start");
 const tunerStop = document.getElementById("tuner-stop");
 const tunerNote = document.getElementById("tuner-note");
@@ -2532,7 +2906,6 @@ tunerStop.addEventListener("click", stopTuner);
 
   function resetSession() {
     const wasRunning = runningSince !== null;
-
     sessionMilliseconds = 0;
 
     if (wasRunning) {
@@ -2621,13 +2994,8 @@ tunerStop.addEventListener("click", stopTuner);
     notes.forEach(note => {
       const entry = createElement("article", "notebook-entry");
       const heading = createElement("h3", "", note.title);
-      const meta = createElement(
-        "div",
-        "notebook-entry-meta",
-        note.category + " • " + note.date
-      );
+      const meta = createElement("div", "notebook-entry-meta", note.category + " • " + note.date);
       const content = createElement("p", "", note.content);
-
       const actions = createElement("div", "notebook-entry-actions");
 
       const editButton = createElement("button", "", "EDYTUJ");
@@ -2676,7 +3044,6 @@ tunerStop.addEventListener("click", stopTuner);
     if (!confirmed) return;
 
     notes = notes.filter(note => note.id !== id);
-
     if (!saveNotes()) return;
 
     if (editingId === id) clearForm();
@@ -2738,47 +3105,311 @@ tunerStop.addEventListener("click", stopTuner);
   renderNotes();
 })();
 
-/* WYZWANIA GITAROWE */
-const challengeCards = document.querySelectorAll(".challenge-card");
-const challengeCounter = document.getElementById("challenge-counter");
-const challengeDoneButtons = document.querySelectorAll(".challenge-done");
+/* ROZBUDOWANY SYSTEM WYZWAN GITAROWYCH */
+(() => {
+  const STORAGE_KEY = "guitarWorldChallengeProgressV2";
 
-function updateChallengeCounter() {
-  const completed = document.querySelectorAll(".challenge-card.completed").length;
-  challengeCounter.textContent = "Wykonane wyzwania: " + completed + " / " + challengeCards.length;
-  if (completed === challengeCards.length) {
-    challengeCounter.textContent += " GRATULACJE! WSZYSTKIE WYZWANIA UKOŃCZONE!";
+  const cards = [...document.querySelectorAll(".challenge-card")];
+  const counter = document.getElementById("challenge-counter");
+  const notice = document.getElementById("challenge-notice");
+
+  const levelDisplay = document.getElementById("challenge-level");
+  const totalXPDisplay = document.getElementById("challenge-total-xp");
+  const completedDisplay = document.getElementById("challenge-completed-count");
+  const streakDisplay = document.getElementById("challenge-streak");
+
+  const levelName = document.getElementById("challenge-level-name");
+  const xpProgress = document.getElementById("challenge-xp-progress");
+  const xpFill = document.getElementById("challenge-xp-fill");
+  const nextLevelText = document.getElementById("challenge-next-level");
+
+  const dailyBox = document.getElementById("daily-challenge");
+  const dailyTask = document.getElementById("daily-challenge-task");
+  const dailyReward = document.getElementById("daily-challenge-reward");
+  const dailyButton = document.getElementById("daily-challenge-done");
+
+  const randomText = document.getElementById("random-challenge");
+  const randomButton = document.getElementById("random-challenge-button");
+
+  const levelNames = [
+    "POCZĄTKUJĄCY GITARZYSTA",
+    "GITAROWY UCZEŃ",
+    "RHYTHM PLAYER",
+    "RIFF MASTER",
+    "ROCK GUITARIST",
+    "METAL GUITARIST",
+    "GUITAR HERO",
+    "LEGENDARNY GITARZYSTA"
+  ];
+
+  const dailyChallenges = [
+    "Poświęć dziś 10 minut na ćwiczenie ulubionego riffu.",
+    "Naucz się jednego nowego akordu i przećwicz jego brzmienie.",
+    "Zagraj wybrany riff pięć razy, starając się zachować równy rytm.",
+    "Poćwicz zmianę dwóch akordów przez 10 minut.",
+    "Ustaw metronom i zagraj prosty fragment w równym tempie.",
+    "Przećwicz fragment utworu, który sprawia Ci najwięcej trudności.",
+    "Nastroj gitarę i sprawdź wszystkie struny.",
+    "Wymyśl krótki riff i zapisz go w notatniku gitarzysty.",
+    "Wróć do utworu, którego dawno nie ćwiczyłeś.",
+    "Poćwicz kostkowanie naprzemienne przez 10 minut.",
+    "Zagraj swój ulubiony riff bez zatrzymywania.",
+    "Przećwicz płynne przechodzenie między trzema akordami.",
+    "Wybierz nową tabulaturę i spróbuj odczytać jej fragment.",
+    "Zagraj wybrany utwór wolniej, skupiając się na dokładności."
+  ];
+
+  const randomChallenges = [
+    "Zagraj dziś jeden riff, którego jeszcze nie znasz.",
+    "Poćwicz zmianę akordów przez 5 minut.",
+    "Zagraj swój ulubiony riff w wolnym tempie.",
+    "Spróbuj zagrać fragment utworu bez zatrzymywania.",
+    "Poćwicz dokładne uderzanie kostką w struny.",
+    "Nastroj gitarę i sprawdź każdą strunę.",
+    "Wybierz jeden trudny fragment i ćwicz go powoli.",
+    "Zagraj coś, co samodzielnie wymyślisz!",
+    "Przećwicz płynne przechodzenie między dźwiękami.",
+    "Powtórz swój ulubiony riff trzy razy.",
+    "Wybierz nowy akord i sprawdź, jak brzmi.",
+    "Ustaw metronom i spróbuj zagrać riff w równym tempie.",
+    "Zapisz w notatniku pomysł na nowy gitarowy riff."
+  ];
+
+  const defaultState = {
+    xp: 0,
+    completed: [],
+    dailyDate: "",
+    dailyIndex: 0,
+    dailyCompleted: [],
+    lastActiveDate: "",
+    streak: 0
+  };
+
+  let state = loadState();
+
+  function loadState() {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (!saved) return { ...defaultState };
+
+      const parsed = JSON.parse(saved);
+
+      return {
+        ...defaultState,
+        ...parsed,
+        completed: Array.isArray(parsed.completed) ? parsed.completed : [],
+        dailyCompleted: Array.isArray(parsed.dailyCompleted) ? parsed.dailyCompleted : []
+      };
+    } catch (error) {
+      return { ...defaultState };
+    }
   }
-}
 
-challengeDoneButtons.forEach(button => {
-  button.addEventListener("click", () => {
-    const card = button.closest(".challenge-card");
-    const completed = card.classList.toggle("completed");
-    button.textContent = completed ? "WYKONANE ✓" : "ZROBIONE ✓";
-    updateChallengeCounter();
+  function saveState() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    } catch (error) {
+      notice.textContent = "Nie udało się zapisać postępów w przeglądarce.";
+    }
+  }
+
+  function getDateKey(date = new Date()) {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  }
+
+  function getPreviousDate(dateKey) {
+    const date = new Date(dateKey + "T12:00:00");
+    date.setDate(date.getDate() - 1);
+    return getDateKey(date);
+  }
+
+  function updateActivityStreak() {
+    const today = getDateKey();
+
+    if (state.lastActiveDate === today) return;
+
+    if (state.lastActiveDate === getPreviousDate(today)) {
+      state.streak++;
+    } else {
+      state.streak = 1;
+    }
+
+    state.lastActiveDate = today;
+  }
+
+  function prepareDailyChallenge() {
+    const today = getDateKey();
+
+    if (state.dailyDate !== today) {
+      state.dailyDate = today;
+
+      const dateNumber = Number(today.replaceAll("-", ""));
+      state.dailyIndex = dateNumber % dailyChallenges.length;
+    }
+
+    dailyTask.textContent = dailyChallenges[state.dailyIndex];
+    dailyReward.textContent = "NAGRODA: +50 XP";
+
+    const completedToday = state.dailyCompleted.includes(today);
+
+    dailyBox.classList.toggle("completed", completedToday);
+    dailyButton.disabled = completedToday;
+
+    dailyButton.textContent = completedToday
+      ? "WYZWANIE UKOŃCZONE ✓"
+      : "UKOŃCZ WYZWANIE DNIA";
+  }
+
+  function getLevel(xp) {
+    return Math.floor(xp / 100) + 1;
+  }
+
+  function getLevelName(level) {
+    return levelNames[Math.min(level - 1, levelNames.length - 1)];
+  }
+
+  function updateAchievements() {
+    const completedCount = state.completed.length;
+    const level = getLevel(state.xp);
+    const dailyCount = state.dailyCompleted.length;
+
+    const unlocked = {
+      first: completedCount >= 1,
+      five: completedCount >= 5,
+      all: completedCount >= cards.length,
+      xp100: state.xp >= 100,
+      level5: level >= 5,
+      daily: dailyCount >= 3,
+      streak3: state.streak >= 3,
+      streak7: state.streak >= 7
+    };
+
+    document.querySelectorAll(".challenge-achievement").forEach(item => {
+      const achievement = item.dataset.achievement;
+      item.classList.toggle("unlocked", Boolean(unlocked[achievement]));
+    });
+  }
+
+  function updateUI() {
+    const completedCount = cards.filter(card =>
+      state.completed.includes(card.dataset.id)
+    ).length;
+
+    const level = getLevel(state.xp);
+    const xpIntoLevel = state.xp % 100;
+    const remainingXP = 100 - xpIntoLevel;
+
+    levelDisplay.textContent = level;
+    totalXPDisplay.textContent = state.xp;
+    completedDisplay.textContent = completedCount;
+    streakDisplay.textContent = state.streak + " 🔥";
+
+    levelName.textContent = getLevelName(level);
+    xpProgress.textContent = xpIntoLevel + " / 100 XP";
+    xpFill.style.width = xpIntoLevel + "%";
+
+    if (level >= levelNames.length) {
+      nextLevelText.textContent = "Osiągnięto najwyższy tytuł! Jesteś legendą Guitar World!";
+    } else {
+      nextLevelText.textContent =
+        "Brakuje " + remainingXP + " XP do poziomu " + (level + 1) + ".";
+    }
+
+    counter.textContent = "Wykonane wyzwania: " + completedCount + " / " + cards.length;
+
+    if (completedCount === cards.length) {
+      counter.textContent += " 🏆 GRATULACJE! WSZYSTKIE WYZWANIA UKOŃCZONE!";
+    }
+
+    cards.forEach(card => {
+      const isCompleted = state.completed.includes(card.dataset.id);
+      card.classList.toggle("completed", isCompleted);
+
+      const button = card.querySelector(".challenge-done");
+      button.disabled = isCompleted;
+      button.textContent = isCompleted ? "UKOŃCZONE ✓" : "ZROBIONE ✓";
+    });
+
+    updateAchievements();
+    prepareDailyChallenge();
+  }
+
+  function awardXP(amount, message) {
+    const previousLevel = getLevel(state.xp);
+
+    state.xp += amount;
+    updateActivityStreak();
+    saveState();
+    updateUI();
+
+    const newLevel = getLevel(state.xp);
+
+    if (newLevel > previousLevel) {
+      notice.textContent = "🎉 AWANS! Osiągasz poziom " + newLevel + ": " + getLevelName(newLevel) + "!";
+    } else {
+      notice.textContent = message + " +" + amount + " XP!";
+    }
+  }
+
+  cards.forEach(card => {
+    const button = card.querySelector(".challenge-done");
+
+    button.addEventListener("click", () => {
+      const id = card.dataset.id;
+
+      if (state.completed.includes(id)) return;
+
+      const xp = Number(card.dataset.xp) || 0;
+
+      state.completed.push(id);
+      awardXP(xp, "Wyzwanie ukończone!");
+    });
   });
-});
 
-const randomChallenges = [
-  "Zagraj dziś jeden riff, którego jeszcze nie znasz.",
-  "Poćwicz zmianę akordów przez 5 minut.",
-  "Zagraj swój ulubiony riff w wolnym tempie.",
-  "Spróbuj zagrać fragment utworu bez zatrzymywania.",
-  "Poćwicz dokładne uderzanie kostką w struny.",
-  "Nastroj gitarę i sprawdź każdą strunę.",
-  "Wybierz jeden trudny fragment i ćwicz go powoli.",
-  "Zagraj coś, co samodzielnie wymyślisz!",
-  "Przećwicz płynne przechodzenie między dźwiękami.",
-  "Powtórz swój ulubiony riff trzy razy."
-];
+  dailyButton.addEventListener("click", () => {
+    const today = getDateKey();
 
-document.getElementById("random-challenge-button").addEventListener("click", () => {
-  const randomIndex = Math.floor(Math.random() * randomChallenges.length);
-  document.getElementById("random-challenge").textContent = " " + randomChallenges[randomIndex];
-});
+    if (state.dailyCompleted.includes(today)) return;
 
-/* METRONOM — działa podczas przewijania i korzystania z sekcji strony */
+    state.dailyCompleted.push(today);
+
+    awardXP(50, "Codzienne wyzwanie ukończone!");
+
+    dailyBox.classList.add("completed");
+    dailyButton.disabled = true;
+    dailyButton.textContent = "WYZWANIE UKOŃCZONE ✓";
+  });
+
+  randomButton.addEventListener("click", () => {
+    const randomIndex = Math.floor(Math.random() * randomChallenges.length);
+    randomText.textContent = randomChallenges[randomIndex];
+  });
+
+  document.querySelectorAll(".challenge-filter").forEach(button => {
+    button.addEventListener("click", () => {
+      const filter = button.dataset.challengeFilter;
+
+      document.querySelectorAll(".challenge-filter").forEach(item => {
+        item.classList.remove("active");
+      });
+
+      button.classList.add("active");
+
+      cards.forEach(card => {
+        const difficulty = card.dataset.difficulty;
+        const shouldShow = filter === "all" || difficulty === filter;
+        card.classList.toggle("hidden", !shouldShow);
+      });
+    });
+  });
+
+  updateUI();
+})();
+
+/* METRONOM */
 (() => {
   const range = document.getElementById("metronome-range");
   const number = document.getElementById("metronome-number");
@@ -2815,13 +3446,16 @@ document.getElementById("random-challenge-button").addEventListener("click", () 
 
   function clickSound(currentBeat) {
     if (!audioContext || audioContext.state !== "running") return;
+
     const oscillator = audioContext.createOscillator();
     const gain = audioContext.createGain();
     const strong = currentBeat === 0;
+
     oscillator.type = "sine";
     oscillator.frequency.setValueAtTime(strong ? 1250 : 850, audioContext.currentTime);
     gain.gain.setValueAtTime(strong ? 0.34 : 0.16, audioContext.currentTime);
     gain.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.075);
+
     oscillator.connect(gain);
     gain.connect(audioContext.destination);
     oscillator.start();
@@ -2841,12 +3475,17 @@ document.getElementById("random-challenge-button").addEventListener("click", () 
 
   async function startMetronome() {
     const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+
     if (!AudioContextClass) {
       status.textContent = "Ta przeglądarka nie obsługuje dźwięku metronomu.";
       return;
     }
+
     try {
-      if (!audioContext || audioContext.state === "closed") audioContext = new AudioContextClass();
+      if (!audioContext || audioContext.state === "closed") {
+        audioContext = new AudioContextClass();
+      }
+
       if (audioContext.state === "suspended") await audioContext.resume();
 
       if (isRunning) {
@@ -2877,10 +3516,12 @@ document.getElementById("random-challenge-button").addEventListener("click", () 
     beat = 0;
     toggle.textContent = "START";
     beatLights.forEach(light => light.classList.remove("active"));
+
     if (audioContext && audioContext.state !== "closed") {
       await audioContext.close();
       audioContext = null;
     }
+
     status.textContent = "Metronom jest wyłączony.";
   }
 
@@ -2916,9 +3557,11 @@ for (let i = 0; i < 65; i++) {
 
 function animateSparks() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+
   sparks.forEach(s => {
     s.alpha += s.speed;
     if (s.alpha > 1 || s.alpha < 0) s.speed *= -1;
+
     ctx.beginPath();
     ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
     ctx.fillStyle = `rgba(255, 45, 20, ${Math.max(0, s.alpha) * 0.55})`;
@@ -2926,6 +3569,7 @@ function animateSparks() {
     ctx.shadowColor = "red";
     ctx.fill();
   });
+
   requestAnimationFrame(animateSparks);
 }
 
