@@ -1292,6 +1292,102 @@ section img {
   .challenge-level-heading { justify-content: center; }
   .challenge-stat strong { font-size: 23px; }
 }
+
+
+/* POWIĘKSZANIE RIFFÓW I TABULATUR */
+#taby .difficulty-item img,
+#riffy .difficulty-item img,
+#riffy .difficulty-item pre {
+  cursor: zoom-in;
+}
+#taby .difficulty-item img,
+#riffy .difficulty-item img,
+#riffy .difficulty-item pre {
+  transition: filter .2s ease;
+}
+#taby .difficulty-item img:hover,
+#riffy .difficulty-item img:hover,
+#riffy .difficulty-item pre:hover {
+  filter: brightness(1.12);
+}
+.zoom-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  box-sizing: border-box;
+  padding: 58px 18px 48px;
+  background: rgba(0, 0, 0, .95);
+  align-items: center;
+  justify-content: center;
+}
+.zoom-overlay.active { display: flex; }
+.zoom-content {
+  max-width: 96vw;
+  max-height: 100%;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.zoom-content img {
+  display: block;
+  max-width: 94vw;
+  max-height: 82vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border: 2px solid #b00000;
+  border-radius: 8px;
+  box-shadow: 0 0 28px rgba(220, 0, 0, .35);
+  cursor: zoom-out;
+}
+.zoom-content pre {
+  box-sizing: border-box;
+  max-width: 94vw;
+  max-height: 82vh;
+  overflow: auto;
+  margin: 0;
+  padding: 22px;
+  border: 2px solid #b00000;
+  border-radius: 8px;
+  background: #111;
+  color: #fff;
+  font-size: clamp(18px, 3vw, 34px);
+  line-height: 1.7;
+  white-space: pre;
+}
+.zoom-close {
+  position: fixed;
+  top: 12px;
+  right: 14px;
+  z-index: 100001;
+  width: 46px;
+  height: 46px;
+  border: 2px solid #ff3333;
+  border-radius: 50%;
+  background: #850000;
+  color: #fff;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+}
+.zoom-caption {
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  left: 12px;
+  color: #ffb3b3;
+  text-align: center;
+  font-size: 13px;
+  pointer-events: none;
+}
+@media (max-width: 600px) {
+  .zoom-overlay { padding: 58px 8px 48px; }
+  .zoom-content img, .zoom-content pre { max-width: 98vw; max-height: 80vh; }
+  .zoom-content pre { padding: 14px; font-size: 18px; }
+}
+
 </style>
 </head>
 
@@ -1363,6 +1459,22 @@ section img {
     <img src="happybirthday2.jpg" width="300" alt="Happy Birthday część 2">
   </div>
 
+  <div class="difficulty-item" data-levels="easy">
+    <h3> CHIVAS – DEATH NOTE</h3>
+    <p class="tuning">Strojenie klasyczne: E A D G B E</p>
+    <p class="difficulty easy">POZIOM TRUDNOŚCI: ŁATWY</p>
+    <p>Tabulatura – Chivas – Death Note</p>
+    <img src="deathnote.png" width="300" alt="Tabulatura Chivas – Death Note">
+  </div>
+
+
+  <div class="difficulty-item" data-levels="easy">
+    <h3> HALLOWEEN</h3>
+    <p class="tuning">Strojenie klasyczne: E A D G B E</p>
+    <p class="difficulty easy">POZIOM TRUDNOŚCI: ŁATWY</p>
+    <p>Tabulatura – Halloween</p>
+    <img src="hallowen.png" width="300" alt="Tabulatura Halloween">
+  </div>
   <div class="difficulty-item" data-levels="easy medium">
     <h3> CHIVAS NOWYBATMAN</h3>
     <p class="tuning">Strojenie klasyczne: E A D G B E</p>
@@ -3574,6 +3686,66 @@ function animateSparks() {
 }
 
 animateSparks();
+</script>
+
+
+
+<!-- Okno powiększania riffów i tabulatur -->
+<div class="zoom-overlay" id="zoomOverlay" aria-hidden="true">
+  <button class="zoom-close" id="zoomClose" type="button" aria-label="Zamknij powiększenie">×</button>
+  <div class="zoom-content" id="zoomContent"></div>
+  <div class="zoom-caption" id="zoomCaption">Naciśnij Esc lub kliknij poza zawartością, aby zamknąć</div>
+</div>
+
+<script>
+/* Kliknięcie tabulatury lub riffu otwiera powiększenie */
+(() => {
+  const overlay = document.getElementById('zoomOverlay');
+  const content = document.getElementById('zoomContent');
+  const closeButton = document.getElementById('zoomClose');
+  const caption = document.getElementById('zoomCaption');
+  if (!overlay || !content || !closeButton || !caption) return;
+
+  function closeZoom() {
+    overlay.classList.remove('active');
+    overlay.setAttribute('aria-hidden', 'true');
+    content.replaceChildren();
+    document.body.style.overflow = '';
+  }
+
+  function openZoom(source) {
+    content.replaceChildren();
+    if (source.tagName === 'IMG') {
+      const image = document.createElement('img');
+      image.src = source.currentSrc || source.src;
+      image.alt = source.alt || 'Powiększona tabulatura';
+      content.appendChild(image);
+      caption.textContent = 'Powiększona tabulatura — Esc lub kliknięcie poza obrazem zamyka';
+    } else {
+      const riff = document.createElement('pre');
+      riff.textContent = source.textContent;
+      content.appendChild(riff);
+      caption.textContent = 'Powiększony riff — naciśnij Esc lub kliknij poza riffem, aby zamknąć';
+    }
+    overlay.classList.add('active');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    closeButton.focus();
+  }
+
+  document.addEventListener('click', event => {
+    const target = event.target.closest('#taby .difficulty-item img, #riffy .difficulty-item img, #riffy .difficulty-item pre');
+    if (target) openZoom(target);
+  });
+
+  closeButton.addEventListener('click', closeZoom);
+  overlay.addEventListener('click', event => {
+    if (event.target === overlay) closeZoom();
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && overlay.classList.contains('active')) closeZoom();
+  });
+})();
 </script>
 
 </body>
